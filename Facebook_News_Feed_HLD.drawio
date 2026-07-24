@@ -1,9 +1,48 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="xPKlM_2axEmC-ywtnuQ8">
-    <mxGraphModel>
+    <mxGraphModel dx="1614" dy="726" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Hello Interview Delivery Framework" vertex="1">
+          <mxGeometry height="30" width="319" x="440" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="1. Requirement Gathering (Functional and non functional)&lt;div&gt;2. Entity extraction&lt;/div&gt;&lt;div&gt;3. Client facing APIs or System interface&lt;/div&gt;&lt;div&gt;4. Data flow (only if data processing intensive question)&lt;/div&gt;&lt;div&gt;5. Basic HLD that satisfies functional requirements&lt;/div&gt;&lt;div&gt;6. Deep dive into non functional requirements&lt;/div&gt;" vertex="1">
+          <mxGeometry height="88" width="588" x="318" y="97" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Requirement Gathering" vertex="1">
+          <mxGeometry height="30" width="151" x="11" y="252" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Functional" vertex="1">
+          <mxGeometry height="30" width="60" x="24" y="295" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Users are able to create posts" vertex="1">
+          <mxGeometry height="30" width="250" x="-11" y="331" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Users are able to follow other users" vertex="1">
+          <mxGeometry height="30" width="367" x="-56" y="369" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Users are able to view posts in their feed" vertex="1">
+          <mxGeometry height="30" width="367" x="-43" y="403" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-8" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Non functional&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="36" width="83" x="12.5" y="657" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. CAP theorem: AP System, availablility &amp;gt;&amp;gt; consistency. Expectation is data to be eventually consistent within 1 minute&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;2. 500 ms latency for both posting and viewing&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;3. Should be scalable to handle 2 billion DAU (that&#39;s comparable to real Facebook scale )&lt;br&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&amp;nbsp;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="71" width="651" x="-32" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="4.&amp;nbsp; News feed should have scroll feature, allowing users to see pages" vertex="1">
+          <mxGeometry height="30" width="401" x="11" y="436" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Out of scope functional requirements (can be taken up later if there is extra time)" vertex="1">
+          <mxGeometry height="30" width="473" x="-2" y="499" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Like and comment on posts" vertex="1">
+          <mxGeometry height="30" width="164" x="12.5" y="539" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Privacy settings" vertex="1">
+          <mxGeometry height="30" width="164" x="-17" y="569" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
