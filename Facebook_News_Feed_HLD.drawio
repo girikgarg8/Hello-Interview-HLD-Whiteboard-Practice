@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="xPKlM_2axEmC-ywtnuQ8">
-    <mxGraphModel dx="1614" dy="726" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2268" dy="1117" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -42,6 +42,231 @@
         </mxCell>
         <mxCell id="kZwhHGzqvlMfPyiFF4_c-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Privacy settings" vertex="1">
           <mxGeometry height="30" width="164" x="-17" y="569" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Entities" vertex="1">
+          <mxGeometry height="30" width="60" x="9" y="825" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="User&lt;div&gt;- Id (PK)&lt;/div&gt;&lt;div&gt;- Name&lt;/div&gt;&lt;div&gt;- Email&lt;/div&gt;&lt;div&gt;- FollowerUser&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Id []&lt;/div&gt;&lt;div&gt;- Created At&lt;/div&gt;&lt;div&gt;-Modified At&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="115" width="199" x="-45.5" y="868" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;Post&lt;/div&gt;&lt;div&gt;- Id (PK)&lt;/div&gt;&lt;div&gt;- CreatorUserID (FK)&lt;/div&gt;&lt;div&gt;- Content&lt;/div&gt;&lt;div&gt;&lt;div&gt;- Created At&lt;/div&gt;&lt;div&gt;-Modified At&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="115" width="199" x="257" y="866" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Learning:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Keep Follow as a different table, instead of maintaining FollowerUserID[] in User table.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Why?&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. It allows us to track date at which two users started following each other etc&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. In order to check all followers of a given user, I can simply query this table instead of querying the cumbersome User table&lt;/div&gt;" vertex="1">
+          <mxGeometry height="298" width="164" x="814" y="812" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-27" edge="1" parent="1" source="kZwhHGzqvlMfPyiFF4_c-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;innerLoopWaypoints=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="kZwhHGzqvlMfPyiFF4_c-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-29" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="API Design (REST architecture)" vertex="1">
+          <mxGeometry height="30" width="213" x="-22" y="1040" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-30" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Follow&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- FollowerUserID&lt;/div&gt;&lt;div&gt;- FollowingUserID&lt;/div&gt;&lt;div&gt;- CreatedAt&lt;/div&gt;&lt;div&gt;- ModifiedAt&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="116" x="554" y="873" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-33" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="POST /posts&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;User ID from Authentication header: JWT/Session&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Request Body: Content&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Response Body: PostId&lt;/div&gt;" vertex="1">
+          <mxGeometry height="155" width="172" x="-10" y="1105" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-35" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="POST /followers&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Requester User ID from Authentication header: JWT/Session&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Request Body: User to be followed ID&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Response Body: success&lt;/div&gt;" vertex="1">
+          <mxGeometry height="155" width="172" x="327" y="1127" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-36" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="GET /feeds?cursor={cursor}&amp;amp;limit={limit}&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;User ID from Authentication header: JWT/Session&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Response Body: Post[], nextCursor&lt;/div&gt;" vertex="1">
+          <mxGeometry height="159" width="124" x="622" y="1127" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-37" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HLD that satisfies functional requirments (will go into deep dives later)" vertex="1">
+          <mxGeometry height="30" width="422" x="-63" y="1347" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-38" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client" vertex="1">
+          <mxGeometry height="60" width="120" x="-6" y="1562" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-39" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Authentication&lt;/div&gt;&lt;div&gt;- Rate Limiting&lt;/div&gt;&lt;div&gt;- Routing&lt;/div&gt;&lt;div&gt;- Reverse Proxy&lt;/div&gt;" vertex="1">
+          <mxGeometry height="255" width="120" x="219" y="1459" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-40" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Posts Service" vertex="1">
+          <mxGeometry height="60" width="120" x="513" y="1430" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-41" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Cassandra DB" vertex="1">
+          <mxGeometry height="80" width="80" x="845" y="1542" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-42" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Follower Service" vertex="1">
+          <mxGeometry height="60" width="120" x="515" y="1689" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-43" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="(Cursor based pagination )" vertex="1">
+          <mxGeometry height="30" width="163" x="605" y="1292" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-44" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Learning:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Separate out the reads from writes&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Fetching feeds is a read heavy operation while creating posts is a write intensive operation&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Create separate Feed Service, different from Posts Service. Doing so will allow you to scale these operations independently.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Write the DB schema in your HLD diagaram, so that any indexes etc which are required can be indicated in the diagram&lt;/div&gt;" vertex="1">
+          <mxGeometry height="152" width="473" x="-25" y="2026" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-46" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Feed Service" vertex="1">
+          <mxGeometry height="60" width="120" x="513" y="1552" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-47" edge="1" parent="1" source="kZwhHGzqvlMfPyiFF4_c-38" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="kZwhHGzqvlMfPyiFF4_c-39" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="598" y="1736" as="sourcePoint" />
+            <mxPoint x="648" y="1686" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-48" edge="1" parent="1" source="kZwhHGzqvlMfPyiFF4_c-39" style="endArrow=classic;html=1;rounded=0;exitX=0.981;exitY=0.293;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="kZwhHGzqvlMfPyiFF4_c-40" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="598" y="1557" as="sourcePoint" />
+            <mxPoint x="648" y="1507" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-49" edge="1" parent="1" source="kZwhHGzqvlMfPyiFF4_c-39" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="kZwhHGzqvlMfPyiFF4_c-46" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="600" y="1557" as="sourcePoint" />
+            <mxPoint x="650" y="1507" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-50" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="kZwhHGzqvlMfPyiFF4_c-42" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="340.24" y="1630.12" as="sourcePoint" />
+            <mxPoint x="650" y="1507" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-51" edge="1" parent="1" source="kZwhHGzqvlMfPyiFF4_c-40" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.043;entryY=0.249;entryDx=0;entryDy=0;entryPerimeter=0;" target="kZwhHGzqvlMfPyiFF4_c-41" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="600" y="1557" as="sourcePoint" />
+            <mxPoint x="650" y="1507" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-52" edge="1" parent="1" source="kZwhHGzqvlMfPyiFF4_c-46" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="kZwhHGzqvlMfPyiFF4_c-41" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="600" y="1557" as="sourcePoint" />
+            <mxPoint x="650" y="1507" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-53" edge="1" parent="1" source="kZwhHGzqvlMfPyiFF4_c-42" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" target="kZwhHGzqvlMfPyiFF4_c-41" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="600" y="1557" as="sourcePoint" />
+            <mxPoint x="650" y="1507" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-54" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="User&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Id (PK)&lt;/div&gt;&lt;div&gt;- Name&lt;/div&gt;&lt;div&gt;- Email&lt;/div&gt;&lt;div&gt;- CreatedAt&lt;/div&gt;&lt;div&gt;- ModifiedAt&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="81" x="937" y="1523" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-55" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Post&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Id (PK)&lt;/div&gt;&lt;div&gt;- PostedByUserID (Index)&lt;/div&gt;&lt;div&gt;- Content&lt;/div&gt;&lt;div&gt;- CreatedAt&lt;/div&gt;&lt;div&gt;- ModifiedAt&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="135" x="1044" y="1517" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-56" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Why index on postedByUserID in Post table?&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Because I have to search for all posts from a given user ID, and the index will help speed up the query&lt;/div&gt;" vertex="1">
+          <mxGeometry height="147" width="113" x="1066" y="1806" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-58" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Follow&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Id (PK)&lt;/div&gt;&lt;div&gt;- FollowingUserId (Index)&lt;/div&gt;&lt;div&gt;- FollowedByUserId&lt;/div&gt;&lt;div&gt;(Index)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="115" width="131" x="1218" y="1514" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-60" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Why the two indexes?&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Index on&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;FollowingUserId for faster queries related to &#39;which all users are followed by x?&#39;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;2. Index on&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;FollowedByUserId for faster queries related to &#39;which are all users are following x?&#39;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="155" width="213" x="1268" y="1823" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-61" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Deep dive into non functional requirements" vertex="1">
+          <mxGeometry height="30" width="369" x="-74" y="2300" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-62" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q1. How to deal with scenario where a user is following 10K users? Fetching list of all these followers and then posts of these folks from DB would be a very slow operation&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;A1. Classic pattern where we want to make reads cheaper by doing some pre-computation or making writes heavier&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Whenever a new post is created by user U1, look up all the folllowers of U1 (U2, U3,...)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;And then store in a precomputed feed table, the list if posts this user can see&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Example:&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;User2 -&amp;gt; [Post1]&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Benefit: When user2 wants to see their feed, we have already pre computed the lists of posts to be shown and thus latency is lower&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Options to do this pre-computation:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Sync: Whenever a new post is created, synchronously make the user wait until this post has been propagated to all the followers. This would be problematic in nature for celebrities with 1 million + followers, as it would be very slow and increase the latency&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. Async: Better approach still the post creation latency won&#39;t suffer. However, there&#39;s still a problem: for celebrities having 100M users, doing 100M writes to the precomputed feed is still computationally and monetarily expensive (async nature only buys time, it doesn&#39;t solve the expensive aspect)&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;Hence, a hybrid approach is suggested :&lt;br&gt;&lt;br&gt;1. Non-celebrity accounts having low to mid followers: Async workers write to the pre computed feed table&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. Celebrity accountd with high follower count: Use the DB subqeuery to first fetch the list of all followers followed by their posts (how we were doing earlier)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Q2. Let&#39;s say a celebrity with 100M followers just posted a new post, and this post has gone viral. Since a lot of read requests are being issued for this post, it it putting stress on one of the Cassandra/DynamoDB causing hot partition problem&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="790" width="376" x="-11" y="2373" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-64" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Updated HLD diagram after deep dives:" vertex="1">
+          <mxGeometry height="30" width="294" x="-103" y="3391" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-65" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="A2. Use Redis Cache to cache the popular post IDs. It would have dual advantage:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1.&amp;nbsp; Due to cache hit, the IOPS on DB would reduce significantly&amp;nbsp;&lt;/div&gt;&lt;div&gt;2. Low latency data fetch&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="353" x="-11" y="3190" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-66" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q3. But if we are leveraging a single Redis node/cluster with consistent hashing, we can again run into the same hot partition problem due to a viral post being located on a single shard&lt;br&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;A3. Instead of creating a Redis cluster with sharding, have multiple uncoordinated Redis nodes - think of them like standalone Redis instances. The read workload from the feed service will be distributed among these multiple Redis nodes, thus avoiding hot partition problem&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="420" x="-6" y="3266" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-67" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client" vertex="1">
+          <mxGeometry height="60" width="120" x="-99" y="3693" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-68" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Authentication&lt;/div&gt;&lt;div&gt;- Rate Limiting&lt;/div&gt;&lt;div&gt;- Routing&lt;/div&gt;&lt;div&gt;- Reverse Proxy&lt;/div&gt;" vertex="1">
+          <mxGeometry height="255" width="120" x="126" y="3590" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-69" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Posts Service" vertex="1">
+          <mxGeometry height="60" width="120" x="420" y="3561" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-70" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Cassandra DB" vertex="1">
+          <mxGeometry height="80" width="80" x="752" y="3673" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-71" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Follower Service" vertex="1">
+          <mxGeometry height="60" width="120" x="422" y="3820" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-72" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Feed Service" vertex="1">
+          <mxGeometry height="60" width="120" x="420" y="3683" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-73" edge="1" parent="1" source="kZwhHGzqvlMfPyiFF4_c-67" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="kZwhHGzqvlMfPyiFF4_c-68" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="505" y="3867" as="sourcePoint" />
+            <mxPoint x="555" y="3817" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-74" edge="1" parent="1" source="kZwhHGzqvlMfPyiFF4_c-68" style="endArrow=classic;html=1;rounded=0;exitX=0.981;exitY=0.293;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="kZwhHGzqvlMfPyiFF4_c-69" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="505" y="3688" as="sourcePoint" />
+            <mxPoint x="555" y="3638" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-75" edge="1" parent="1" source="kZwhHGzqvlMfPyiFF4_c-68" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="kZwhHGzqvlMfPyiFF4_c-72" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="507" y="3688" as="sourcePoint" />
+            <mxPoint x="557" y="3638" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-76" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="kZwhHGzqvlMfPyiFF4_c-71" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="247.24" y="3761.12" as="sourcePoint" />
+            <mxPoint x="557" y="3638" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-77" edge="1" parent="1" source="kZwhHGzqvlMfPyiFF4_c-69" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.043;entryY=0.249;entryDx=0;entryDy=0;entryPerimeter=0;" target="kZwhHGzqvlMfPyiFF4_c-70" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="507" y="3688" as="sourcePoint" />
+            <mxPoint x="557" y="3638" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-78" edge="1" parent="1" source="kZwhHGzqvlMfPyiFF4_c-72" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="kZwhHGzqvlMfPyiFF4_c-70" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="507" y="3688" as="sourcePoint" />
+            <mxPoint x="557" y="3638" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-79" edge="1" parent="1" source="kZwhHGzqvlMfPyiFF4_c-71" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" target="kZwhHGzqvlMfPyiFF4_c-70" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="507" y="3688" as="sourcePoint" />
+            <mxPoint x="557" y="3638" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-80" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="User&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Id (PK)&lt;/div&gt;&lt;div&gt;- Name&lt;/div&gt;&lt;div&gt;- Email&lt;/div&gt;&lt;div&gt;- CreatedAt&lt;/div&gt;&lt;div&gt;- ModifiedAt&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="81" x="844" y="3654" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-81" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Post&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Id (PK)&lt;/div&gt;&lt;div&gt;- PostedByUserID (Index)&lt;/div&gt;&lt;div&gt;- Content&lt;/div&gt;&lt;div&gt;- CreatedAt&lt;/div&gt;&lt;div&gt;- ModifiedAt&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="135" x="951" y="3648" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-82" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Follow&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Id (PK)&lt;/div&gt;&lt;div&gt;- FollowingUserId (Index)&lt;/div&gt;&lt;div&gt;- FollowedByUserId&lt;/div&gt;&lt;div&gt;(Index)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="115" width="131" x="1125" y="3645" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-83" edge="1" parent="1" source="kZwhHGzqvlMfPyiFF4_c-69" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="kZwhHGzqvlMfPyiFF4_c-84" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="507" y="3780" as="sourcePoint" />
+            <mxPoint x="572" y="3533.77" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-84" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Precomputation queue" vertex="1">
+          <mxGeometry height="48" width="108" x="569" y="3496" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-86" edge="1" parent="1" source="kZwhHGzqvlMfPyiFF4_c-84" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="507" y="3773" as="sourcePoint" />
+            <mxPoint x="753.54" y="3520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-87" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Async workers" vertex="1">
+          <mxGeometry height="60" width="120" x="752" y="3490" as="geometry" />
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-88" edge="1" parent="1" source="kZwhHGzqvlMfPyiFF4_c-87" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="507" y="3773" as="sourcePoint" />
+            <mxPoint x="804.31" y="3667.62" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kZwhHGzqvlMfPyiFF4_c-89" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Precomputed Feed&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- ID (PK)&lt;/div&gt;&lt;div&gt;- Follower User ID&amp;nbsp;&lt;/div&gt;&lt;div&gt;- Post ID&lt;/div&gt;&lt;div&gt;- CreatedAt&lt;/div&gt;&lt;div&gt;- ModifiedAt&lt;/div&gt;" vertex="1">
+          <mxGeometry height="135" width="112" x="1307" y="3640" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
