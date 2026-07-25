@@ -1,9 +1,279 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="JE7OJhzIHBNJ-wtBjCFT">
-    <mxGraphModel>
+    <mxGraphModel dx="2419" dy="1368" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Hello Interview Delivery Framework" vertex="1">
+          <mxGeometry height="30" width="229" x="280" y="-91" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="1. Requirement Gathering (Functional and non functional)&lt;div&gt;2. Entity extraction&lt;/div&gt;&lt;div&gt;3. Client facing APIs or System interface&lt;/div&gt;&lt;div&gt;4. Data flow (only if data processing intensive question)&lt;/div&gt;&lt;div&gt;5. Basic HLD that satisfies functional requirements&lt;/div&gt;&lt;div&gt;6. Deep dive into non functional requirements&lt;/div&gt;" vertex="1">
+          <mxGeometry height="88" width="588" x="58" y="-47" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Requirement Gathering" vertex="1">
+          <mxGeometry height="30" width="142" x="-46" y="86" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Functional" vertex="1">
+          <mxGeometry height="30" width="60" x="-40" y="123" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. The system is able to identify requests based upon IP, user ID, API Key or similar identifiers" vertex="1">
+          <mxGeometry height="30" width="558" x="-79" y="167" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. The system is able to rate limit requests based on the specified configuration" vertex="1">
+          <mxGeometry height="30" width="558" x="-115" y="211" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. The configuration is dynamic in nature, and be changed later as required. (Example: update throttling limit from 100 to 200 TPS)" vertex="1">
+          <mxGeometry height="30" width="731" x="-68" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-8" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Non functional&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="36" width="83" x="-46" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. CAP theorem: Availability &amp;gt;&amp;gt; Consistency. Example: if a configuration change is made, it is okay for the rate limiter to still serve requests with older configuration than going unavailable&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="837" x="-73" y="438" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Low latency rate limit checks (&amp;lt;10 ms)" vertex="1">
+          <mxGeometry height="30" width="495" x="-189" y="479" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Scalable to handle 1Million TPS and 100M DAU" vertex="1">
+          <mxGeometry height="30" width="692" x="-264" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="4. Feedback loop: Rate limiter should respond with number of allowed requests, reset time etc (through response headers)" vertex="1">
+          <mxGeometry height="30" width="763" x="-100" y="298" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Entities" vertex="1">
+          <mxGeometry height="30" width="60" x="-58" y="587" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Request" vertex="1">
+          <mxGeometry height="30" width="60" x="-56" y="627" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Configuration/Rule" vertex="1">
+          <mxGeometry height="30" width="110" x="141" y="621" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- IP&lt;div&gt;- User ID&lt;/div&gt;&lt;div&gt;- API Key ?&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="96" width="73" x="-58" y="679" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- MaxRequests&lt;div&gt;- TimeDuration&lt;/div&gt;&lt;div&gt;- Throttle Criteria (like IP, User ID etc)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="84" width="130" x="121" y="692" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="API or System Interface" vertex="1">
+          <mxGeometry height="30" width="154" x="-58" y="797" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Expressing it here as a function since rate limiter can be called via remote procedure call (RPC)" vertex="1">
+          <mxGeometry height="30" width="279" x="-59" y="851" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="isRequestAllowed(clientId, ruleId) -&amp;gt; returns&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;div&gt;{passed: boolean, remaining: number, resetTime: timestamp }&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="383.5" x="-73" y="914" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-27" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HLD&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="60" x="-61" y="1013" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-28" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Questions to answer which will influence the design:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Where does rate limiter live in the system architecture?&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. How should we identify clients?&lt;/div&gt;" vertex="1">
+          <mxGeometry height="113" width="281" x="-77" y="1102" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-29" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Different options of placing rate limiter along with tradeoffs explained&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="384" x="-144" y="1268" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-30" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Option 1: Each microservice having their own rate limiter" vertex="1">
+          <mxGeometry height="30" width="364" x="-144" y="1311" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-31" edge="1" parent="1" source="1I7A6KjD0a8kr-Q23iSR-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;innerLoopWaypoints=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="1I7A6KjD0a8kr-Q23iSR-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-32" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client" vertex="1">
+          <mxGeometry height="60" width="120" x="-126" y="1461" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway" vertex="1">
+          <mxGeometry height="60" width="120" x="91" y="1461" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;Microservice 1" vertex="1">
+          <mxGeometry height="60" width="120" x="340" y="1376" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-35" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;Microservice 2" vertex="1">
+          <mxGeometry height="60" width="120" x="340" y="1536" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Rate Limiter" vertex="1">
+          <mxGeometry height="22" width="93" x="353.5" y="1385" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-38" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Rate Limiter" vertex="1">
+          <mxGeometry height="22" width="93" x="353.5" y="1544" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-40" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Cons: Lot of duplication of effort to develop similar rate limiter functionality, no global view (a client might be hitting 1000s of services while being in limit for each of the individual services)" vertex="1">
+          <mxGeometry height="30" width="967" x="-153" y="1734" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-41" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Pro:&amp;nbsp; Possible to define custom rate limiting rules based on service logic" vertex="1">
+          <mxGeometry height="30" width="500" x="-198" y="1694" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-42" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Option 2: Creating a different service dedicated only to rate limiter functionality&lt;/span&gt;" vertex="1">
+          <mxGeometry height="36" width="496" x="-144" y="1817" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-43" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client" vertex="1">
+          <mxGeometry height="60" width="120" x="-112" y="1949" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-44" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway" vertex="1">
+          <mxGeometry height="60" width="120" x="105" y="1949" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-45" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Microservice 1&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="29" width="120" x="352" y="1962" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-46" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Microservice 2&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="120" x="353.5" y="2042" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-49" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Rate Limiter" vertex="1">
+          <mxGeometry height="30" width="126" x="348" y="1882" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-50" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Pro: No duplication of logic, consistent API structure for rate limiting" vertex="1">
+          <mxGeometry height="30" width="413" x="-145" y="2096" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-51" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Con: Additional hop with the rate limiter service. In non functional requirement, we had mentioned latency requirement &amp;lt; 10 ms" vertex="1">
+          <mxGeometry height="30" width="524" x="-126" y="2140" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-52" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Option 3: Moving rate limiter functionality to the edge (API Gateway) -- Going ahead with this&lt;/span&gt;" vertex="1">
+          <mxGeometry height="36" width="547" x="-180" y="2232" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-53" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client" vertex="1">
+          <mxGeometry height="60" width="120" x="-157" y="2330" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-54" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway" vertex="1">
+          <mxGeometry height="60" width="120" x="60" y="2330" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-58" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway" vertex="1">
+          <mxGeometry height="60" width="120" x="157" y="2374" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-59" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Horizontally scalable API Gateway" vertex="1">
+          <mxGeometry height="30" width="60" x="58" y="2429" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-60" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Rate limiter" vertex="1">
+          <mxGeometry height="37" width="95" x="153" y="2459" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-61" edge="1" parent="1" source="1I7A6KjD0a8kr-Q23iSR-54" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.105;entryY=0.027;entryDx=0;entryDy=0;entryPerimeter=0;" target="1I7A6KjD0a8kr-Q23iSR-60" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="269" y="2344" as="sourcePoint" />
+            <mxPoint x="319" y="2294" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-62" edge="1" parent="1" source="1I7A6KjD0a8kr-Q23iSR-58" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.579;entryY=0.027;entryDx=0;entryDy=0;entryPerimeter=0;" target="1I7A6KjD0a8kr-Q23iSR-60" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="269" y="2344" as="sourcePoint" />
+            <mxPoint x="319" y="2294" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-63" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Pro: No duplication of logic, consistent API structure for rate limiting&lt;/span&gt;" vertex="1">
+          <mxGeometry height="36" width="386" x="-170" y="2555" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-64" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Con: No service specific rate limiting rules possible" vertex="1">
+          <mxGeometry height="30" width="416" x="-247" y="2591" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-67" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Answer to the second question:&amp;nbsp; 2. How should we identify clients?" vertex="1">
+          <mxGeometry height="30" width="393" x="-201" y="2675" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-68" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Since we decided to go with rate limiter at the edge, we can only rate limit based on the information received in HTTP request headers, body etc&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="751" x="-204" y="2733" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-69" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="IP, User ID, API Key based throttling are all possible with the rate limiter at API GW&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;A pragmatic approach would be to throttle at lower TPS for unauthenticated users while setting higher limits for authenticated users&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Example: 100 TPS for unauthenticated IP requests, 500 TPS for user based throttling while 1000 TPS for API key based throttling&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="139" width="493" x="-218" y="2791" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-72" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Different algorithms for rate limiting: In an HLD interview, the focus is not on the low level code or implementation.&lt;div&gt;&amp;nbsp;High level understanding of the algorithms along with tradeoffs would be good for HLD interviews.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="939" x="-436" y="2956" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-73" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Token bucket algorithm (Easiest algorithm to implement from LLD perspective as well, prefer to discuss this)&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Think of a bucket having fixed max capacity (let&#39;s say 100). There is a refiller which is periodically refilling the tokens at a fixed rate (eg: 20 tokens every 5 secs). Whenever there is an incoming request, we check if there is any available token in the bucket. If yes, the token is consumed. If no, the request is rate limited&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="140" width="503" x="-269" y="3009" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-74" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Token bucket algorithm (Easiest algorithm to implement from LLD perspective as well, prefer to discuss this)&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Think of a bucket having fixed max capacity (let&#39;s say 100). There is a refiller which is periodically refilling the tokens at a fixed rate (eg: 20 tokens every 5 secs). Whenever there is an incoming request, we check if there is any available token in the bucket. If yes, the token is consumed. If no, the request is rate limited&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Pro: Easy to implement and understand&lt;/div&gt;&lt;div&gt;Con: If the bucket is full of tokens and a sudden traffic burst arrives, none of the requests will be throttled (can&#39;t handle bursts smoothly)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="221" width="503" x="-278" y="3225" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-75" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Fixed window algorithm&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;The time axis is divided into subintervals of fixed duration each (eg: 5 sec each). A fixed number of requests are to be allowed for each sub-interval (eg: 100 requests in every 5 sec sub-interval). A counter for is maintained for the number of allowed request in each sub-interval. Example: if current request count is 100 already and the 101th request arrives, it will be throttled&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Pro: Easy to implement and understand, less memory consumption&lt;/div&gt;&lt;div&gt;Con: Cannot handle traffic bursts smoothly at the edges. If 100 requests arrive respectively at 12:05 (end of first window) and 12:05 (start of next window), both will be permitted. This can cause issues to downstream systems.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="221" width="503" x="-282.5" y="3475" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-76" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;3. Sliding window log&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;A deque/Redis sorted set is maintained with all the allowed requests with their timestamps. When a new request arrives, the length of the deque/sorted set is checked and only if the deque length allows it, then only this request will be permitted and enqueued to the sorted set. Else, the request will be throttled.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Over time, as the sliding window moves, the old entries (whose timestamp is less than now()-sliding window span) are removed&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Pro: Handles rate limiting precisely&amp;nbsp;&lt;/div&gt;&lt;div&gt;Con: Memory overhead, overhead of removing the old entries, also Redis sorted set TC for insertion is O(log N)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="221" width="503" x="353.5" y="3235" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-77" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;4. Sliding window counter&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Improvement on the sliding window log design. Maintain count of requests in each window instead of maintaining the log.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Use average formula to calculate number of requests in each window.&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Example: If previous window had request count as 100 and current window has request count of 50 (uptil now, might grow), and my sliding window is 70% into the old window&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Then request count in current window is 70% of 100 + 50 = 120&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Pro: Less memory overhead compared to sliding window log&lt;/div&gt;&lt;div&gt;Con: Assumes uniform distribution of requests in the window, also it&#39;s approximation&lt;/div&gt;" vertex="1">
+          <mxGeometry height="249" width="503" x="353.5" y="3508" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-78" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. We&#39;ll go ahead with token bucket algorithm for this HLD design due to its simplicity&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. Realise that API Gateway itself will have multiple servers, so we can&#39;t keep the token count in memory because it can be lost when the server is terminated. Hence, going with Redis as the central layer&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="157" width="505" x="-294" y="3950" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-79" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="High level steps of how Token bucket algorithm will work with Redis:&lt;div&gt;&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="382" x="-277" y="4133" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-80" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Request arrives at Gateway&lt;div&gt;2. Fetch IP, User ID or API key from headers/JWT&lt;/div&gt;&lt;div&gt;3. Fetch current token count and last refill time from Redis&lt;/div&gt;&lt;div&gt;HMGET alice:bucket tokens last_refill (from a hash called&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;alice:bucket, fetch the fields of current token count and last refill time).&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Idea is that if last refill time is 30 sec ago and refill rate is 1 token per sec, we can increment the token count by 30 (keeping the total bucket capacity in mind)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;4. Refill token based on elapsed time (cap at bucket size)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;5. If tokens &amp;gt;=1 -&amp;gt; consume token (token-=1) and allow request&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Else deny the request&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;6. Write back updated token count + last refill time as now() into Redis hash&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="273" width="488" x="-365" y="4171" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-81" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Important note:&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;We can&#39;t execute these steps in the API Gateway Server because of race condition. Eg: if token count is 1 and two API gateway servers read it, and allow 2 requests while only 1 should have been allowed.&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;To have atomicity, we need to execute this in Redis Lua script&lt;/div&gt;" vertex="1">
+          <mxGeometry height="149" width="434" x="-371" y="4497" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-82" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Fail fast behaviour: If request is throttled, throw it with 429 error instead of queueing it&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="504" x="-340" y="4682" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-83" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HLD that satisifies all functional requirements (we&#39;ll construct another version later after going into deep dives):" vertex="1">
+          <mxGeometry height="30" width="672" x="-418" y="4780" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-84" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client" vertex="1">
+          <mxGeometry height="60" width="120" x="-252" y="4902" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-85" edge="1" parent="1" source="1I7A6KjD0a8kr-Q23iSR-84" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="47" y="4996" as="sourcePoint" />
+            <mxPoint x="-15.5" y="4932" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-86" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway" vertex="1">
+          <mxGeometry height="136" width="120" x="-15" y="4872" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-87" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HTTP Status Code 429" vertex="1">
+          <mxGeometry height="30" width="60" x="-106" y="4894" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-88" edge="1" parent="1" source="1I7A6KjD0a8kr-Q23iSR-86" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-52" y="5058" as="sourcePoint" />
+            <mxPoint x="45" y="5058.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-89" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Redis" vertex="1">
+          <mxGeometry height="80" width="80" x="2" y="5057" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-90" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Microservice 1&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="29" width="120" x="200" y="4885" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-91" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Microservice 2&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="120" x="201.5" y="4965" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-92" edge="1" parent="1" source="1I7A6KjD0a8kr-Q23iSR-86" style="endArrow=classic;html=1;rounded=0;exitX=0.976;exitY=0.365;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="1I7A6KjD0a8kr-Q23iSR-90" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="134" y="4940" as="sourcePoint" />
+            <mxPoint x="184" y="4890" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-94" edge="1" parent="1" source="1I7A6KjD0a8kr-Q23iSR-86" style="endArrow=classic;html=1;rounded=0;exitX=0.976;exitY=0.616;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="1I7A6KjD0a8kr-Q23iSR-91" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="131" y="4940" as="sourcePoint" />
+            <mxPoint x="181" y="4890" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-95" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;Headers sent by API Gateway&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;X-RateLimit-Limit: The rate limit ceiling for that request (eg:100 per minute)&lt;div&gt;X-RateLimit-Remaining: Number of requests left in the current window (eg: 0)&lt;/div&gt;&lt;div&gt;X-RateLimit-Reset: When rate limit reset, as a Unix timestamp (eg: 123)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Retry-After: 60 seconds&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="447" x="-787" y="4908" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-96" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Deep dives into non-functional requirements" vertex="1">
+          <mxGeometry height="30" width="243" x="-441" y="5236" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-98" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Scalability to 1 Million TPS: A single Redis node cannot handle such high TPS, we need to create a Redis cluster with multiple shards. And use consistent hashing technique to distribute the data among these shards.&amp;nbsp;&amp;nbsp;" vertex="1">
+          <mxGeometry height="142" width="605" x="-445" y="5292" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-99" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. CAP theorem: AP System: Availablity &amp;gt;&amp;gt; Consistency: Ensuring high availability:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;a. Configure read replicas, in case of master node failure, the read replica can be promoted to master. There will be some data loss due to some writes that were not yet replicated from master to read replica, but that&#39;s fine, the only impact it will have is maybe 120 requests get permitted instead of 100.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="108" width="545" x="-441" y="5434" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-101" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="b. Worst case scenario, if Redis cluster is completely down. We have one of the following options:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Fail open: Allow all requests to pass through the API Gateway, no throttling at all&lt;/div&gt;&lt;div&gt;2. Fail close:&amp;nbsp; All requests are throttled at API GW&lt;/div&gt;&lt;div&gt;3. Hybrid approach: Have per pod level rate limiting in place until the Redis cluster is back online again&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;We will go with the hybrid approach in case Redis cluster is down&lt;/div&gt;" vertex="1">
+          <mxGeometry height="173" width="599" x="-460" y="5558" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-102" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Latency should be &amp;lt; 10 ms:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;a. Make sure TCP connection pooling between API GW and Redis cluster to avoid overhead of Redis connection establishment&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;b. Make sure API GW and Redis cluster are in same region to avoid cross region latency&lt;/div&gt;" vertex="1">
+          <mxGeometry height="97" width="556" x="-470" y="5773" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-103" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;blockquote style=&quot;margin: 0px 0px 0px 40px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px;&quot;&gt;Q. How to handle configuration/rule updates for rate limiter?&amp;nbsp;&amp;nbsp;&lt;/blockquote&gt;" vertex="1">
+          <mxGeometry height="30" width="800" x="-709" y="5962" as="geometry" />
+        </mxCell>
+        <mxCell id="1I7A6KjD0a8kr-Q23iSR-105" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="A. Rate limiter should read rules/configuration from Redis. However, DB will be maintained as source of truth since Redis is meant for ephemeral data.&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;So, the flow would be:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Client update -&amp;gt; DB update -&amp;gt; CDC -&amp;gt; Redis update&lt;/div&gt;" vertex="1">
+          <mxGeometry height="86" width="717" x="-453" y="6028" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
