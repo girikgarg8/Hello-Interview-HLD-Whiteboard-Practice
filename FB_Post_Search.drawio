@@ -1,9 +1,249 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="FxnuOfmPRmIRRlKsC35o">
-    <mxGraphModel>
+    <mxGraphModel dx="1678" dy="764" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Hello Interview Delivery Framework" vertex="1">
+          <mxGeometry height="30" width="247" x="222" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="1. Requirement Gathering (Functional and non functional)&lt;div&gt;2. Entity extraction&lt;/div&gt;&lt;div&gt;3. Client facing APIs or System interface&lt;/div&gt;&lt;div&gt;4. Data flow (only if data processing intensive question)&lt;/div&gt;&lt;div&gt;5. Basic HLD that satisfies functional requirements&lt;/div&gt;&lt;div&gt;6. Deep dive into non functional requirements&lt;/div&gt;" vertex="1">
+          <mxGeometry height="88" width="588" x="51.5" y="93" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Requirement Clarification" vertex="1">
+          <mxGeometry height="30" width="159" x="-233" y="209" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Functional" vertex="1">
+          <mxGeometry height="30" width="60" x="-226" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Users are able to create posts" vertex="1">
+          <mxGeometry height="30" width="198" x="-237" y="354" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Users are able to search for posts by keyword. Further, the posts can be sorted based on the timestamps or number of likes.&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="405" x="-233" y="427" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Non-functional requirements" vertex="1">
+          <mxGeometry height="30" width="174" x="-246" y="708" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. CAP Theorem: AP System. Availability &amp;gt;&amp;gt; Consistency. Expectation to be eventually consistent within 1 min" vertex="1">
+          <mxGeometry height="30" width="624" x="-252" y="757" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Low latency post search ( &amp;lt; 500 ms) - Human being perceive as real time in less than this number" vertex="1">
+          <mxGeometry height="30" width="536" x="-237" y="803" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. High throughput (See below)" vertex="1">
+          <mxGeometry height="30" width="225" x="-264" y="845" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Note: You can&#39;t use ElasticSearch, PostGres Full Text or other off the shelf search functionality" vertex="1">
+          <mxGeometry height="30" width="516" x="-226" y="257" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Users are able to like posts" vertex="1">
+          <mxGeometry height="30" width="237" x="-268" y="384" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Out of scope functional requirements" vertex="1">
+          <mxGeometry height="30" width="244" x="-240" y="488" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Fuzzy Search (a search technique that finds results even when the user’s query does not perfectly match the data)" vertex="1">
+          <mxGeometry height="30" width="769" x="-284" y="554" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Filtering results" vertex="1">
+          <mxGeometry height="30" width="149" x="-243.5" y="522" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Personalization of search results - By the way, if this was in scope, it would have introduced complexity since we wouldn&#39;t be able to cache the search results since they would be specific to a user." vertex="1">
+          <mxGeometry height="30" width="616.5" x="-213" y="596" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-18" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;4. High recall, all of the posts (Out of all the truly relevant items in the entire database, how many did the search engine actually find and return?)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="36" width="881" x="-240" y="887" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-19" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;5. High availability&lt;/span&gt;" vertex="1">
+          <mxGeometry height="36" width="162" x="-240" y="930" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Back of envelope estimation - usually not a good idea to do it, if it&#39;s not going to influence the design. However, in this case we are doing it, since we need to understand the read to write ratio and the storage requirement of the system." vertex="1">
+          <mxGeometry height="99" width="482" x="-246" y="1008" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Intuition or instinct we initially have is: this is going to be a read heavy system since the question says &quot;search&quot; system&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="688" x="-268" y="1120" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Users of the system: 1 Billion" vertex="1">
+          <mxGeometry height="30" width="192" x="-257" y="1177" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Writes: (assumption 1 person posts while 100 others like it)" vertex="1">
+          <mxGeometry height="30" width="407.5" x="-281" y="1232" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Posts: 1B/100K = 10 K posts/sec&lt;div&gt;Likes: 10B/100K = 100 K likes/sec&lt;/div&gt;" vertex="1">
+          <mxGeometry height="84" width="254" x="-240" y="1274" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Reads:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Searches: 1B/100K = 10 K Search/ sec&lt;/div&gt;" vertex="1">
+          <mxGeometry height="84" width="496" x="-352" y="1362" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="So, this proved to be a write heavy system than a read heavy one" vertex="1">
+          <mxGeometry height="30" width="378" x="-252" y="1459" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-27" edge="1" parent="1" source="GXhtB-WlkQ6-UquPLxNR-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;innerLoopWaypoints=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="GXhtB-WlkQ6-UquPLxNR-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-28" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Storage: assumption: average post size is 1 KB&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Number of Posts: 1 B * 365 * 10 years = 3.6 TB&lt;/div&gt;&lt;div&gt;Storage: 3.6 TB * 1KB = 3.6 PB&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;We&#39;ll see later in the design, how this storage can be optimized - do we really need to store all the posts for Search&lt;/div&gt;" vertex="1">
+          <mxGeometry height="86" width="290" x="-240" y="1543" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-29" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Entities" vertex="1">
+          <mxGeometry height="30" width="60" x="-248" y="1684" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-31" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="User&lt;div&gt;Post&lt;/div&gt;&lt;div&gt;Like&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="-246" y="1734" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-32" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="API" vertex="1">
+          <mxGeometry height="30" width="60" x="-248" y="1801" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-36" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="POST /posts&lt;div&gt;User ID from authentication header JWT/Session&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Request Body: Content&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Response: PostID&lt;/div&gt;" vertex="1">
+          <mxGeometry height="186" width="176" x="-254" y="1856" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-37" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="POST /likes&lt;div&gt;User ID from authentication header JWT/Session&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Request Body: postID&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Response: success&lt;/div&gt;" vertex="1">
+          <mxGeometry height="186" width="176" x="81" y="1856" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-38" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="GET /search?keyword={keyword}&amp;amp;sortBy={criteria}&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Response: List &amp;lt;Post&amp;gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="186" width="176" x="449" y="1871" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-39" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="High level design that satisifes functional requirements" vertex="1">
+          <mxGeometry height="30" width="439" x="-321" y="2046" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-40" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Basic design principle to be kept in mind: Keep different services for different functionalities, especially if one operation is read intensive and the other is write intensive. This allows us to scale the services (read and write operations) independently" vertex="1">
+          <mxGeometry height="61" width="578.5" x="-254" y="2104" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-41" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client" vertex="1">
+          <mxGeometry height="60" width="120" x="-246" y="2406" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-42" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Authentication&lt;/div&gt;&lt;div&gt;- Authorization&lt;/div&gt;&lt;div&gt;- Rate Limiting&lt;/div&gt;&lt;div&gt;- Routing&lt;/div&gt;" vertex="1">
+          <mxGeometry height="344" width="120" x="-44" y="2251" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-43" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Posts Service" vertex="1">
+          <mxGeometry height="60" width="120" x="210" y="2253" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-44" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Posts DB" vertex="1">
+          <mxGeometry height="80" width="80" x="444" y="2245" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-45" parent="1" style="whiteSpace=wrap;html=1;" value="Post&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- AuthorUserId&lt;/div&gt;&lt;div&gt;- Content&lt;/div&gt;&lt;div&gt;- CreatedAt&lt;/div&gt;" vertex="1">
+          <mxGeometry height="75" width="120" x="569" y="2240" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-46" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Search Service" vertex="1">
+          <mxGeometry height="60" width="120" x="208" y="2391" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-48" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Search Index&lt;div&gt;(implemented with Redis)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="86" width="86" x="441" y="2389" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-49" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Like Service" vertex="1">
+          <mxGeometry height="60" width="120" x="208" y="2518" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-50" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Redis Data Structures maintained" vertex="1">
+          <mxGeometry height="30" width="207" x="625" y="2434" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-51" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. like:{keyword} : Redis Sorted Set&lt;div&gt;2. time: {keyword} : Redis List&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Example: User creates a post P1 with content &quot;hello&quot; with 5 likes&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Redis sorted set like:hello -&amp;gt; [{P1,5}]&lt;/div&gt;&lt;div&gt;Redis sorted set time:hello -&amp;gt; [P1]&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="366" x="542" y="2464" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-52" edge="1" parent="1" source="GXhtB-WlkQ6-UquPLxNR-45" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="GXhtB-WlkQ6-UquPLxNR-54" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="830" y="2565" as="sourcePoint" />
+            <mxPoint x="1078" y="2414" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-53" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="CDC" vertex="1">
+          <mxGeometry height="30" width="60" x="933" y="2322" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-54" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Ingestion Service" vertex="1">
+          <mxGeometry height="60" width="120" x="1079" y="2406" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-55" edge="1" parent="1" source="GXhtB-WlkQ6-UquPLxNR-54" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.915;entryY=0.314;entryDx=0;entryDy=0;entryPerimeter=0;" target="GXhtB-WlkQ6-UquPLxNR-48" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="803" y="2577" as="sourcePoint" />
+            <mxPoint x="853" y="2527" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-57" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Likes DB" vertex="1">
+          <mxGeometry height="80" width="80" x="436" y="2557" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-58" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="518.32" y="2600" as="sourcePoint" />
+            <mxPoint x="731.67" y="2605.33" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-59" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="CDC" vertex="1">
+          <mxGeometry height="30" width="60" x="565" y="2611" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-60" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Flink aggregation" vertex="1">
+          <mxGeometry height="60" width="120" x="733" y="2584" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-61" edge="1" parent="1" source="GXhtB-WlkQ6-UquPLxNR-60" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="943" y="2720" as="sourcePoint" />
+            <mxPoint x="986.33" y="2614" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-62" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Kafka topic" vertex="1">
+          <mxGeometry height="60" width="120" x="987" y="2584" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-63" edge="1" parent="1" source="GXhtB-WlkQ6-UquPLxNR-62" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.428;entryY=0.944;entryDx=0;entryDy=0;entryPerimeter=0;" target="GXhtB-WlkQ6-UquPLxNR-54" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="943" y="2720" as="sourcePoint" />
+            <mxPoint x="993" y="2670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-64" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q. Why CDC from likes DB to ingestion service is required at all ?&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;A. Since, accoding to our functional requirements, we want to be able to search for posts by like count. So, whenever a new like is registered/deregistered, we need to notify the ingestion service as well so that the score of the post in Redis sorted set can be adjusted.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="167" width="595" x="-212" y="2757" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-65" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q. Why do we need Flink here? Why can&#39;t we directly CDC from Likes DB to Ingestion Service?" vertex="1">
+          <mxGeometry height="30" width="649" x="-239" y="2942" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-66" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="A. Since likes DB is handling 100K likes per sec, direct CDC to ingestion service would be computationally expensive. Since, for every event, we would have to tokenize the post and then increment or decrement the like count in Redis sorted set&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Flink job helps us here in aggregation, so for example, instead of increasing the like count of a post 5 times, Flink will aggregate it and increment by 5 in one shot&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="540" x="-167" y="2993" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-67" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q. Brief explanation of how ingestion service and Redis search index is functioning&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="635" x="-254" y="3220" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-68" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="A. Any post update/insert operation is CDCed to Ingestion service. Ingestion service then does tokenization of post, removes any stop words (like &quot;is&quot;, &quot;am&quot;, &quot;the&quot;)&amp;nbsp;.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;To be able to support sort by both like count and time, we maintained two different Redis data structures: sorted set for likes and list for times&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;So, a post with content &quot;hello&quot; with 5 likes will be stored as:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;like:hello -&amp;gt; [&amp;nbsp; {P1,5}&amp;nbsp; ]&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;time:hello -&amp;gt; [ P1 ]&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="165" width="635" x="-260" y="3256" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-69" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Note: Hello Interview uses Redis for aggregation of likes, but I prefer to use Flink instead&amp;nbsp;" vertex="1">
+          <mxGeometry height="229" width="242" x="801" y="2789" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-70" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Deep Dive: Non functional requirements" vertex="1">
+          <mxGeometry height="30" width="303" x="-286" y="3478" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-71" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Low latency searches: Requests to search service are hammering the search index, even though there might be repeated searches. Also, keep in mind that the search results are not personalized, so we have a good opportunity for caching&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Following changes can be made to improve the read performance:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Introduce Redis/MemCached before the Search Index to reduce load on search index in case of cache hit&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. To overcome cache stampede problem caused by cache miss, have per-pod level application cache too&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;3. Introduce cache at the edge (CDN) which would help reduce the latency too&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="213" width="623" x="-330" y="3544" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-73" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="By introducing Kafka in the CDC flow, we ensure that we are able to buffer very high write volume caused due to bursty traffic. Also, enable Kafka persistence which allows us to replay the ingestion later if required, ensuring no data loss" vertex="1">
+          <mxGeometry height="30" width="735" x="-356" y="3848" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-75" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Scalability&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Single Redis node as search index won&#39;t be sufficient, we will need Redis cluster with multiple nodes.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;How to partition the data among these shards:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Option1 : Based on the keyword. So, like:hello and time:hello are guaranteed to be on the same shard&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Advantage: Any read query for this keyword only needs to contact one Redis node&lt;/div&gt;&lt;div&gt;Disadvantage: Can cause hot partition problem if one specific keyword like &quot;Donald&quot; has lot of posts, causing memory or CPU utilization&lt;/div&gt;" vertex="1">
+          <mxGeometry height="172" width="577" x="-320" y="4037" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-79" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Option 2: Maintain keys with partial information. Example: timestamp:hello can be broken into 4 smaller sorted sets, which can reside on different Redis nodes&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;timestamp:hello:1&lt;/div&gt;&lt;div&gt;timestamp:hello:2&lt;/div&gt;&lt;div&gt;timestamp:hello:3&lt;/div&gt;&lt;div&gt;&lt;div&gt;timestamp:hello:4&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Advantage: Avoids hot partition problem, since the data is now distributed among multiple shards&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Disadvantage: The Search service now needs to gather the data from multiple shards in Redis cluster, and do the final aggregation/sorting operation before returning result to client&lt;/div&gt;" vertex="1">
+          <mxGeometry height="217" width="472" x="-286" y="4249" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-80" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q. How do we reduce memory usage for Redis Search Index, since Redis memory is expensive?" vertex="1">
+          <mxGeometry height="30" width="449" x="-326" y="4528" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-81" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="A. Identify less popular keywords and move them to cold storage like S3, thus enabling Redis memory to be freed up.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;How to identify these keywords? Use a cron job&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="449" x="-323" y="4620" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-82" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q. How to search for posts having bigrams like &quot;Taylor Swift&quot;" vertex="1">
+          <mxGeometry height="30" width="393" x="-357.5" y="4717" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-83" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Naive Approach 1:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Find all documents having taylor and swift, do set intersection&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Problem: &quot;taylor is not a swift&quot; also matches this criteria&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="593" x="-325" y="4778" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-85" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Approach 2:" vertex="1">
+          <mxGeometry height="30" width="153.36" x="-113" y="4854.27" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-87" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;div style=&quot;forced-color-adjust: none;&quot;&gt;Find all documents having taylor and swift, do set intersection&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none;&quot;&gt;Let&#39;s say set has 50 posts, now do DB query on posts to do exact search for &quot;*taylor swift*&quot;&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none;&quot;&gt;&lt;br style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="51" width="355" x="-194" y="4892.999090909091" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-88" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Approach 3:" vertex="1">
+          <mxGeometry height="30" width="153.36" x="-107.18" y="4995" as="geometry" />
+        </mxCell>
+        <mxCell id="GXhtB-WlkQ6-UquPLxNR-89" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Store bigrams too, apart from unigrams in the Redis Search Index.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;So, for a post like &quot;Hello how are you?&quot;, the Redis sorted set will also have keywords like &quot;hello how&quot;, &quot;how are&quot; etc&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;This will increase the memory requirement while making searches more faster&lt;/div&gt;" vertex="1">
+          <mxGeometry height="102" width="404.5" x="-181.5" y="5103" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
