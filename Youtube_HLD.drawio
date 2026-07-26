@@ -350,8 +350,8 @@
         <mxCell id="YNMJSUh1zJjP1P0iry2Z-123" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="CDN to store manifest as well as video segments (chunks)" vertex="1">
           <mxGeometry height="60" width="120" x="-168" y="3878" as="geometry" />
         </mxCell>
-        <mxCell id="YNMJSUh1zJjP1P0iry2Z-124" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="There will be logic on client side which will assess the network conditions periodically.&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Initially the network bandwith might be high but if the conditions worsen, then the player can start streaming the 144p segment instead of 720p&lt;/div&gt;" vertex="1">
-          <mxGeometry height="30" width="1130" x="-274" y="4374" as="geometry" />
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-124" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="There will be logic on client side which will assess the network conditions periodically.&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Initially the network bandwith might be high but if the conditions worsen, then the player can start streaming the 144p segment instead of 720p&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;This is called Adaptive Bit Rate (ABR) functionality&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="130" width="1130" x="-274" y="4374" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
