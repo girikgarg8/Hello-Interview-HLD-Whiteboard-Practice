@@ -1,9 +1,358 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="XLW75xeGK7hQCUX8PfVx">
-    <mxGraphModel>
+    <mxGraphModel dx="2534" dy="1437" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Hello Interview Delivery Framework" vertex="1">
+          <mxGeometry height="30" width="249" x="177" y="-270" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="1. Requirement Gathering (Functional and non functional)&lt;div&gt;2. Entity extraction&lt;/div&gt;&lt;div&gt;3. Client facing APIs or System interface&lt;/div&gt;&lt;div&gt;4. Data flow (only if data processing intensive question)&lt;/div&gt;&lt;div&gt;5. Basic HLD that satisfies functional requirements&lt;/div&gt;&lt;div&gt;6. Deep dive into non functional requirements&lt;/div&gt;" vertex="1">
+          <mxGeometry height="88" width="588" x="7.5" y="-209" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Requirement clarification" vertex="1">
+          <mxGeometry height="30" width="163" x="3" y="-83" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Functional requirements" vertex="1">
+          <mxGeometry height="30" width="148" x="6" y="-44" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. User is able to upload videos" vertex="1">
+          <mxGeometry height="30" width="277" x="-39" y="5" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. User is able to stream videos" vertex="1">
+          <mxGeometry height="30" width="277" x="-42" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Non functional requirements" vertex="1">
+          <mxGeometry height="30" width="182" x="-16" y="114" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. CAP theorem: AP system: Availability &amp;gt;&amp;gt; Consistency for video uploads&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="465" x="-48" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Low latency streaming (&amp;lt;500 ms), true even in low bandwidth (From tap Play → first frames visible on screen should feel under ~500ms)." vertex="1">
+          <mxGeometry height="30" width="1030" x="-155" y="199" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Support uploading/streaming for large videos (256 GB)" vertex="1">
+          <mxGeometry height="30" width="465" x="-93" y="237" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="4. Scalability to scale to 1 Milion uploads/day and 100 Million DAU" vertex="1">
+          <mxGeometry height="30" width="465" x="-69" y="274" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Scale of the system" vertex="1">
+          <mxGeometry height="30" width="123" x="-10" y="346" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="~1 Million uploads/day&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;100 Million Daily Active Users (DAU)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Max video size of 256 GB (this is a constraint in real Youtube as well)&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="98" width="249" x="-5" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Entity and API" vertex="1">
+          <mxGeometry height="30" width="150" x="-64" y="547" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- Video (raw contents/blob)&lt;div&gt;- VideoMetadata&lt;/div&gt;&lt;div&gt;- User&lt;/div&gt;" vertex="1">
+          <mxGeometry height="79" width="252" x="-63" y="602" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="APIs (similar to Google Drive design)&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="223.5" x="-52.5" y="685" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="POST /videos" vertex="1">
+          <mxGeometry height="30" width="60" x="-42" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Body: Video Metadata" vertex="1">
+          <mxGeometry height="30" width="149" x="-39" y="774" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Response: S3 Presigned URL" vertex="1">
+          <mxGeometry height="30" width="143" x="-30" y="807" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="PUT {S3 Presigned URL}" vertex="1">
+          <mxGeometry height="30" width="121" x="209" y="719" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Body: Video Blob" vertex="1">
+          <mxGeometry height="30" width="203" x="157" y="769" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="GET /videos/{id}" vertex="1">
+          <mxGeometry height="30" width="60" x="464" y="719" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Response Body: VideoMetadata" vertex="1">
+          <mxGeometry height="30" width="93" x="447.5" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="GET {S3 Presigned URL}" vertex="1">
+          <mxGeometry height="30" width="60" x="644" y="719" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-29" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Response Body: Video Blob" vertex="1">
+          <mxGeometry height="30" width="93" x="632" y="782" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-30" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HLD that satisfies basic functional requirements before going into deep dives" vertex="1">
+          <mxGeometry height="30" width="195" x="-237" y="879" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client" vertex="1">
+          <mxGeometry height="60" width="120" x="-63" y="1074" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-32" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway" vertex="1">
+          <mxGeometry height="60" width="120" x="139" y="1074" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Video Service" vertex="1">
+          <mxGeometry height="60" width="120" x="358" y="1074" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="S3 (Blob Storage)" vertex="1">
+          <mxGeometry height="60" width="120" x="550" y="1004" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-36" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Metadata&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;DB&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="80" x="555" y="1179" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-37" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Video&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- Name&lt;/div&gt;&lt;div&gt;- S3 Link&lt;/div&gt;&lt;div&gt;- Status: UPLOADING | UPLOADED | FAILED&lt;/div&gt;&lt;div&gt;- CreatedAt&lt;/div&gt;&lt;div&gt;- Modified At&lt;/div&gt;" vertex="1">
+          <mxGeometry height="95" width="199" x="701" y="1181" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-38" edge="1" parent="1" source="YNMJSUh1zJjP1P0iry2Z-31" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="YNMJSUh1zJjP1P0iry2Z-32" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="481" y="1087" as="sourcePoint" />
+            <mxPoint x="531" y="1037" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-41" edge="1" parent="1" source="YNMJSUh1zJjP1P0iry2Z-32" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="YNMJSUh1zJjP1P0iry2Z-33" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="481" y="1087" as="sourcePoint" />
+            <mxPoint x="531" y="1037" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-42" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. POST /videos&lt;div&gt;Req Body: Metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="72" y="1058" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-43" edge="1" parent="1" source="YNMJSUh1zJjP1P0iry2Z-33" style="endArrow=classic;html=1;rounded=0;exitX=0.567;exitY=1.008;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="YNMJSUh1zJjP1P0iry2Z-36" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="481" y="1065" as="sourcePoint" />
+            <mxPoint x="531" y="1015" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-44" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Save Metadata in DB" vertex="1">
+          <mxGeometry height="30" width="60" x="440" y="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-45" edge="1" parent="1" source="YNMJSUh1zJjP1P0iry2Z-33" style="endArrow=classic;html=1;rounded=0;exitX=0.555;exitY=-0.011;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="YNMJSUh1zJjP1P0iry2Z-34" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="481" y="1050" as="sourcePoint" />
+            <mxPoint x="531" y="1000" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-46" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Generate presigned URL" vertex="1">
+          <mxGeometry height="30" width="60" x="429" y="1007" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-47" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="4. Return presigned URL" vertex="1">
+          <mxGeometry height="30" width="60" x="64" y="1138" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-50" edge="1" parent="1" source="YNMJSUh1zJjP1P0iry2Z-31" style="curved=1;endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" target="YNMJSUh1zJjP1P0iry2Z-34" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="48.5" y="1070" />
+              <mxPoint x="40.12" y="1040.14" />
+              <mxPoint x="-1.5" y="1020" />
+              <mxPoint x="348.02" y="942.93" />
+            </Array>
+            <mxPoint x="-1.5" y="1070" as="sourcePoint" />
+            <mxPoint x="48.5" y="1020" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-52" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="5. Upload video blob to S3 via presigned URL" vertex="1">
+          <mxGeometry height="30" width="60" x="271.5" y="912" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-54" edge="1" parent="1" source="YNMJSUh1zJjP1P0iry2Z-34" style="endArrow=classic;html=1;rounded=0;exitX=0.823;exitY=1.002;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" target="YNMJSUh1zJjP1P0iry2Z-36" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="487" y="1104" as="sourcePoint" />
+            <mxPoint x="537" y="1054" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-55" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="6. S3 event triggers a Lambda function which updates the status&amp;nbsp; to &#39;UPLOADED&#39; in DB" vertex="1">
+          <mxGeometry height="139" width="252" x="648" y="1045" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-57" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="7. GET /videos/:id" vertex="1">
+          <mxGeometry height="30" width="60" x="57" y="1190" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-58" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="8. Lookup video metadata from DB&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="133" x="344" y="1246" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-59" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="9. Return S3 Link&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="60" x="45" y="1242" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-60" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="10. Download video from S3 directly" vertex="1">
+          <mxGeometry height="30" width="60" x="259" y="988" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-61" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q. For the part where the Lambda function is triggered upon successful upload of a video (chunk), how do we know which record/row in the DB needs to be updated?&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="729" x="-93" y="1371" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-62" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="A. Include the video name, chunk number etc in the S3 object name. Example: video123-chunk001&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Lambda function can then extract video ID, chunk ID etc from the S3 object key and make DB updates accordingly.&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="796" x="-115" y="1436" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-63" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Deep dives" vertex="1">
+          <mxGeometry height="30" width="60" x="-93" y="1532" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-65" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1.User should be able to upload and stream videos as large as 256 GB :&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Current design will only work for small file upload, there are hardware restrictions on maximum payload size in single HTTP request. Moreover, resumable uploads won&#39;t be possible with current design.&lt;/div&gt;&lt;div&gt;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Solution: Client side chunking. Large files are broken down into smaller chunks, maximum 5 MB. Client maintains unique identifier (having video ID, chunk ID etc) for each chunk. These chunks are then uploaded (serially/parallely) by client to S3.&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Let&#39;s say, the upload is 90% complete, and then there is a failure.&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;The client can fetch from metadata DB, the list of chunks which were successfully uploaded and compare against the list of chunks available locally. The failed chunks can be re-uploaded by client to S3&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Note that this design, also necessitates changes to metadata DB&lt;/div&gt;" vertex="1">
+          <mxGeometry height="235" width="962.5" x="-212.5" y="1628" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-70" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="60" width="120" x="-177" y="2084" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-71" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Client" vertex="1">
+          <mxGeometry height="30" width="60" x="-147" y="2150" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-72" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="255" width="120" x="27" y="1976" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-73" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="API Gateway&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Authentication&lt;/div&gt;&lt;div&gt;-Authorization&lt;/div&gt;&lt;div&gt;- Rate Limiting&lt;/div&gt;&lt;div&gt;- Routing&lt;/div&gt;" vertex="1">
+          <mxGeometry height="136" width="93" x="39" y="2035.5" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-74" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Video Service" vertex="1">
+          <mxGeometry height="60" width="120" x="327.5" y="2064" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-75" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;exitX=0.011;exitY=0.381;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-175.89999999999995" y="2112.86" as="sourcePoint" />
+            <mxPoint x="-57" y="2112.86" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-77" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Chunk 1" vertex="1">
+          <mxGeometry height="30" width="60" x="-150.22" y="2084" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-78" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Chunk 2" vertex="1">
+          <mxGeometry height="30" width="60" x="-147" y="2114" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-81" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="S3 Blob Storage" vertex="1">
+          <mxGeometry height="60" width="120" x="581" y="1939" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-83" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Metadata&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;DB&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="80" x="614" y="2162" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-84" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="YNMJSUh1zJjP1P0iry2Z-81" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="-93" y="1958.71" />
+            </Array>
+            <mxPoint x="-93" y="2082" as="sourcePoint" />
+            <mxPoint x="-43" y="2032" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-85" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Parallel upload of chunks" vertex="1">
+          <mxGeometry height="30" width="60" x="-44" y="1909" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-86" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Video&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- Name&lt;/div&gt;&lt;div&gt;- Chunk: [&lt;/div&gt;&lt;div&gt;id&lt;/div&gt;&lt;div&gt;Part Number: 0/1/2 etc&lt;/div&gt;&lt;div&gt;S3Link&lt;/div&gt;&lt;div&gt;&amp;nbsp; Status&lt;/div&gt;&lt;div&gt;CreatedAt&lt;/div&gt;&lt;div&gt;ModifiedAt&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="159" width="143" x="725" y="2154" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-88" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Low latency streaming (&amp;lt;500 ms from intial Play to first frame load), even with low bandwidth" vertex="1">
+          <mxGeometry height="30" width="1059" x="-599" y="2427" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-89" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="In the current design, this non functional requirement is not being satsified. Even though we did client side chunking and uploaded these chunks to S3. Because these client side chunks can be upto 5MB in size, now downloading a 5MB payload can take time on slow networks.&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Thus, we need to do another level of chunking - server side chunking. Essentially, this server side chunking will break the client side chunks into short clips of 5-10 sec each.&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Q. How is server side chunking different from client side chunking?&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;A. Client side chunking was done to be able to upload large videos in small chunks. Server side chunks are, however, optimized for video playback, making sure that the video starts playing in less than 500 ms after user hits the &#39;Play&#39; button&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="185" width="1006" x="-325" y="2496" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-90" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Another optimization that is required here, is transcoding. Since the clients can be on different types of networks - slow or fast, we need to make sure every chunk is available in different formats - 144 to 1080 p&amp;nbsp;&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="1233" x="-468" y="2868" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-91" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q. We had stored client side chunks in S3 and metadata DB, now we&#39;ll also be storing server side chunks. Isn&#39;t it introducing redundancy?" vertex="1">
+          <mxGeometry height="30" width="861" x="-367.5" y="2704" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-92" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="A. Yes, the client side chunks will only be mantained in S3 and metadata DB for a short time until the server side chunking is not completed.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Once completed, the client side chunks can be deleted from both S3 and the metadata DB&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="828" x="-301" y="2761" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-93" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q. Where should the metadata of these server side chunks be stored? Should it be stored inside metadata DB or S3/CDN?&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="799" x="-382" y="2925" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-94" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="A. Hello Interview guy Evan stores it in both DB and S3/CDN. However, this approach has some problems:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Two sources of truth&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. Storing in DB is redundant because client calling DB to fetch the chunk URL will not scale well and hammer the DB&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;My preferred approach would be to store the Manifest (a list of segments in the right order with their links etc) in S3/&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;CDN&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;And DB should only store the reference to the CDN URL where the manifest is stored&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="123" width="781" x="-371" y="2978" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-95" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Updated pipeline now:" vertex="1">
+          <mxGeometry height="30" width="183" x="-330" y="3424" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-96" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Clients do chunking on their end and upload them to S3&amp;nbsp;&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="466" x="-282" y="3479" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-98" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Sample Manifest JSON structure" vertex="1">
+          <mxGeometry height="30" width="341.5" x="-287.75" y="3120" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-99" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="{ &quot;chunks&quot; : [&amp;nbsp;&lt;div&gt;{&lt;/div&gt;&lt;div&gt;chunk_id: &quot;123&quot;,&lt;div&gt;part_no: 1,&lt;/div&gt;&lt;div&gt;&quot;240p&quot; : {&lt;/div&gt;&lt;div&gt;&quot;s3Link&quot; : &quot;cdnUrl&quot;,&lt;/div&gt;&lt;div&gt;&quot;status&quot; : &quot;available&quot;&lt;br&gt;}&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; }&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="159" width="467" x="-282" y="3177" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-100" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2.&amp;nbsp; Lambda function triggers and updates metadata DB with status as &#39;complete&#39;" vertex="1">
+          <mxGeometry height="30" width="534" x="-266" y="3517" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-101" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Another lambda function triggers and creates server side chunks of 5-10 sec each." vertex="1">
+          <mxGeometry height="30" width="689" x="-333.5" y="3555" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-103" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="4. These server side chunks are then passed through transcoders (eg: 144p transcoder, 1080p transcoder etc)" vertex="1">
+          <mxGeometry height="30" width="703" x="-274" y="3593" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-104" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="5. The manifest JSON is updated with all the server side chunk details like S3 link, status etc" vertex="1">
+          <mxGeometry height="30" width="703" x="-320" y="3631" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-105" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="6. The client side chunks and their metadata is deleted once not required anymore" vertex="1">
+          <mxGeometry height="30" width="507" x="-252.5" y="3676" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-106" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Updated HLD diagram now:" vertex="1">
+          <mxGeometry height="30" width="287" x="-350" y="3783" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-107" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client" vertex="1">
+          <mxGeometry height="60" width="120" x="-297" y="3998" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-108" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway" vertex="1">
+          <mxGeometry height="60" width="120" x="-30" y="3994" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-109" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Video Service" vertex="1">
+          <mxGeometry height="60" width="120" x="215" y="3998" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-110" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="S3 Blob Storage" vertex="1">
+          <mxGeometry height="60" width="120" x="461" y="3896" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-112" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Metadata&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;DB&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="80" x="470" y="4099" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-113" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Video&lt;div&gt;- ID&lt;/div&gt;&lt;div&gt;- Name&lt;/div&gt;&lt;div&gt;- Upload_chunks (client side chunks): id, s3 link, status&lt;/div&gt;&lt;div&gt;- manifest URL: server side chunk details&lt;/div&gt;" vertex="1">
+          <mxGeometry height="196" width="183" x="603" y="4118" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-114" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="YNMJSUh1zJjP1P0iry2Z-112" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="527" y="3953" as="sourcePoint" />
+            <mxPoint x="496" y="4166" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-115" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Lambda function: update status of client side chunk" vertex="1">
+          <mxGeometry height="30" width="60" x="530" y="4005" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-116" edge="1" parent="1" source="YNMJSUh1zJjP1P0iry2Z-110" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="738" y="3901" as="sourcePoint" />
+            <mxPoint x="830.29" y="3931.57" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-117" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Lambda function: server side chunking of 5-10 sec each" vertex="1">
+          <mxGeometry height="30" width="60" x="639" y="3901" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-118" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Transcoder: 144p" vertex="1">
+          <mxGeometry height="60" width="120" x="829" y="3905" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-119" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Transcoder: 1080 p" vertex="1">
+          <mxGeometry height="60" width="120" x="819" y="4028" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-120" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="YNMJSUh1zJjP1P0iry2Z-119" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="741.71" y="4060.86" />
+            </Array>
+            <mxPoint x="741.71" y="3929.43" as="sourcePoint" />
+            <mxPoint x="1235" y="3784" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-121" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.685;entryY=-0.014;entryDx=0;entryDy=0;entryPerimeter=0;" target="YNMJSUh1zJjP1P0iry2Z-110" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="908.86" y="3782.29" />
+              <mxPoint x="534.57" y="3782.29" />
+            </Array>
+            <mxPoint x="903.14" y="3903.71" as="sourcePoint" />
+            <mxPoint x="1025" y="3776" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-122" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Put 144p server side chunk into S3&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. Update manifest.json in S3&lt;/div&gt;" vertex="1">
+          <mxGeometry height="127" width="111.5" x="664.5" y="3579" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-123" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="CDN to store manifest as well as video segments (chunks)" vertex="1">
+          <mxGeometry height="60" width="120" x="-168" y="3878" as="geometry" />
+        </mxCell>
+        <mxCell id="YNMJSUh1zJjP1P0iry2Z-124" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="There will be logic on client side which will assess the network conditions periodically.&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Initially the network bandwith might be high but if the conditions worsen, then the player can start streaming the 144p segment instead of 720p&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="1130" x="-274" y="4374" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
