@@ -1,9 +1,192 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="lRaA55iZEk8nktToTO-t">
-    <mxGraphModel>
+    <mxGraphModel dx="1806" dy="803" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Hello Interview Delivery Framework&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Requirement Gathering (functional and non-functional)&lt;/div&gt;&lt;div&gt;2. Entity extraction&lt;/div&gt;&lt;div&gt;3. API or System Interface&lt;/div&gt;&lt;div&gt;4. Data flow (Esp. if data engineering heavy question)&lt;/div&gt;&lt;div&gt;5. HLD that satisfies functional requirements&lt;/div&gt;&lt;div&gt;6. Deep dives into non functional requirements&lt;/div&gt;" vertex="1">
+          <mxGeometry height="201" width="469" x="62" y="63" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Requirement Gathering" vertex="1">
+          <mxGeometry height="30" width="254" x="-168" y="347" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Functional" vertex="1">
+          <mxGeometry height="30" width="254" x="-203" y="391" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Users are able to view list of problems available on Leetcode like platform (in a paginated fashion)" vertex="1">
+          <mxGeometry height="30" width="604" x="-136" y="442" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Users are able to view details of a specific problem (eg: description, sample input and output test cases etc)&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="772" x="-193" y="493" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Users are able to code a solution in their preferred language (C++/Java/ Python) and get feedback on their solution (AC/TLE/MLE/WA etc)" vertex="1">
+          <mxGeometry height="30" width="772" x="-113" y="544" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="4. Support for contests is there, in which a set of problems is given to candidates. And the candidates are ranked according to the solution time of the problems. Users are able to see live leaderboard" vertex="1">
+          <mxGeometry height="30" width="772" x="-103" y="605" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Non functional" vertex="1">
+          <mxGeometry height="30" width="254" x="-190" y="671" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. CAP theorem: AP System, Availabilty &amp;gt;&amp;gt; Consistency eg: if a new problem/submission is created, it is okay if it&#39;s eventually consistent" vertex="1">
+          <mxGeometry height="30" width="746" x="-108" y="712" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Security and isolation: Different user submissions should be isolated from each other, also platform should have appropriate guardrails from OOM, timeouts etc" vertex="1">
+          <mxGeometry height="30" width="746" x="-108" y="763" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Low latency leaderboard view, also dashboard should be fresh or near realtime" vertex="1">
+          <mxGeometry height="30" width="746" x="-263" y="834" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-14" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;4. Scalable to support competitions with 100K users&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="36" width="447" x="-108" y="896" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Scale of the system" vertex="1">
+          <mxGeometry height="30" width="164" x="-119" y="976" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- 100K DAU (5M total accounts)" vertex="1">
+          <mxGeometry height="30" width="180" x="-124" y="1025" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- 3K problems" vertex="1">
+          <mxGeometry height="30" width="180" x="-168" y="1061" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- 100K peak for competitions" vertex="1">
+          <mxGeometry height="30" width="226" x="-156" y="1091" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Core Entities" vertex="1">
+          <mxGeometry height="30" width="110" x="-152" y="1160" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Problem" vertex="1">
+          <mxGeometry height="30" width="60" x="-135" y="1211" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="User" vertex="1">
+          <mxGeometry height="30" width="60" x="72" y="1211" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Submission" vertex="1">
+          <mxGeometry height="30" width="60" x="290" y="1208" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Competition" vertex="1">
+          <mxGeometry height="30" width="60" x="478" y="1204" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Leaderboard" vertex="1">
+          <mxGeometry height="30" width="60" x="681" y="1211" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-27" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="APIs" vertex="1">
+          <mxGeometry height="30" width="60" x="-141" y="1280" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-28" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="GET /problems?category={category}&amp;amp;difficulty={difficulty}&amp;amp;cursor={cursor}&amp;amp;size={size}" vertex="1">
+          <mxGeometry height="30" width="200" x="-168" y="1361" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-29" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Return: List &amp;lt;Partial &amp;lt;Problem&amp;gt;&amp;gt;, nextCursor" vertex="1">
+          <mxGeometry height="30" width="172" x="-156" y="1437" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-30" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="GET /problems/{problemId}" vertex="1">
+          <mxGeometry height="30" width="139" x="100" y="1337" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-31" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Return: Problem" vertex="1">
+          <mxGeometry height="30" width="60" x="129" y="1398" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-32" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="POST /submissions" vertex="1">
+          <mxGeometry height="30" width="60" x="323" y="1337" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-33" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Req Body: {&lt;div&gt;ProblemId&lt;/div&gt;&lt;div&gt;ContestId?&lt;/div&gt;&lt;div&gt;Language&lt;/div&gt;&lt;div&gt;Code&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="313" y="1531" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-34" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Return: Status: accepted, submissionId" vertex="1">
+          <mxGeometry height="30" width="60" x="313" y="1620" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-35" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="GET /leaderboards/{contestId}?offset={offset}&amp;amp;limit={limit}" vertex="1">
+          <mxGeometry height="30" width="164" x="456" y="1337" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-36" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Response&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;Array &amp;lt;UserId, Score&amp;gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="122" width="142" x="462" y="1391" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-38" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="UserId from authentication header: JWT/Session" vertex="1">
+          <mxGeometry height="30" width="60" x="311" y="1413" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-40" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="GET /submissions/{submissionId}&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;This API will be beneficial if we go for polling to check the submission status. We might go for Websockets too&lt;/div&gt;" vertex="1">
+          <mxGeometry height="123" width="160" x="662" y="1328" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-42" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Response: &amp;lt;Status, ExecutionTime, MemoryConsumption&amp;gt;&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="260" x="676" y="1469" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-43" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HLD to satisfy functional requirments" vertex="1">
+          <mxGeometry height="30" width="204" x="-135" y="1754" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-44" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Note: Evan (Hello Interview guy&#39;s) solution is different, however I had done this design long back in Sanket&#39;s course&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;So, I will draw the HLD diagram (boxes) according to Sanket&#39;s solution only.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;However, all important technical discussions and points from Evan&#39;s solution will be disussed here in the form of points&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;This is the previous design doc for reference:&amp;nbsp;https://docs.google.com/document/d/1FiDLwNE4chVf6g2P9mkOjazk0qSRx-ldQm0credyFuA/edit?usp=sharing&lt;/div&gt;" vertex="1">
+          <mxGeometry height="187" width="550" x="-144" y="1817" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-45" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HLD that satisifies basic functonal requirements as discussed by Evan:" vertex="1">
+          <mxGeometry height="30" width="224" x="-145" y="2113" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-46" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;(Monaco IDE)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="-152" y="2284" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-47" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Primary Server" vertex="1">
+          <mxGeometry height="62" width="120" x="150" y="2284" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-48" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Database" vertex="1">
+          <mxGeometry height="85" width="85" x="506" y="2275" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-49" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; Problem&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- Name&lt;/div&gt;&lt;div&gt;- Difficulty&lt;/div&gt;&lt;div&gt;- Category&lt;/div&gt;&lt;div&gt;- CodeStubs[]&lt;/div&gt;&lt;div&gt;- TestCases[]&lt;/div&gt;&lt;div&gt;....&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="171" x="659" y="2272" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-50" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Submission&lt;/span&gt;&lt;/div&gt;&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- UserId&lt;/div&gt;&lt;div&gt;- ProblemId&lt;/div&gt;&lt;div&gt;- TestCaseResults []&lt;/div&gt;&lt;div&gt;- Passed&lt;/div&gt;&lt;div&gt;- Error?&lt;/div&gt;&lt;div&gt;- runTime&lt;/div&gt;&lt;div&gt;- completionTime&lt;/div&gt;&lt;div&gt;...&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="171" x="942" y="2275" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-51" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div style=&quot;&quot;&gt;Competition&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- Id&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- StartTime&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- endTime&lt;/div&gt;&lt;div style=&quot;&quot;&gt;- problems[]&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="171" x="659" y="2508" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-52" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="User&lt;div&gt;- Id&lt;/div&gt;" vertex="1">
+          <mxGeometry height="150" width="171" x="948" y="2508" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-54" edge="1" parent="1" source="9MYm1bHpN9P42XVpgqMA-47" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="9MYm1bHpN9P42XVpgqMA-48" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="379" y="2481" as="sourcePoint" />
+            <mxPoint x="429" y="2431" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-55" edge="1" parent="1" source="9MYm1bHpN9P42XVpgqMA-46" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="9MYm1bHpN9P42XVpgqMA-47" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="379" y="2481" as="sourcePoint" />
+            <mxPoint x="429" y="2431" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-56" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="GET /problems" vertex="1">
+          <mxGeometry height="30" width="123" x="9" y="2245" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-57" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="GET /problems/:id" vertex="1">
+          <mxGeometry height="30" width="101" x="20" y="2277" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-58" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="POST /submissions" vertex="1">
+          <mxGeometry height="30" width="98" x="3" y="2329" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-59" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="GET /leaderboards" vertex="1">
+          <mxGeometry height="30" width="60" x="20" y="2381" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-60" edge="1" parent="1" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="9MYm1bHpN9P42XVpgqMA-47" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="208" y="2441.5" as="sourcePoint" />
+            <mxPoint x="404" y="2447" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-61" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="run code" vertex="1">
+          <mxGeometry height="30" width="60" x="213" y="2381" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-62" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="153" width="214" x="104" y="2443" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-63" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Docker containers" vertex="1">
+          <mxGeometry height="30" width="132" x="141" y="2621" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-64" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Java Runtime Service" vertex="1">
+          <mxGeometry height="60" width="120" x="151" y="2529" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-65" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="C++ Runtime Service" vertex="1">
+          <mxGeometry height="60" width="120" x="153" y="2459" as="geometry" />
+        </mxCell>
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-66" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="For the leaderboard, do raw query on DB to find the user having highest number of successfully solved problems in least time.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="215" width="151" x="-163" y="2705" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
