@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="lRaA55iZEk8nktToTO-t">
-    <mxGraphModel dx="1806" dy="803" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1828" dy="851" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -186,6 +186,12 @@
         </mxCell>
         <mxCell id="9MYm1bHpN9P42XVpgqMA-66" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="For the leaderboard, do raw query on DB to find the user having highest number of successfully solved problems in least time.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="215" width="151" x="-163" y="2705" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q. What is the definition of a contest/competition?" vertex="1">
+          <mxGeometry height="30" width="338" x="-194" y="2919" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q. Why problem execution in Docker container, why not on the host machine directly or in VM?" vertex="1">
+          <mxGeometry height="30" width="338" x="-168" y="3183" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
