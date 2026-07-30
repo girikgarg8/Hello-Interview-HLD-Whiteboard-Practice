@@ -184,14 +184,26 @@
         <mxCell id="9MYm1bHpN9P42XVpgqMA-65" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="C++ Runtime Service" vertex="1">
           <mxGeometry height="60" width="120" x="153" y="2459" as="geometry" />
         </mxCell>
-        <mxCell id="9MYm1bHpN9P42XVpgqMA-66" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="For the leaderboard, do raw query on DB to find the user having highest number of successfully solved problems in least time.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="9MYm1bHpN9P42XVpgqMA-66" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="For the leaderboard, do raw query on DB to find the user having highest number of successfully solved problems in least time.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;We recognize this is not an optimal solution and we&#39;ll fix it during the deep dives into non functional requirements&lt;/div&gt;" vertex="1">
           <mxGeometry height="215" width="151" x="-163" y="2705" as="geometry" />
         </mxCell>
         <mxCell id="SbvYTmW74KeEhvhrWvDF-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q. What is the definition of a contest/competition?" vertex="1">
-          <mxGeometry height="30" width="338" x="-194" y="2919" as="geometry" />
+          <mxGeometry height="30" width="338" x="-217" y="2973" as="geometry" />
         </mxCell>
         <mxCell id="SbvYTmW74KeEhvhrWvDF-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q. Why problem execution in Docker container, why not on the host machine directly or in VM?" vertex="1">
-          <mxGeometry height="30" width="338" x="-168" y="3183" as="geometry" />
+          <mxGeometry height="30" width="338" x="-210" y="3245" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-4" parent="1" style="whiteSpace=wrap;html=1;" value="- 90 min&lt;div&gt;&amp;nbsp;- 10 problems&lt;/div&gt;&lt;div&gt;- Up to 100k users&lt;/div&gt;&lt;div&gt;- Rank by number of problems solved in 90 minutes&lt;/div&gt;&lt;div&gt;- In case of tie, rank by fastest time to complete&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="134" width="353" x="-146" y="3047" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="A. Why not do the code execution on:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;a. Host machine: Bad actors might write malicious code to access filesystem, DB, OOM, infinite loop etc. Running it there is risky&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;b. VM: Creating VM provides isolation but VMs are heavy in nature because they have their own OS.&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;c. Lambda function: Good option, but suffers from cold start problem. Although cold start problem too, can be resolved with the help of&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;provisioned concurrency&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="192" width="645" x="-227" y="3310" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Deep dives into non functional requirements" vertex="1">
+          <mxGeometry height="30" width="221" x="-263" y="3563" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Security and isolation:&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Although usage of Docker containers is a good starting point, there can still be bad actors who try to abuse by high CPU, memory consumption, or infinite loop etc&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;To safeguard against such misuse, following guardrails will be implemented:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Explicit timeout per execution&lt;/div&gt;&lt;div&gt;2. CPU and memory bounds&lt;/div&gt;&lt;div&gt;3. Read only filesystem (to make sure no infinite loop to continuously write data, any test data will be written to /tmp folder)&lt;/div&gt;&lt;div&gt;4. Network isolation to make sure no interaction with other containers or host system&lt;/div&gt;&lt;div&gt;5. No system calls are allowed&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="231" width="1046" x="-265" y="3645" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
