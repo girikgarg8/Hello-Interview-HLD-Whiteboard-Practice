@@ -205,6 +205,120 @@
         <mxCell id="SbvYTmW74KeEhvhrWvDF-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Security and isolation:&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Although usage of Docker containers is a good starting point, there can still be bad actors who try to abuse by high CPU, memory consumption, or infinite loop etc&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;To safeguard against such misuse, following guardrails will be implemented:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Explicit timeout per execution&lt;/div&gt;&lt;div&gt;2. CPU and memory bounds&lt;/div&gt;&lt;div&gt;3. Read only filesystem (to make sure no infinite loop to continuously write data, any test data will be written to /tmp folder)&lt;/div&gt;&lt;div&gt;4. Network isolation to make sure no interaction with other containers or host system&lt;/div&gt;&lt;div&gt;5. No system calls are allowed&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="231" width="1046" x="-265" y="3645" as="geometry" />
         </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q.&amp;nbsp; How to ensure live leaderboard while making sure the reads are fast and low latency ?" vertex="1">
+          <mxGeometry height="30" width="716" x="-194" y="3914" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="a. Cache the results of DB expensive query: This isn&#39;t a great option since the expensive DB query still needs to be performed periodically (eg: every 5 min). And any client&#39;s request which is a cache miss, will suffer with high latency" vertex="1">
+          <mxGeometry height="51" width="602" x="-131.5" y="3983" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="b. Always rely on cache data for leaderboard: A cron job will take care to write the computed leaderboard details from DB query to the cache periodically (eg: every 5 min). Client requests always rely on Cache.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Downside: Since stale data will be served from cache, the non functional requirement to ensure near realtime dashboard would be lost.&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="91" width="713" x="-182" y="4068" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="c. Use Redis Sorted Set data structure (most preferred solution):&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;In general, whenever the reads are very expensive while the writes are cheap.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;There is a possibility of making the reads cheap by balancing it out by making writes heavier.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;How sorted set approach will work for leaderboard:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Insert every (participant, score) combination into the sorted set. The score will be calculated based on the number of problems solved (directly proportional) and time (inversely proportional). Every insertion will be O(log N) in time complexity&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Next, on the read path, for paginated calls to get the leaderboard, we can use the ZRANGE Redis command . Again this read operation in O(log N) in nature&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;So far, the approach looks good. However, there is a problem, we need to make sure the submissions DB and Redis Cache are in sync to each other.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Different options:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Application level dual write: Susceptible to failures, can lead to one system being out of sync (eg: Write to DB failed even after retries but Cache has data)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. CDC (Change Data Capture): With CDC, DB writes can be streamed to Kafka topic.&amp;nbsp; A worker service can then consume from this Kafka topic and update cache&lt;/div&gt;" vertex="1">
+          <mxGeometry height="382" width="1164" x="-174" y="4181" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="So far, the design has been synchronous in nature. Meaning that the user submits code, the primary server spins up Docker containers to evaluate it, while the user waits for the outcome.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;This design won&#39;t scale well, when we have ~100K submissions, our system might not be prescaled enough to handle this peak load. And keeping it unnecessarily scaled will result in higher costs&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;So, we instead move to async pattern with Kafka, all code submissions will be pushed to Kafka topic. The evaluator service will then spin up docker containers, evaluate the user&#39;s code, update in submissions DB.&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Next question, how is the user going to get notified about the submission result?&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;There are different options - Polling, SSE, Websockets etc&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Now, it is usually tempting to go for WebSockets since it enables low latency, bi-directional communication&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;But websockets are resource intensive, and another issue is we need to make sure all the intermediate hops like proxies, Gateway etc support Websockets&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Evan specifically calls out that polling would be fine for this usecase, since it&#39;s not a latency sensitive usecase. Real Leetcode also uses polling btw for polling&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="369" width="707" x="-193" y="4583" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Final HLD diagram from Evan after non-functional requirements (deep dives)" vertex="1">
+          <mxGeometry height="30" width="268" x="-227" y="4998" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-23" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client" vertex="1">
+          <mxGeometry height="60" width="120" x="-244" y="5127" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway" vertex="1">
+          <mxGeometry height="60" width="120" x="27" y="5127" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-25" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Problem Submission Service" vertex="1">
+          <mxGeometry height="60" width="120" x="367" y="5127" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-26" edge="1" parent="1" source="SbvYTmW74KeEhvhrWvDF-25" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="283" y="5280" as="sourcePoint" />
+            <mxPoint x="632" y="5236.65" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Kafka topic" vertex="1">
+          <mxGeometry height="60" width="120" x="584" y="5239" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Problem Evaluator Service" vertex="1">
+          <mxGeometry height="60" width="120" x="367" y="5354" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-29" edge="1" parent="1" source="SbvYTmW74KeEhvhrWvDF-28" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="283" y="5287" as="sourcePoint" />
+            <mxPoint x="427" y="5536.65" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-30" edge="1" parent="1" source="SbvYTmW74KeEhvhrWvDF-27" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="SbvYTmW74KeEhvhrWvDF-28" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="283" y="5287" as="sourcePoint" />
+            <mxPoint x="333" y="5237" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-31" edge="1" parent="1" source="SbvYTmW74KeEhvhrWvDF-25" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="559" y="5282" as="sourcePoint" />
+            <mxPoint x="859.06" y="5157" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-32" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Database" vertex="1">
+          <mxGeometry height="80" width="80" x="858" y="5115" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="249" width="314" x="273" y="5537" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-34" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Docker containers" vertex="1">
+          <mxGeometry height="30" width="132" x="355" y="5799" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-35" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Python Runtime Service" vertex="1">
+          <mxGeometry height="60" width="120" x="306" y="5566" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-36" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="C++ Runtime Service" vertex="1">
+          <mxGeometry height="60" width="120" x="306" y="5662" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-37" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="etc" vertex="1">
+          <mxGeometry height="30" width="60" x="307" y="5746" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-38" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="User&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- Name&lt;/div&gt;&lt;div&gt;- Email&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;etc&lt;/div&gt;" vertex="1">
+          <mxGeometry height="116" width="82" x="981" y="5131" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-39" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Problem&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- Description&lt;/div&gt;&lt;div&gt;- Difficulty&lt;/div&gt;&lt;div&gt;- TestCase[]&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;etc&lt;/div&gt;" vertex="1">
+          <mxGeometry height="116" width="82" x="1154" y="5131" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-40" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Submission&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- UserId&lt;/div&gt;&lt;div&gt;- TestCaseResults[]&lt;/div&gt;&lt;div&gt;- Status&lt;/div&gt;&lt;div&gt;- Score&lt;/div&gt;&lt;div&gt;- ContestId?&lt;/div&gt;&lt;div&gt;&amp;nbsp;- MemoryConsumption&lt;/div&gt;&lt;div&gt;- TimeForExecution&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;etc&lt;/div&gt;" vertex="1">
+          <mxGeometry height="161" width="171" x="1292" y="5108.5" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-41" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Contest/Competition&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- Problem[]&lt;/div&gt;&lt;div&gt;- StartTime&lt;/div&gt;&lt;div&gt;- EndTme&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;etc&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="190" width="206" x="1502" y="5085" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-42" edge="1" parent="1" source="SbvYTmW74KeEhvhrWvDF-28" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" target="SbvYTmW74KeEhvhrWvDF-32" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="901.41" y="5399" />
+            </Array>
+            <mxPoint x="667" y="5399" as="sourcePoint" />
+            <mxPoint x="717" y="5349" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-43" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Update submission status" vertex="1">
+          <mxGeometry height="30" width="60" x="911" y="5339" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-44" edge="1" parent="1" source="SbvYTmW74KeEhvhrWvDF-32" style="endArrow=classic;html=1;rounded=0;exitX=0.322;exitY=0.057;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="667" y="5384" as="sourcePoint" />
+            <mxPoint x="713.18" y="5017.24" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-45" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Redis" vertex="1">
+          <mxGeometry height="80" width="80" x="638" y="4977" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-46" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="CDC" vertex="1">
+          <mxGeometry height="30" width="60" x="781" y="5039" as="geometry" />
+        </mxCell>
+        <mxCell id="SbvYTmW74KeEhvhrWvDF-48" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Sorted set for leaderboard&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Key: leaderboard:{contestId}&lt;/div&gt;&lt;div&gt;Value:&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Element: UserId&lt;/div&gt;&lt;div&gt;Ranking on: Score&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="61" width="286" x="663" y="4912" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
