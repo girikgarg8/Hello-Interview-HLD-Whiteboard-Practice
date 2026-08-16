@@ -1,9 +1,42 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="l63jemFF7JkL8xwAk5dJ">
-    <mxGraphModel dx="1406" dy="803" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2014" dy="1116" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="I4sKmwTz25wvMcoeHdur-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Hello Interview Delivery Framework&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Requirement Gathering (Functional &amp;amp; Non-functional)&lt;/div&gt;&lt;div&gt;2. Entity Extraction &amp;amp; API&lt;/div&gt;&lt;div&gt;3. Data Flow (if data engineering or intensive question)&lt;/div&gt;&lt;div&gt;4. HLD that satisfies basic functional requirements&lt;/div&gt;&lt;div&gt;5. Deep dive into non functional requirements&lt;/div&gt;" vertex="1">
+          <mxGeometry height="129" width="440" x="-57" y="-176" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Requirements" vertex="1">
+          <mxGeometry height="30" width="60" x="-390" y="31" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Functional" vertex="1">
+          <mxGeometry height="30" width="60" x="-401" y="81" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Given a long URL with an optional alias, the URL shortener generates a short URL&lt;div&gt;2. Upon visiting the short URL in browser, the user is redirected to the original long URL&lt;/div&gt;" vertex="1">
+          <mxGeometry height="61" width="592" x="-418" y="163" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Non-functional" vertex="1">
+          <mxGeometry height="30" width="150" x="-428" y="266" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. CAP theorem: Availability &amp;gt;&amp;gt; Consistency. Eventually consistent system is fine" vertex="1">
+          <mxGeometry height="30" width="508" x="-375" y="318" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Generated short URL should be as short as possible, and also not have any collisions" vertex="1">
+          <mxGeometry height="30" width="508" x="-355" y="422" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Low latency long to short URL redirection (&amp;lt;200ms, human being perceive this as real time)&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="573" x="-373" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="4. Read &amp;gt;&amp;gt; Writes: Users are more likely to read the shortened to long URL mapping. Thus, making it read heavy system. This fact will have implications for the design downstream (separating out reads and writes, caching, indexing etc)&amp;nbsp;" vertex="1">
+          <mxGeometry height="80" width="508" x="-344" y="473" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Scale of the system:" vertex="1">
+          <mxGeometry height="30" width="197" x="-442" y="574" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="100M DAU and 1 Billion URLs" vertex="1">
+          <mxGeometry height="30" width="197" x="-396" y="631" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
