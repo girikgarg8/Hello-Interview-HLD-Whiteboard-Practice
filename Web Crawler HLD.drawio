@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="J9BQvCHIYIp7Ru_l7RV7">
-    <mxGraphModel dx="1441" dy="595" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1525" dy="642" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -216,9 +216,6 @@
         </mxCell>
         <mxCell id="wJZm29l0_nlpAetehJ7I-66" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="In order to satisfy the crawl delay requirement from robots.txt, in metadata DB, store the crawl delay and last crawl time of each domain&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Let&#39;s say now() - lastCrawlTime is less than crawlDelay, than push this url again to the kafka topic (basically move this to the back of queue)&lt;br&gt;&lt;br&gt;One potential problem that can exist is, the URL might be getting pushed repeatedly to the topic, that&#39;s fine for now&lt;/div&gt;" vertex="1">
           <mxGeometry height="253" width="211" x="1034" y="2424" as="geometry" />
-        </mxCell>
-        <mxCell id="wJZm29l0_nlpAetehJ7I-69" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Text" vertex="1">
-          <mxGeometry height="30" width="60" x="558" y="2586" as="geometry" />
         </mxCell>
         <mxCell id="wJZm29l0_nlpAetehJ7I-70" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Parsers will scale dynamically based on the Kafka topic volume&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;How it can be done?&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Export consumer lag as a metric&lt;br&gt;&lt;br&gt;2. Setup HPA to auto scale based on this metric&lt;/div&gt;" vertex="1">
           <mxGeometry height="226" width="120" x="1055" y="2749" as="geometry" />
