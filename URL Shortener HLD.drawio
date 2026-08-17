@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="l63jemFF7JkL8xwAk5dJ">
-    <mxGraphModel dx="2014" dy="1116" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2014" dy="1113" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -36,6 +36,60 @@
         </mxCell>
         <mxCell id="I4sKmwTz25wvMcoeHdur-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="100M DAU and 1 Billion URLs" vertex="1">
           <mxGeometry height="30" width="197" x="-396" y="631" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Entities and API:" vertex="1">
+          <mxGeometry height="30" width="189" x="-454.5" y="707" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Entities&lt;br&gt;&lt;br&gt;&lt;div&gt;1. Long URL&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. Short URL&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;3. User&lt;/div&gt;" vertex="1">
+          <mxGeometry height="135" width="168" x="-454.5" y="737" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="API" vertex="1">
+          <mxGeometry height="30" width="60" x="-126" y="703" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="POST /shortened-url&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&amp;nbsp;longUrl&lt;/div&gt;&lt;div&gt;alias?&lt;/div&gt;&lt;div&gt;expirationTime?&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Returns shortened URL key&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;GET myurlshortener.com/{key}&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Redirect to long URL&lt;/div&gt;" vertex="1">
+          <mxGeometry height="188" width="185" x="-169" y="763" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HLD that satisfies basic functional requirements" vertex="1">
+          <mxGeometry height="30" width="253" x="-443" y="1039" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-20" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client" vertex="1">
+          <mxGeometry height="60" width="120" x="-289" y="1164" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-22" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Primary Server&lt;div&gt;- creates short URL&lt;/div&gt;&lt;div&gt;- looking long URL from short&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="-27" y="1161" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-23" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Database" vertex="1">
+          <mxGeometry height="80" width="80" x="206" y="1151" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="URL&lt;div&gt;- ShortUrl/CustomAlias&lt;/div&gt;&lt;div&gt;- LongUrl&lt;/div&gt;&lt;div&gt;- ExpirationTime?&lt;/div&gt;&lt;div&gt;- CreationTime&lt;/div&gt;&lt;div&gt;- UserId&lt;/div&gt;" vertex="1">
+          <mxGeometry height="109" width="192" x="381" y="1143" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="User&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- UserId&lt;/div&gt;&lt;div&gt;....(other info like email and metadata)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="109" width="192" x="636" y="1147" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-26" edge="1" parent="1" source="I4sKmwTz25wvMcoeHdur-22" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;" target="I4sKmwTz25wvMcoeHdur-20" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="303" y="1139" as="sourcePoint" />
+            <mxPoint x="353" y="1089" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-27" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="getShortUrl(long)" vertex="1">
+          <mxGeometry height="30" width="88" x="-134" y="1149" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-28" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="redirect(short)" vertex="1">
+          <mxGeometry height="30" width="88" x="-140" y="1190.5" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-29" edge="1" parent="1" source="I4sKmwTz25wvMcoeHdur-22" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="I4sKmwTz25wvMcoeHdur-23" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="191" y="1143" as="sourcePoint" />
+            <mxPoint x="241" y="1093" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-30" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Non functional requirements (deep dives)" vertex="1">
+          <mxGeometry height="30" width="245" x="-420" y="1395" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-31" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- 302 Redirect (instead of 301) to make sure there is telemetry on our end for all requests&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;301 is Permanent redirect, it will be cached on client side, CDN etc&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="267.5" x="-410" y="1295" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
