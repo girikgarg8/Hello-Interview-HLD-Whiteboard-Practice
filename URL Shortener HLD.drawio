@@ -91,6 +91,84 @@
         <mxCell id="I4sKmwTz25wvMcoeHdur-31" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- 302 Redirect (instead of 301) to make sure there is telemetry on our end for all requests&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;301 is Permanent redirect, it will be cached on client side, CDN etc&lt;/div&gt;" vertex="1">
           <mxGeometry height="30" width="267.5" x="-410" y="1295" as="geometry" />
         </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-32" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Till now, we had black boxed the part where the short code gets generated.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Let&#39;s discuss different options and discuss their tradeoffs&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Non-functional requirement for short URL:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Fast generation&lt;/div&gt;&lt;div&gt;- Short in length (5-7 characters)&lt;/div&gt;&lt;div&gt;- Unique&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Going one by one through the naive to best options&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Option 1:&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Use a distributed sequential counter (with decimal base) and assign the short URL&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Problem: With scale of 1 Billion URLs, it will have 10 digits but our non-functional requirement is to have in 4-5 digits&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Option 2:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Use a random number generator in the range of 0 to 1 Billion&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Problem: Chances of collision are there&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Option 3:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Use a hashing algorithm like MD5 or SHA on the long URL&amp;nbsp;&lt;/div&gt;&lt;div&gt;to generate the short URL&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Problem: Collisions, also the output produced by these hash functions is long&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Option 4:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Use sequential distributed counter but do base62 encoding to reduce the number of digits.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Base62 encoding is obtained by dividing the number repeatedly by 62 and writing the remainder in reverse order (similar to how decimal to binary conversion is done)&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Base62 encoded result will have characters from a-z,A-Z,0-9&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;As a capacity estimate, 6 characters of base62 encoded data will produce 62^6= 56 Billion combinations, which is much higher than even our scale of 1 Billion URLs&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Few notes about this approach:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. There can be security concern about using a distributed counter with base62 encoding, since the sequence number is predictable now. To reduce this, we can use a bijective (one to one) function which will map the output of distributed counter to a different number. Thus, reducing the predictability of the sequence. Example: sqids.org provides bijective function&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. How should the distributed counter be implemented?&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;a. Evan (Hello interview guy) uses Redis based counter with INCR command&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Pros: Fast in performance&lt;/div&gt;&lt;div&gt;Cons: Not durable, even though we can introduce read replicas etc but still cache shouldn&#39;t be used as persistent data store&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;b. My design:&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Use a database for generating the sequence number&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Pro: Durable data store&lt;/div&gt;&lt;div&gt;Con: Slower than cache&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Possible workaround to get low latency:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Application servers can pre-generate a set of sequence numbers from DB(let&#39;s say 100) and keep it in-memory&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="1077" width="433" x="-428" y="1537" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-34" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2.Coming to other Non functional requirement, AP System (Eventually consistent)&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;This can be satisfied by taking any NoSQL DB like Cassandra, DynamoDB etc&lt;/div&gt;" vertex="1">
+          <mxGeometry height="143" width="336" x="-467" y="2698" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-35" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Other non-functional requirement to have low latency redirects and being a read heavy system:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Separate out reads and writes, at both service and DB layer which allows to scale independently&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Use Redis Cache on the read path&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Create DB Index on fields which are frequently accessed&lt;/div&gt;&lt;div&gt;&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="91" width="381" x="-470" y="2885" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-36" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Final design after incorporating the non-functional requirements:" vertex="1">
+          <mxGeometry height="30" width="323" x="-467" y="3064" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client" vertex="1">
+          <mxGeometry height="60" width="120" x="-453" y="3212" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-38" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway" vertex="1">
+          <mxGeometry height="60" width="120" x="-211" y="3212" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-39" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Read Service&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;(horizontally scalable)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="79" y="3114" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-40" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Write Service&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;(horizontally scalable)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="75" y="3367" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-41" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Redis" vertex="1">
+          <mxGeometry height="80" width="80" x="344" y="3108" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-42" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="DB" vertex="1">
+          <mxGeometry height="80" width="80" x="573" y="3217" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-44" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="URL&lt;div&gt;- ShortUrl/CustomAlias&lt;/div&gt;&lt;div&gt;- LongUrl&lt;/div&gt;&lt;div&gt;- ExpirationTime?&lt;/div&gt;&lt;div&gt;- CreationTime&lt;/div&gt;&lt;div&gt;- UserId&lt;/div&gt;" vertex="1">
+          <mxGeometry height="109" width="192" x="802" y="3195" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-45" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="User&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- UserId&lt;/div&gt;&lt;div&gt;....(other info like email and metadata)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="109" width="192" x="1057" y="3199" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-46" edge="1" parent="1" source="I4sKmwTz25wvMcoeHdur-37" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="I4sKmwTz25wvMcoeHdur-38" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="102" y="3333" as="sourcePoint" />
+            <mxPoint x="152" y="3283" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-48" edge="1" parent="1" source="I4sKmwTz25wvMcoeHdur-38" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="I4sKmwTz25wvMcoeHdur-40" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-209" y="3331" as="sourcePoint" />
+            <mxPoint x="-87" y="3331" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-49" edge="1" parent="1" source="I4sKmwTz25wvMcoeHdur-40" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="I4sKmwTz25wvMcoeHdur-42" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="102" y="3333" as="sourcePoint" />
+            <mxPoint x="152" y="3283" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-50" edge="1" parent="1" source="I4sKmwTz25wvMcoeHdur-42" style="endArrow=classic;html=1;rounded=0;exitX=0.113;exitY=0.281;exitDx=0;exitDy=0;entryX=0.963;entryY=0.756;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" target="I4sKmwTz25wvMcoeHdur-41" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="542" y="3475" as="sourcePoint" />
+            <mxPoint x="960" y="3375" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-51" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="CDC" vertex="1">
+          <mxGeometry height="30" width="60" x="487" y="3174" as="geometry" />
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-52" edge="1" parent="1" source="I4sKmwTz25wvMcoeHdur-38" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="I4sKmwTz25wvMcoeHdur-39" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="318" y="3333" as="sourcePoint" />
+            <mxPoint x="368" y="3283" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-53" edge="1" parent="1" source="I4sKmwTz25wvMcoeHdur-39" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="I4sKmwTz25wvMcoeHdur-41" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="318" y="3333" as="sourcePoint" />
+            <mxPoint x="368" y="3283" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I4sKmwTz25wvMcoeHdur-54" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Sequence&lt;div&gt;Number&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="698" y="3219" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
