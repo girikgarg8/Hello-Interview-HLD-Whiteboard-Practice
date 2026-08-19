@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="J2b1pUtoZY06iMoRjept">
-    <mxGraphModel dx="1614" dy="713" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1828" dy="839" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -27,6 +27,21 @@
         </mxCell>
         <mxCell id="82d1D_E5-_z6WtIXFdai-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. CAP Theorem: AP for event search and creation part, CP for booking flow since we don&#39;t want double booking scenarios&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. Low latency search (&amp;lt;500 ms)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;3. Scalable to handle surges from popular events&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;4. Read &amp;gt;&amp;gt; Write: Read heavy system: Lot of folks would be searching for events, but fewer of them would be booking tickets. This gives opportunities for CQRS, caching and DB indexes&lt;/div&gt;" vertex="1">
           <mxGeometry height="155" width="429" x="-127" y="642" as="geometry" />
+        </mxCell>
+        <mxCell id="82d1D_E5-_z6WtIXFdai-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Entity extraction and API design" vertex="1">
+          <mxGeometry height="30" width="389" x="-278" y="893" as="geometry" />
+        </mxCell>
+        <mxCell id="82d1D_E5-_z6WtIXFdai-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Event&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- PerformerId&lt;/div&gt;&lt;div&gt;- VenueId&lt;/div&gt;&lt;div&gt;- StartTime&lt;/div&gt;&lt;div&gt;- EndTime&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="136" width="97.5" x="-187" y="975" as="geometry" />
+        </mxCell>
+        <mxCell id="82d1D_E5-_z6WtIXFdai-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;Performer&lt;/div&gt;&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- Name&lt;/div&gt;&lt;div&gt;- Email&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="136" width="97.5" x="38.75" y="975" as="geometry" />
+        </mxCell>
+        <mxCell id="82d1D_E5-_z6WtIXFdai-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;Performer&lt;/div&gt;&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- Name&lt;/div&gt;&lt;div&gt;- Email&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="136" width="97.5" x="284" y="975" as="geometry" />
+        </mxCell>
+        <mxCell id="82d1D_E5-_z6WtIXFdai-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Ticket&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- EventId&lt;/div&gt;&lt;div&gt;- Status&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="185" width="60" x="529" y="965" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
