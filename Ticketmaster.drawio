@@ -70,7 +70,7 @@
         <mxCell id="82d1D_E5-_z6WtIXFdai-27" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Search Service" vertex="1">
           <mxGeometry height="60" width="120" x="-155" y="2103" as="geometry" />
         </mxCell>
-        <mxCell id="82d1D_E5-_z6WtIXFdai-28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Event Service" vertex="1">
+        <mxCell id="82d1D_E5-_z6WtIXFdai-28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Event CRUD Service" vertex="1">
           <mxGeometry height="60" width="120" x="-153" y="2248" as="geometry" />
         </mxCell>
         <mxCell id="82d1D_E5-_z6WtIXFdai-29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Booking Service" vertex="1">
