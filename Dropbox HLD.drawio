@@ -1,9 +1,45 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="aJ0ZGUT4xrflEo30j6XU">
-    <mxGraphModel>
+    <mxGraphModel dx="1614" dy="717" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Hello Interview Delivery Framework&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Requirement Gathering (Functional and non-functional)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. Entity extraction and API&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;3. Data flow (if infra heavy question)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;4. HLD that satisfies basic functional requirements&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;5. Deep dives into non-functional requirements&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="183" width="492" x="174" y="66" as="geometry" />
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Functional requirements" vertex="1">
+          <mxGeometry height="30" width="151" x="-191" y="324" as="geometry" />
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. User should be able to upload files to Dropbox/Google Drive like system" vertex="1">
+          <mxGeometry height="30" width="410" x="-193" y="371" as="geometry" />
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. User should be able to download files from remote to their local machine" vertex="1">
+          <mxGeometry height="30" width="436.5" x="-206.25" y="427" as="geometry" />
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3.User is able to sync between the remote and local file systems&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="436.5" x="-234" y="483" as="geometry" />
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Non-functional requirements" vertex="1">
+          <mxGeometry height="30" width="191" x="-219" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. CAP theorem: AP system (eventually consistent is fine)" vertex="1">
+          <mxGeometry height="30" width="317" x="-221" y="725" as="geometry" />
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Low latency uploads and downloads of files (we cannot quantify since files size is variable, hence going with &#39;as low as possible&#39;)" vertex="1">
+          <mxGeometry height="30" width="797" x="-267" y="769" as="geometry" />
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Ability to support large files (upto 50 GB) with resumable uploads&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="445" x="-263" y="813" as="geometry" />
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Out of Scope" vertex="1">
+          <mxGeometry height="30" width="143" x="-222" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Design a blob storage like S3 (we&#39;ll be using S3 in our design)" vertex="1">
+          <mxGeometry height="30" width="492" x="-270" y="602" as="geometry" />
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="4. High data integrity (sync accuracy, the remote and local shouldn&#39;t be drifted)" vertex="1">
+          <mxGeometry height="30" width="445" x="-238.25" y="857" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
