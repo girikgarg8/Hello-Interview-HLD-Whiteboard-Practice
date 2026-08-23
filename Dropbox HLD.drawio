@@ -20,7 +20,7 @@
           <mxGeometry height="30" width="436.5" x="-234" y="483" as="geometry" />
         </mxCell>
         <mxCell id="-ytKBwrGRmqnR_m710Oe-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Non-functional requirements" vertex="1">
-          <mxGeometry height="30" width="191" x="-219" y="680" as="geometry" />
+          <mxGeometry height="30" width="191" x="-234" y="674" as="geometry" />
         </mxCell>
         <mxCell id="-ytKBwrGRmqnR_m710Oe-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. CAP theorem: AP system (eventually consistent is fine)" vertex="1">
           <mxGeometry height="30" width="317" x="-221" y="725" as="geometry" />
@@ -39,6 +39,21 @@
         </mxCell>
         <mxCell id="-ytKBwrGRmqnR_m710Oe-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="4. High data integrity (sync accuracy, the remote and local shouldn&#39;t be drifted)" vertex="1">
           <mxGeometry height="30" width="445" x="-238.25" y="857" as="geometry" />
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Entities extraction and API design" vertex="1">
+          <mxGeometry height="30" width="258" x="-252.5" y="945" as="geometry" />
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="• File ( Binary contents that will be stored in blob storage)" vertex="1">
+          <mxGeometry height="30" width="353.5" x="-242" y="1001" as="geometry" />
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="• File Metadata&amp;nbsp;&lt;div&gt;-&amp;nbsp; Name&lt;/div&gt;&lt;div&gt;- Content&amp;nbsp;&lt;/div&gt;&lt;div&gt;- List of Chunks&lt;/div&gt;&lt;div&gt;....other metadata)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="410" x="-382" y="1065" as="geometry" />
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="• Chunk&lt;div&gt;- Id (Derived from hash fingerprint)&lt;/div&gt;&lt;div&gt;- Sequence number (01,02,...etc)&lt;/div&gt;&lt;div&gt;- Status (In progress, failed, completed etc)&lt;/div&gt;&lt;div&gt;- Mime Type&lt;/div&gt;&lt;div&gt;- Compression Algorithm?&lt;/div&gt;&lt;div&gt;..other metadata&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="61" width="205" x="-267" y="1223" as="geometry" />
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="• User&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- Name&lt;/div&gt;&lt;div&gt;- Email&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="120" x="-224.5" y="1361" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
