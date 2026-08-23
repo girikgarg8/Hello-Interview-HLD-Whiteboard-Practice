@@ -163,11 +163,10 @@
         <mxCell id="-ytKBwrGRmqnR_m710Oe-58" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Generate S3 Presigned URL" vertex="1">
           <mxGeometry height="30" width="60" x="282" y="2193" as="geometry" />
         </mxCell>
-        <mxCell id="-ytKBwrGRmqnR_m710Oe-59" edge="1" parent="1" source="-ytKBwrGRmqnR_m710Oe-38" style="endArrow=classic;html=1;rounded=0;exitX=0.717;exitY=-0.012;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.363;entryY=0.044;entryDx=0;entryDy=0;entryPerimeter=0;" target="-ytKBwrGRmqnR_m710Oe-42" value="">
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-59" edge="1" parent="1" source="-ytKBwrGRmqnR_m710Oe-71" style="endArrow=classic;html=1;rounded=0;entryX=0.363;entryY=0.044;entryDx=0;entryDy=0;entryPerimeter=0;" target="-ytKBwrGRmqnR_m710Oe-42" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <Array as="points">
-              <mxPoint x="84" y="2107.5" />
-              <mxPoint x="343" y="2100.5" />
+              <mxPoint x="358" y="2112.5" />
             </Array>
             <mxPoint x="218" y="2290" as="sourcePoint" />
             <mxPoint x="268" y="2240" as="targetPoint" />
@@ -182,8 +181,8 @@
         <mxCell id="-ytKBwrGRmqnR_m710Oe-62" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="7. Get file&amp;nbsp;&lt;div&gt;metadata&lt;/div&gt;" vertex="1">
           <mxGeometry height="30" width="60" x="275" y="2329" as="geometry" />
         </mxCell>
-        <mxCell id="-ytKBwrGRmqnR_m710Oe-63" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="7. Download file chunk from S3" vertex="1">
-          <mxGeometry height="30" width="60" x="120" y="2127" as="geometry" />
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-63" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="7. Download file chunk from CDN/S3" vertex="1">
+          <mxGeometry height="30" width="126" x="92" y="2136" as="geometry" />
         </mxCell>
         <mxCell id="-ytKBwrGRmqnR_m710Oe-64" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Discussion on synchronizing data between local and remote" vertex="1">
           <mxGeometry height="30" width="298" x="-394.5" y="2598" as="geometry" />
@@ -208,6 +207,25 @@
         </mxCell>
         <mxCell id="-ytKBwrGRmqnR_m710Oe-69" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Local changed&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;• With the help of Filewatcher APIs on local, detect file changes on local filesystem&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;• Upload the chunks and their metadata (normal upload path as discussed earlier)&lt;/div&gt;" vertex="1">
           <mxGeometry height="92" width="343" x="-434" y="2807" as="geometry" />
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-72" edge="1" parent="1" source="-ytKBwrGRmqnR_m710Oe-38" style="endArrow=classic;html=1;rounded=0;exitX=0.717;exitY=-0.012;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.363;entryY=0.044;entryDx=0;entryDy=0;entryPerimeter=0;" target="-ytKBwrGRmqnR_m710Oe-71" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points" />
+            <mxPoint x="-282" y="2231" as="sourcePoint" />
+            <mxPoint x="449" y="2206" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-71" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="CDN" vertex="1">
+          <mxGeometry height="60" width="120" x="-137" y="2103" as="geometry" />
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-73" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Regarding the non functional requirement of ensuring data integrity (no drift between local and remote)" vertex="1">
+          <mxGeometry height="30" width="385" x="-438" y="3017" as="geometry" />
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-74" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Sync to be fast&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Client can use short polling to call Sync Service APIs to check list of changed files (Websocket seems overkill since it&#39;s not low latency requirement)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Have client side logic to download only chunks that are missing on local and not all of them&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="144" width="220" x="-448" y="3093" as="geometry" />
+        </mxCell>
+        <mxCell id="-ytKBwrGRmqnR_m710Oe-75" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Sync to be consistent&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Create a reconciler on local which will periodically (like every 24 hours) compare all the S3 objects on server side to local and reconcile if any differences&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Reconciler is only meant for any accidental drift, the regular Sync Service flow should take care otherwise&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="144" width="220" x="-444" y="3313" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
