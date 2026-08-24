@@ -1,9 +1,231 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="RX1-72pMZi8YBz3qvHL-">
-    <mxGraphModel>
+    <mxGraphModel dx="2053" dy="965" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Hello Interview delivery framework&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Requirement Gathering (functional and non-functional)&lt;/div&gt;&lt;div&gt;2. Entity extraction and API design&lt;/div&gt;&lt;div&gt;3. Data flow (if infra heavy question)&lt;/div&gt;&lt;div&gt;4. HLD that satisfies basic functional requirements&lt;/div&gt;&lt;div&gt;5. Deep dives into non functional requirements&lt;/div&gt;" vertex="1">
+          <mxGeometry height="159" width="334" x="232" y="74" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Functional requirements" vertex="1">
+          <mxGeometry height="30" width="181" x="-175" y="329" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. User should be to send and receive text messages to other users&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;3. User should be able to send and receive media (images, videos etc) to other users&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;4. Users should be able to access message after they have been offline&lt;/div&gt;" vertex="1">
+          <mxGeometry height="131" width="211" x="-167" y="429" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Users can start group chats as well as converse over DM" vertex="1">
+          <mxGeometry height="30" width="194" x="-165" y="389" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Non-functional requirements" vertex="1">
+          <mxGeometry height="30" width="194" x="-179" y="609" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. CAP theorem: AP system (Eventual consistency is fine)" vertex="1">
+          <mxGeometry height="30" width="370" x="-208" y="653" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Messages are delivered with low latency (&amp;lt;500 ms, with this number we have sufficient margin for offline usecase too)" vertex="1">
+          <mxGeometry height="30" width="304" x="-181" y="701" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. System should guarantee delivery of messages" vertex="1">
+          <mxGeometry height="30" width="309.5" x="-200" y="764" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="4. Scale to handle billions of users, system will have high throughput" vertex="1">
+          <mxGeometry height="30" width="370" x="-194" y="823" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="5. Make sure messages are not stored unnecessarily on server side, to prevent privacy and compliance issues later on" vertex="1">
+          <mxGeometry height="30" width="370" x="-188" y="874" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="6. Fault tolerant system" vertex="1">
+          <mxGeometry height="30" width="370" x="-299" y="925" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Entity Extraction" vertex="1">
+          <mxGeometry height="30" width="136" x="-206" y="1018" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="User&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- Name&lt;/div&gt;&lt;div&gt;- Phone&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="-194" y="1107" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Message&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- Type: Text | Media&lt;/div&gt;&lt;div&gt;- SenderUserID&lt;/div&gt;&lt;div&gt;- RecipientGroupID&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="219" width="141" x="-55" y="1012.5" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Group&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- User[]&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="219" width="141" x="140" y="1005" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="TextMessage&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- Text&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="219" width="141" x="320" y="1001" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;MediaMessage&lt;/div&gt;&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- Name&lt;/div&gt;&lt;div&gt;- Mime Type&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;-&amp;nbsp; Chunk[]&lt;/span&gt;&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="219" width="141" x="523" y="1003" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;MediaChunk&lt;/div&gt;&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- Sequence&lt;/div&gt;&lt;div&gt;- S3ObjectKey&lt;/div&gt;&lt;div&gt;- CompressionAlgo?&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="219" width="141" x="752" y="995" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="MediaBlobContent" vertex="1">
+          <mxGeometry height="102" width="141" x="964" y="1051" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="API Design:&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="130" x="-208" y="1231.5" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Let&#39;s brainstorm through the API architecture we&#39;ll be following in this question, given that it&#39;s a latency sensitive requirement. Follow the decision chart below:&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="450" x="-194" y="1297" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Latency sensitive requirement?" vertex="1">
+          <mxGeometry height="30" width="60" x="227" y="1422" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-26" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="246.67" y="1467.35" as="sourcePoint" />
+            <mxPoint x="148.67" y="1520.35" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-27" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="No" vertex="1">
+          <mxGeometry height="30" width="60" x="147" y="1461" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-29" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Use client side polling (short or long polling)" vertex="1">
+          <mxGeometry height="30" width="60" x="38" y="1562" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-30" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="247" y="1467" as="sourcePoint" />
+            <mxPoint x="350.67" y="1518.35" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-31" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Yes" vertex="1">
+          <mxGeometry height="30" width="60" x="306" y="1470" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-32" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Server to client side communication only?" vertex="1">
+          <mxGeometry height="30" width="60" x="345" y="1541" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-34" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="359" y="1602" as="sourcePoint" />
+            <mxPoint x="284.67" y="1639.68" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-36" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Yes" vertex="1">
+          <mxGeometry height="30" width="60" x="274" y="1599" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-37" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Use server side polling" vertex="1">
+          <mxGeometry height="30" width="60" x="205" y="1646" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-38" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="370.67" y="1596.23" as="sourcePoint" />
+            <mxPoint x="415.67" y="1646.23" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-39" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="No" vertex="1">
+          <mxGeometry height="30" width="60" x="380" y="1599" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-40" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Audio/video calling?" vertex="1">
+          <mxGeometry height="30" width="60" x="382" y="1671" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-43" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="398.22" y="1705" as="sourcePoint" />
+            <mxPoint x="362" y="1751.57" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-44" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="No" vertex="1">
+          <mxGeometry height="30" width="60" x="324" y="1709" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-45" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="418" y="1709" as="sourcePoint" />
+            <mxPoint x="447.78" y="1748.57" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-46" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Yes" vertex="1">
+          <mxGeometry height="30" width="60" x="441" y="1705" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-47" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="WebRTC" vertex="1">
+          <mxGeometry height="30" width="60" x="434" y="1763" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-48" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Websocket" vertex="1">
+          <mxGeometry height="30" width="60" x="267" y="1753" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-49" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="In our case, we require low latency, bidirectional communication with no video/audio calling&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Hence, Websocket is the way to go for&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="494" x="-191" y="1883" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-51" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="There really is no standard way to describe WebSocket APIs, unlike REST architecture&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;However, we&#39;ll be describing them in the form of commands sent (sent by client to server) and commands received (received from client by server) along with their payloads&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="410" x="-201" y="2024" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-53" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Commands Sent&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- createChat&lt;/div&gt;&lt;div&gt;- sendMessage&lt;/div&gt;&lt;div&gt;- createAttachment&lt;/div&gt;&lt;div&gt;- modifyParticipants&lt;/div&gt;" vertex="1">
+          <mxGeometry height="97" width="141" x="-209" y="2171" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-54" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Commands Received&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- newMessage&lt;/div&gt;&lt;div&gt;- chatUpdate&lt;/div&gt;" vertex="1">
+          <mxGeometry height="97" width="141" x="54" y="2174" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-55" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HLD that satisfies basic functional requirements&lt;div&gt;(we&#39;ll iteratively make it more scalable etc during deep dives)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="53" width="274" x="-207" y="2364" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-56" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client" vertex="1">
+          <mxGeometry height="60" width="120" x="-209" y="2509" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-58" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Chat Server" vertex="1">
+          <mxGeometry height="60" width="120" x="109" y="2509" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-59" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="(Single chat server for now)" vertex="1">
+          <mxGeometry height="30" width="155.5" x="98" y="2596" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-60" edge="1" parent="1" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="iIfmfWo0CBsvGYO34Th3-58" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-91" y="2540" as="sourcePoint" />
+            <mxPoint x="-41" y="2490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-61" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Websocket connection" vertex="1">
+          <mxGeometry height="30" width="137" x="-51" y="2507" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-62" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="DynamoDB" vertex="1">
+          <mxGeometry height="80" width="80" x="421" y="2497" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-63" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="iIfmfWo0CBsvGYO34Th3-62" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="226" y="2540" as="sourcePoint" />
+            <mxPoint x="276" y="2490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-64" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="S3 storage" vertex="1">
+          <mxGeometry height="80" width="80" x="430" y="2663" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-65" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="• Chat&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- Name&lt;/div&gt;&lt;div&gt;..metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="75" width="60" x="618" y="2499.5" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-66" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="• ChatParticipant&lt;div&gt;- ChatId&lt;/div&gt;&lt;div&gt;- ParticipantId&lt;/div&gt;&lt;div&gt;..metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="86" width="97" x="604" y="2640" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-69" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="• Messages&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- ChatId&lt;/div&gt;&lt;div&gt;- Content&lt;/div&gt;&lt;div&gt;- creatorId&lt;/div&gt;&lt;div&gt;- timeStamp&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="89" x="795" y="2526" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-70" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="• Inbox&lt;div&gt;- recipientId&lt;/div&gt;&lt;div&gt;- messageId&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="111" x="787" y="2663" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-71" edge="1" parent="1" source="iIfmfWo0CBsvGYO34Th3-64" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.007;exitY=0.671;exitDx=0;exitDy=0;exitPerimeter=0;" target="iIfmfWo0CBsvGYO34Th3-56" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="455" y="2554" as="sourcePoint" />
+            <mxPoint x="505" y="2504" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-74" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="How each of the functional requirements work in this design?" vertex="1">
+          <mxGeometry height="30" width="197" x="-248" y="2844" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-75" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="a. User should be able to create group.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- To do it, first of all a chat entity has to be created with the details like name, ID etc&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Then create entities in ChatParticipant table with the required participants (one or more depending on DM or group chat)&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="123" width="331" x="-345" y="2939" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-76" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="(The join table required in many to many relationship in SQL database)" vertex="1">
+          <mxGeometry height="30" width="60" x="627" y="2794" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-77" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;b. User should be able to send or receive messages&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- User A sends message over Websocket connection to chat server&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- This message is persisted in DB and also an entry is created in the inbox table (having recipient and messageId)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Since it&#39;s a single chat server for now, the recipient user ID (B) is checked in memory in the server, if there&#39;s any active Websocket connection for it. If yes, the message is sent to B over WebSocket&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- If the recipient is not connected over WebSocket, then the next time B comes online, the list of all messages from inbox for B is fetched and downloaded.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="287" width="331" x="-337" y="3123" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-78" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="c. User should be able to send and receive media" vertex="1">
+          <mxGeometry height="30" width="206" x="-324" y="3453" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-79" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="First of all, a note that the content field in the messages table doesn&#39;t necessarily mean text content.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;In case of media, it will be a JSON body like&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;{ &quot;type&quot;: &quot;image&quot;, &quot;url&quot;: &quot;s3://…/abc&quot;, &quot;mime&quot;: &quot;image/jpeg&quot; }&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;Hello Interview guy deliberately doesn&#39;t go into creating a Metadata DB in this problem (since it would be more relevant in Google Drive or Youtube design etc)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;The upload path is:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Client sends request to Chat Server with the intent to upload media&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Chat Server talks to S3 and generates S3 pre-signed URL&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Client is returned the S3 pre-signed URL&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Client upload binary content to S3 using pre-signed URL&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- When user clicks on &#39;send&#39;, an entry in the message and inbox table is made respectively&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="438" width="169" x="-309" y="3618" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-80" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="The download path is:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Online usecase: User on websocket receives message with JSON content, downloads the S3 object and displays to user.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. Offline usecase:&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;When user comes online, from the inbox table the list of messages pending for that user is fetched.&lt;/div&gt;&lt;div&gt;The message entity will in turn have JSON content with S3 object key that can be downloaded&lt;/div&gt;" vertex="1">
+          <mxGeometry height="315" width="142" x="-302" y="4146" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
