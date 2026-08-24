@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="29rRF2OD3gryyC5T2Qhf">
-    <mxGraphModel dx="2053" dy="954" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2853" dy="954" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -244,6 +244,246 @@
         </mxCell>
         <mxCell id="_zuop-OibEd9gmZE1kWI-74" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Apple Push Notification (APN) or Firebase Cloud Messaging (FCM)" vertex="1">
           <mxGeometry height="30" width="210" x="-167" y="3528" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-75" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Approaches to make swipes strongly consistent" vertex="1">
+          <mxGeometry height="30" width="515" x="-374.5" y="4275" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-76" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-159.47" y="4309" as="sourcePoint" />
+            <mxPoint x="-317.44" y="4402.48" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-77" edge="1" parent="1" source="_zuop-OibEd9gmZE1kWI-75" style="endArrow=classic;html=1;rounded=0;exitX=0.417;exitY=1.112;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="70.97" y="4463" as="sourcePoint" />
+            <mxPoint x="-10.38" y="4401.31" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-78" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Using Redis single threaded nature to check for inverted swipe&amp;nbsp; and create match entity" vertex="1">
+          <mxGeometry height="30" width="351" x="-686" y="4448" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-79" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Using PostGres SQL database as it gives strong consistency out of the box" vertex="1">
+          <mxGeometry height="30" width="351" x="-40" y="4444" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-80" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HLD with Redis approach" vertex="1">
+          <mxGeometry height="30" width="105" x="-871" y="4581" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-81" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Redis approach:&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Use Lua script to check for user1:user2 and user2:user1 swipe responses&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;If both of them are like responses, we can go ahead with creating a match entity and sending notification to both the users.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Note: Need to make sure that both keys user1:user2 and user2:user1 coslot for Lua script execution.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="163" width="488" x="-1081" y="4596" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-82" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client" vertex="1">
+          <mxGeometry height="60" width="120" x="-1175" y="5120" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-83" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway" vertex="1">
+          <mxGeometry height="60" width="120" x="-886" y="5120" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-84" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Profile Service" vertex="1">
+          <mxGeometry height="60" width="120" x="-574" y="4982" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-85" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Feed Service" vertex="1">
+          <mxGeometry height="60" width="120" x="-577" y="5156" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-86" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Swipe Service" vertex="1">
+          <mxGeometry height="60" width="120" x="-580" y="5330" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-87" edge="1" parent="1" source="_zuop-OibEd9gmZE1kWI-82" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="_zuop-OibEd9gmZE1kWI-83" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-377" y="5213" as="sourcePoint" />
+            <mxPoint x="-327" y="5163" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-88" edge="1" parent="1" source="_zuop-OibEd9gmZE1kWI-83" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="_zuop-OibEd9gmZE1kWI-84" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-828" y="5282" as="sourcePoint" />
+            <mxPoint x="-659" y="5282" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-89" edge="1" parent="1" source="_zuop-OibEd9gmZE1kWI-83" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="_zuop-OibEd9gmZE1kWI-85" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-681" y="5343" as="sourcePoint" />
+            <mxPoint x="-489" y="5205" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-90" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="_zuop-OibEd9gmZE1kWI-86" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-765.15" y="5146.93" as="sourcePoint" />
+            <mxPoint x="-492" y="5379" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-91" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Cassandra" vertex="1">
+          <mxGeometry height="80" width="80" x="-232" y="4969" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-92" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Cassandra" vertex="1">
+          <mxGeometry height="80" width="80" x="-227" y="5327" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-93" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Redis" vertex="1">
+          <mxGeometry height="74" width="74" x="-433" y="5442" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-94" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Profile&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- MinAgePreference&lt;/div&gt;&lt;div&gt;- MaxAgePreference&lt;/div&gt;&lt;div&gt;- GenderPreference&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="247" x="-339" y="4843" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-95" edge="1" parent="1" source="_zuop-OibEd9gmZE1kWI-91" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="-61.1" y="5009" />
+              <mxPoint x="-61.1" y="5184.18" />
+            </Array>
+            <mxPoint x="-383" y="5320" as="sourcePoint" />
+            <mxPoint x="-189.34" y="5184.18" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-96" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="ElasticSearch" vertex="1">
+          <mxGeometry height="80" width="80" x="-268" y="5142" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-98" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Additional challenges with this Redis approach and their solutions:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Need to ensure data consistency between Redis cache and Cassandra DB - CDC between Redis and Cassandra&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. Storing all the swipes in Redis cache will occupy lot of memory at the projected TPS of 100M*100 DAU. Redis memory is expensive too.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Solution: Go for the Postgres based solution described next&amp;nbsp;&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="212" width="383" x="-1102" y="5687" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-99" edge="1" parent="1" source="_zuop-OibEd9gmZE1kWI-85" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="_zuop-OibEd9gmZE1kWI-96" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-343" y="5299" as="sourcePoint" />
+            <mxPoint x="-293" y="5249" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-100" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="_zuop-OibEd9gmZE1kWI-91" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-457" y="5011" as="sourcePoint" />
+            <mxPoint x="-268" y="5007" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-101" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="CDC" vertex="1">
+          <mxGeometry height="30" width="60" x="-44" y="5126" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-102" edge="1" parent="1" source="_zuop-OibEd9gmZE1kWI-86" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="_zuop-OibEd9gmZE1kWI-93" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-533.78" y="5396.73" as="sourcePoint" />
+            <mxPoint x="-342" y="5343" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-103" edge="1" parent="1" source="_zuop-OibEd9gmZE1kWI-86" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="_zuop-OibEd9gmZE1kWI-92" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-392" y="5393" as="sourcePoint" />
+            <mxPoint x="-342" y="5343" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-104" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Key user1:user2&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Value: like&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Key user2:user1&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;Value: like&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="101" width="131" x="-682" y="5490" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-105" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Lastly, for the constraint related to avoid showing the same profile multiple times" vertex="1">
+          <mxGeometry height="30" width="481" x="-1119" y="6982" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-106" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Postgres based solution for swipes CP consistency&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="300" x="-1123" y="5969" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-107" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="This is how the schema and sample row in Postgres will look like:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Schema: User1, User2, User1 Response, User2 Response&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Sample row: A, B, Like, Like&lt;/div&gt;" vertex="1">
+          <mxGeometry height="114" width="487" x="-1175" y="6057" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-108" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Benefit of this schema is, row level locking can be applied on the rows and it ensures strict consistency between swap and inverse swap." vertex="1">
+          <mxGeometry height="30" width="595" x="-1104" y="6203" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-109" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client" vertex="1">
+          <mxGeometry height="60" width="120" x="-1137" y="6565" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-110" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway" vertex="1">
+          <mxGeometry height="60" width="120" x="-848" y="6565" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-111" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Profile Service" vertex="1">
+          <mxGeometry height="60" width="120" x="-536" y="6427" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-112" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Feed Service" vertex="1">
+          <mxGeometry height="60" width="120" x="-539" y="6601" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-113" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Swipe Service" vertex="1">
+          <mxGeometry height="60" width="120" x="-542" y="6775" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-114" edge="1" parent="1" source="_zuop-OibEd9gmZE1kWI-109" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="_zuop-OibEd9gmZE1kWI-110" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-339" y="6658" as="sourcePoint" />
+            <mxPoint x="-289" y="6608" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-115" edge="1" parent="1" source="_zuop-OibEd9gmZE1kWI-110" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="_zuop-OibEd9gmZE1kWI-111" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-790" y="6727" as="sourcePoint" />
+            <mxPoint x="-621" y="6727" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-116" edge="1" parent="1" source="_zuop-OibEd9gmZE1kWI-110" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="_zuop-OibEd9gmZE1kWI-112" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-643" y="6788" as="sourcePoint" />
+            <mxPoint x="-451" y="6650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-117" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="_zuop-OibEd9gmZE1kWI-113" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-727.15" y="6591.93" as="sourcePoint" />
+            <mxPoint x="-454" y="6824" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-118" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Cassandra" vertex="1">
+          <mxGeometry height="80" width="80" x="-194" y="6414" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-119" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Postgres" vertex="1">
+          <mxGeometry height="80" width="80" x="-189" y="6772" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-121" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Profile&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- MinAgePreference&lt;/div&gt;&lt;div&gt;- MaxAgePreference&lt;/div&gt;&lt;div&gt;- GenderPreference&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="247" x="-301" y="6288" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-122" edge="1" parent="1" source="_zuop-OibEd9gmZE1kWI-118" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="-23.100000000000023" y="6454" />
+              <mxPoint x="-23.100000000000023" y="6629.18" />
+            </Array>
+            <mxPoint x="-345" y="6765" as="sourcePoint" />
+            <mxPoint x="-151.34" y="6629.18" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-123" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="ElasticSearch" vertex="1">
+          <mxGeometry height="80" width="80" x="-230" y="6587" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-124" edge="1" parent="1" source="_zuop-OibEd9gmZE1kWI-112" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="_zuop-OibEd9gmZE1kWI-123" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-305" y="6744" as="sourcePoint" />
+            <mxPoint x="-255" y="6694" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-125" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="_zuop-OibEd9gmZE1kWI-118" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-419" y="6456" as="sourcePoint" />
+            <mxPoint x="-230" y="6452" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-126" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="CDC" vertex="1">
+          <mxGeometry height="30" width="60" x="-6" y="6571" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-128" edge="1" parent="1" source="_zuop-OibEd9gmZE1kWI-113" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="_zuop-OibEd9gmZE1kWI-119" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-354" y="6838" as="sourcePoint" />
+            <mxPoint x="-304" y="6788" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-129" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Swipe&lt;div&gt;- User1ID&lt;/div&gt;&lt;div&gt;- User2ID&lt;/div&gt;&lt;div&gt;- User1Response&lt;/div&gt;&lt;div&gt;- User2Response&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="93" width="188" x="6" y="6772" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-130" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Match&lt;div&gt;- User1ID&lt;/div&gt;&lt;div&gt;- User2ID&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="86" width="188" x="278" y="6775.5" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-131" edge="1" parent="1" source="_zuop-OibEd9gmZE1kWI-113" style="endArrow=classic;html=1;rounded=0;exitX=0.37;exitY=0.974;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.338;entryY=1.004;entryDx=0;entryDy=0;entryPerimeter=0;" target="_zuop-OibEd9gmZE1kWI-109" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="-497.6" y="6874.64" />
+              <mxPoint x="-1101.1" y="6874.64" />
+            </Array>
+            <mxPoint x="-348" y="6601" as="sourcePoint" />
+            <mxPoint x="-298" y="6551" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-132" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Firebase Cloud Messaging or Apple Push Notifcation" vertex="1">
+          <mxGeometry height="30" width="161" x="-895" y="6835" as="geometry" />
+        </mxCell>
+        <mxCell id="_zuop-OibEd9gmZE1kWI-135" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="• First of all, ElasticSearch will give the list of potential matches with the help of geospatial queries to locate nearby matches and also the gender, age preferences etc.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;• Out of the matches obtained in previous step, filter out the ones which are already seen with the help of bloom filter.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;• Display the remaining matches to the user&amp;nbsp;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="93" width="554" x="-1099" y="7097" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
