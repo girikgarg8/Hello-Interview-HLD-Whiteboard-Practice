@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="RX1-72pMZi8YBz3qvHL-">
-    <mxGraphModel dx="2053" dy="965" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2279" dy="863" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -225,6 +225,18 @@
         </mxCell>
         <mxCell id="iIfmfWo0CBsvGYO34Th3-80" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="The download path is:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Online usecase: User on websocket receives message with JSON content, downloads the S3 object and displays to user.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. Offline usecase:&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;When user comes online, from the inbox table the list of messages pending for that user is fetched.&lt;/div&gt;&lt;div&gt;The message entity will in turn have JSON content with S3 object key that can be downloaded&lt;/div&gt;" vertex="1">
           <mxGeometry height="315" width="142" x="-302" y="4146" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-81" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Deep dives into non-functional requirements" vertex="1">
+          <mxGeometry height="30" width="262" x="-443" y="4559" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-82" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Low latency delivery of message (&amp;lt;500 ms) - already satisifed with webocket and inbox table&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="408" x="-454" y="4619" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-83" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Guaranteed delivery of messages - already ensured, the message is first persisted to DB and then we make an attempt to send it over WebSocket connection if user is online&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Even if user is offline, once they come online , all the pending messages for this user are loaded from the inbox table and shown&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="113" width="408" x="-449" y="4701" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-84" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. System is scalable to handle billions of users and high throughput - right now, we have single chat server which won&#39;t be sufficient for scale. So, we need to horizontally scale the chat servers and introduce an API Gateway with LB&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Now, this introduces another problem: Two users A and B might be connected to different servers. If A wants to send a message to B, there should be a way to know which specific chat server B is connected to.&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;Multiple approaches to handle this problem:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1.&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="275" width="372" x="-436" y="4874" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
