@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="RX1-72pMZi8YBz3qvHL-">
-    <mxGraphModel dx="2279" dy="863" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3355" dy="1482" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -235,8 +235,89 @@
         <mxCell id="iIfmfWo0CBsvGYO34Th3-83" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Guaranteed delivery of messages - already ensured, the message is first persisted to DB and then we make an attempt to send it over WebSocket connection if user is online&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Even if user is offline, once they come online , all the pending messages for this user are loaded from the inbox table and shown&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="113" width="408" x="-449" y="4701" as="geometry" />
         </mxCell>
-        <mxCell id="iIfmfWo0CBsvGYO34Th3-84" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. System is scalable to handle billions of users and high throughput - right now, we have single chat server which won&#39;t be sufficient for scale. So, we need to horizontally scale the chat servers and introduce an API Gateway with LB&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Now, this introduces another problem: Two users A and B might be connected to different servers. If A wants to send a message to B, there should be a way to know which specific chat server B is connected to.&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;Multiple approaches to handle this problem:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1.&amp;nbsp;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="275" width="372" x="-436" y="4874" as="geometry" />
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-84" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. System is scalable to handle billions of users and high throughput - right now, we have single chat server which won&#39;t be sufficient for scale. So, we need to horizontally scale the chat servers and introduce an API Gateway with LB&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Now, this introduces another problem: Two users A and B might be connected to different servers. If A wants to send a message to B, there should be a way to know which specific chat server B is connected to.&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;Multiple approaches to handle this problem:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Broadcast to all servers with Kafka topic:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Pro: All servers listen to these updates, only one server which has in memory mapping for the user will send it over WebSocket while others will ignore it. No need to maintain mapping of user to server.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Con: At scale, it can lead to too many events being published to Kafka topic, causing Kaka overload&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Also, it would lead to enormous unnecessary work.&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Consider:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;10K Chat Servers&lt;/div&gt;&lt;div&gt;1 million messages/sec&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;If every message is consumed by all 10K servers, it means 9999 servers are doing unnecessary processing at the scale of 1 million messages per second&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. Maintain mapping of connected user to server in Redis&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Note: Hello Interview guy goes with Zookeeper for maintaining the mapping. However, personally speaking, I try to avoid Zookeeper for following reasons:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;a. Not familiar with Zookeeper much, and will get stuck in any follow up questions. Though this change later once I have hands on experience with Zookeeper&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;b. Redis can almost serve every usecase for which we require Zookeeper.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;c. Zookeeper is a legacy technology and it&#39;s overly used even when there are better alternatives like Redis. Evan (from Hello Interview) himself admits that&lt;/div&gt;" vertex="1">
+          <mxGeometry height="489" width="372" x="-436" y="4874" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-87" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Pro:&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;No overhead of Kakfa overload or unncessary processing&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="284" x="-404" y="5980" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-88" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Approach:&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Use Redis Cache for storing user Id to server mapping&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;And then in-memory cache in each Chat Server&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="443" x="-422" y="5537" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-90" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Complete write path&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1 Sender sends message to Chat Server over Websocket&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. Message and inbox entities are created and persisted in DB&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="216" x="-353" y="5635" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-91" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Con: If a server goes down, the existing user-&amp;gt;server mapping in Redis has to be changed. For some time, we might need to write to both the old terminating server and the new server which is taking over to ensure seamless experience for user without any message loss" vertex="1">
+          <mxGeometry height="30" width="242" x="-383" y="6097" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-93" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Check Redis to know which chat server recipient B is connected to (if at all)" vertex="1">
+          <mxGeometry height="30" width="234" x="-343" y="5724" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-94" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="4. Sender server A makes synchronous request to recipient server" vertex="1">
+          <mxGeometry height="30" width="265" x="-347" y="5774" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-97" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="5. Server B internally checks its hashmap to find the websocket ID corresponding to the given user&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;6. Server B sends message to recipient over Websocket&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="265" x="-343" y="5849" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-103" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Note: This limitation called out above is just an FYI. In most interviews, using a Redis based user-&amp;gt; server mapping solution would be completely acceptable" vertex="1">
+          <mxGeometry height="30" width="258" x="-403" y="6213" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-104" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Non functional requirement for not storing messages unnecessarily:" vertex="1">
+          <mxGeometry height="30" width="411" x="-451" y="6341" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-105" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="• Active users&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Once client receives the message, send an ACK to Server so that it can be deleted&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="398" x="-451" y="6390" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-106" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="• Inactive users" vertex="1">
+          <mxGeometry height="30" width="181" x="-347" y="6468" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-107" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Have a cron job that deletes messages which were not received in 30 days&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="398" x="-451" y="6526" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-108" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Final HLD after incorporating all the non-functional requirements:&amp;nbsp;&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="255" x="-449" y="6623" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-109" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client" vertex="1">
+          <mxGeometry height="60" width="120" x="-442" y="6795" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-110" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway" vertex="1">
+          <mxGeometry height="60" width="120" x="-173" y="6799" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-111" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Chat Server" vertex="1">
+          <mxGeometry height="60" width="120" x="122" y="6799" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-112" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Chat Server" vertex="1">
+          <mxGeometry height="60" width="120" x="188" y="6758" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-113" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="(Horizontally Scalable)" vertex="1">
+          <mxGeometry height="30" width="138" x="122" y="6887" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-115" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="DynamoDB" vertex="1">
+          <mxGeometry height="80" width="80" x="451" y="6793" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-117" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Redis" vertex="1">
+          <mxGeometry height="80" width="80" x="382" y="6659" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-118" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Store user to server mapping" vertex="1">
+          <mxGeometry height="30" width="202" x="483" y="6677" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-120" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="• Chat&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- Name&lt;/div&gt;&lt;div&gt;..metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="75" width="60" x="939" y="6750" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-121" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="• ChatParticipant&lt;div&gt;- ChatId&lt;/div&gt;&lt;div&gt;- ParticipantId&lt;/div&gt;&lt;div&gt;..metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="86" width="97" x="925" y="6890.5" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-122" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="• Messages&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- ChatId&lt;/div&gt;&lt;div&gt;- Content&lt;/div&gt;&lt;div&gt;- creatorId&lt;/div&gt;&lt;div&gt;- timeStamp&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="89" x="1116" y="6776.5" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-123" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="• Inbox&lt;div&gt;- recipientId&lt;/div&gt;&lt;div&gt;- messageId&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="111" x="1108" y="6913.5" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-124" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="(The join table required in many to many relationship in SQL database)" vertex="1">
+          <mxGeometry height="30" width="60" x="948" y="7044.5" as="geometry" />
+        </mxCell>
+        <mxCell id="iIfmfWo0CBsvGYO34Th3-125" parent="1" style="whiteSpace=wrap;html=1;" value="Cron job to delete data older than 30 days" vertex="1">
+          <mxGeometry height="60" width="120" x="63" y="7025" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
