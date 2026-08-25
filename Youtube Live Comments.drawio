@@ -1,9 +1,36 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="-KZy1wuY341JlxtDA7WG">
-    <mxGraphModel>
+    <mxGraphModel dx="1805" dy="815" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Hello Interview Delivery Framework&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Requirement Gathering (functional and non-functional)&lt;/div&gt;&lt;div&gt;2. Entity extraction and API design&lt;/div&gt;&lt;div&gt;3. Data flow (if infra heavy question)&lt;/div&gt;&lt;div&gt;4. HLD that satisfies basic functional requirements&lt;/div&gt;&lt;div&gt;5. Deep dives into non functional requirements&lt;/div&gt;" vertex="1">
+          <mxGeometry height="146" width="401" x="157" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Functional requirements" vertex="1">
+          <mxGeometry height="30" width="150" x="-196" y="336" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Viewers can post comments&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="233" x="-219" y="378" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Viewers can see all comments posted in near realtime" vertex="1">
+          <mxGeometry height="30" width="311" x="-191" y="424" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Viewers can see all comments posted before they joined" vertex="1">
+          <mxGeometry height="30" width="330" x="-194" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Non-functional requirements" vertex="1">
+          <mxGeometry height="30" width="185" x="-203" y="549" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. CAP theorem: Availability &amp;gt;&amp;gt; Consistency (Eventual consistency is fine)" vertex="1">
+          <mxGeometry height="30" width="449" x="-215" y="598" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Low latency comment broadcast (~200 ms)" vertex="1">
+          <mxGeometry height="30" width="449" x="-287" y="641" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Scale to millions of video w/ thousands of comments per second" vertex="1">
+          <mxGeometry height="30" width="449" x="-231" y="694" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
