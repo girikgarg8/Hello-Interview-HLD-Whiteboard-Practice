@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="-KZy1wuY341JlxtDA7WG">
-    <mxGraphModel dx="1805" dy="815" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2361" dy="906" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -30,6 +30,204 @@
         </mxCell>
         <mxCell id="eJ3RLoxxL0zo8U_XuLCM-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Scale to millions of video w/ thousands of comments per second" vertex="1">
           <mxGeometry height="30" width="449" x="-231" y="694" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Entities extraction &amp;amp; API design" vertex="1">
+          <mxGeometry height="30" width="204" x="-204.5" y="775" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="• User&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- Name&lt;/div&gt;&lt;div&gt;...Other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="-204.5" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="• Video&lt;br&gt;- Id&lt;div&gt;- Title&lt;/div&gt;&lt;div&gt;...Other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="-59" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="• Comment&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- UserId&lt;/div&gt;&lt;div&gt;- Content&lt;/div&gt;&lt;div&gt;- VideoId&lt;/div&gt;&lt;div&gt;- CreatedAt&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="94" x="99" y="850" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="API design" vertex="1">
+          <mxGeometry height="30" width="163" x="-215" y="977" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="POST /comments/:liveVideoId&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;{&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Comment&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="238" x="-207" y="1069" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Response Status -&amp;gt; 200" vertex="1">
+          <mxGeometry height="30" width="174" x="70" y="1028" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="API to fetch comments in paginated fashion would need persistent connection like SSE or WebSocket because of latency requirements" vertex="1">
+          <mxGeometry height="30" width="336" x="-187" y="1199" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Let&#39;s evaluate the tradeoffs for both the approaches - the general decision tree as well as specifically in the context of this problem&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="408" x="-196" y="1298" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Latency sensitive requirement?" vertex="1">
+          <mxGeometry height="30" width="60" x="158" y="1395" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-23" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="179" y="1445" as="sourcePoint" />
+            <mxPoint x="137.34" y="1498.12" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-24" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="178" y="1445" as="sourcePoint" />
+            <mxPoint x="237.34" y="1509.9" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="No" vertex="1">
+          <mxGeometry height="30" width="60" x="92" y="1444" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Do client side polling (short/long(" vertex="1">
+          <mxGeometry height="60" width="120" x="29" y="1516" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-27" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Yes" vertex="1">
+          <mxGeometry height="30" width="60" x="199" y="1444" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-28" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Frequent bidirectional communication ?" vertex="1">
+          <mxGeometry height="60" width="120" x="204" y="1514" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-29" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="251.77" y="1574" as="sourcePoint" />
+            <mxPoint x="201.23" y="1642.01" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-30" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="No" vertex="1">
+          <mxGeometry height="30" width="60" x="174" y="1585" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-31" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Use Server Side Events (SSE)" vertex="1">
+          <mxGeometry height="30" width="60" x="127" y="1681" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-32" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="250.23" y="1575.12" as="sourcePoint" />
+            <mxPoint x="299.23" y="1647.12" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-33" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Yes" vertex="1">
+          <mxGeometry height="30" width="60" x="267" y="1591" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Requirement for audio/video calling?" vertex="1">
+          <mxGeometry height="60" width="120" x="274" y="1648" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-35" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="339" y="1711" as="sourcePoint" />
+            <mxPoint x="389" y="1783.9" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-36" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Yes" vertex="1">
+          <mxGeometry height="30" width="60" x="358" y="1726" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Use WebRTC" vertex="1">
+          <mxGeometry height="60" width="120" x="398" y="1780" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-38" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="339.77" y="1711" as="sourcePoint" />
+            <mxPoint x="289.23" y="1779.01" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-39" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="No" vertex="1">
+          <mxGeometry height="30" width="60" x="262" y="1722" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-40" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Use WebSockets" vertex="1">
+          <mxGeometry height="60" width="120" x="218" y="1780" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-41" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="In the context of our problem, the ratio of comment creation to reads/streams would be like 1:1000 or 1:2000&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Hence, there is no need for &quot;frequent&quot; bidirectional communication and an SSE would do fine&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Also, websockets introduce ton of complexity such as :&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1.&amp;nbsp; All intermediate layers like Gateway, proxy layers etc need to support Websockets&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. Websockets are also resource intensive compared to SSE. There is no browser built-in support for reconnection if Websocket goes down&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;In the aftermath of these facts, we&#39;ll go with a REST API for create comments and SSE based API for comments streaming.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Since SSE/Websocket don&#39;t have a formal API contract unlike REST APIs, we can jutst indicate it with arrows in HLD diagram.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="260" width="609" x="-486" y="1955" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-42" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Attaching below a comparison of SSE and WebSocket as explained in the video:" vertex="1">
+          <mxGeometry height="30" width="234" x="-286" y="2295" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-43" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="SSE" vertex="1">
+          <mxGeometry height="30" width="60" x="-471" y="2397" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-44" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Websocket" vertex="1">
+          <mxGeometry height="30" width="60" x="-28" y="2401" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-46" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- Unidirectiona&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;l&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- over HTTP&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Built in browser support for reconnection&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Just looks like a long running HTTP request&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- HTTP headers to indicate we&#39;ll be sending chunks&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="144" width="214" x="-544" y="2470" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-47" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- Bidirectional&lt;div&gt;- Its own protocol (not HTTP)&lt;/div&gt;&lt;div&gt;- All infra need to support upgrading from HTTP to websocket&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Load balancers, proxies, firewalss - all need to negotiate this upgrade&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="401" x="-202" y="2499" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-48" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Some other design decisions and their rationale:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Separate out comment CRUD service from the comment broadcast service: At the scale of 100 Million Users, a single service doing both CRUD operations on DB as well as handling SSE connections.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Thus, to have separation of concerns and better scalability, this design decision is taken&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="308" x="-542" y="2719" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-50" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Maintain Redis Cache to store video -&amp;gt; [list of servers] mapping and each server will maintain internally maintain in-memory&amp;nbsp;&lt;div&gt;mapping of video -&amp;gt; [list of sse connections] over which update to be sent&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Reason: as we horizontally scale the chat broadcast servers, we need to maintain mapping of which all servers have active SSE connections for a given video.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="362" x="-544" y="2958" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-52" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HLD:" vertex="1">
+          <mxGeometry height="30" width="267" x="-642" y="3083" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-53" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client" vertex="1">
+          <mxGeometry height="60" width="120" x="-514" y="3285" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-54" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway" vertex="1">
+          <mxGeometry height="60" width="120" x="-260" y="3289" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-56" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Comment Service" vertex="1">
+          <mxGeometry height="60" width="120" x="-17" y="3154" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-57" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Realtime Comment Service" vertex="1">
+          <mxGeometry height="68" width="102" x="-6" y="3463" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-58" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="60" width="120" x="34" y="3516" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-59" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="(Horizontally scalable)" vertex="1">
+          <mxGeometry height="30" width="134" x="14" y="3608" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-60" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="DynamoDB" vertex="1">
+          <mxGeometry height="80" width="80" x="292" y="3141" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-61" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Redis" vertex="1">
+          <mxGeometry height="80" width="80" x="304" y="3289" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-62" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="(maintain mapping of video to list of servers)" vertex="1">
+          <mxGeometry height="30" width="134" x="406" y="3328" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-63" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Comment&amp;nbsp;&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- UserId&lt;/div&gt;&lt;div&gt;- VideoId&lt;/div&gt;&lt;div&gt;- Content&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="397" y="3138" as="geometry" />
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-64" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=-0.012;entryY=0.394;entryDx=0;entryDy=0;entryPerimeter=0;" target="eJ3RLoxxL0zo8U_XuLCM-54" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-394" y="3312" as="sourcePoint" />
+            <mxPoint x="-344" y="3262" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-65" edge="1" parent="1" source="eJ3RLoxxL0zo8U_XuLCM-54" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="eJ3RLoxxL0zo8U_XuLCM-56" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-89" y="3328" as="sourcePoint" />
+            <mxPoint x="44" y="3329" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-67" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="eJ3RLoxxL0zo8U_XuLCM-60" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="103" y="3182" as="sourcePoint" />
+            <mxPoint x="153" y="3132" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-68" edge="1" parent="1" source="eJ3RLoxxL0zo8U_XuLCM-56" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" target="eJ3RLoxxL0zo8U_XuLCM-61" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="125" y="3422" as="sourcePoint" />
+            <mxPoint x="175" y="3372" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-69" edge="1" parent="1" source="eJ3RLoxxL0zo8U_XuLCM-56" style="endArrow=classic;html=1;rounded=0;exitX=0.426;exitY=0.959;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="eJ3RLoxxL0zo8U_XuLCM-57" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="125" y="3422" as="sourcePoint" />
+            <mxPoint x="175" y="3372" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-70" edge="1" parent="1" source="eJ3RLoxxL0zo8U_XuLCM-57" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.576;entryY=0.961;entryDx=0;entryDy=0;entryPerimeter=0;" target="eJ3RLoxxL0zo8U_XuLCM-53" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="125" y="3422" as="sourcePoint" />
+            <mxPoint x="175" y="3372" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eJ3RLoxxL0zo8U_XuLCM-71" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="SSE" vertex="1">
+          <mxGeometry height="30" width="60" x="-184" y="3408" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
