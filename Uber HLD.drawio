@@ -1,9 +1,15 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="2cL-e1aPalSVDb-uw84N">
-    <mxGraphModel>
+    <mxGraphModel dx="1805" dy="811" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Hello Interview Delivery Framework&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Requirement Gathering (Functional &amp;amp; Non-functional)&lt;/div&gt;&lt;div&gt;2. Entity extraction and API design&lt;/div&gt;&lt;div&gt;3. Data flow (for infra heavy questions)&lt;/div&gt;&lt;div&gt;4. HLD that satisfies basic functional requirements&lt;/div&gt;&lt;div&gt;5. Deep dives into non-functional requirements&lt;/div&gt;" vertex="1">
+          <mxGeometry height="188" width="340" x="203" y="107" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Functional requirements&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Users should be able to input a start location and a destination and get an estimate fare&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. User should be able to request a ride based on an estimate&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;3. Drivers should be able to accept/deny a reqest and navigate to pickup/drop-off&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Out of scope&lt;/div&gt;&lt;div&gt;- Fare estimate or booking of multiple car types, we&#39;ll go with only one car type for now&lt;/div&gt;&lt;div&gt;- Ratings for drivers and riders&lt;/div&gt;&lt;div&gt;- Schedule a ride in advance&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Non-functional requirements&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Low latency matching &amp;lt; 1 min to match or failure&lt;/div&gt;&lt;div&gt;2. Consistency of matching. Ride to driver is 1:1&lt;/div&gt;&lt;div&gt;3. Highly available outside the matching&lt;/div&gt;&lt;div&gt;4. Handle high throughput, surges for peak hours or special events. 100s of thousands of requests within a given region&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Out of scope&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- GDPR user privacy&lt;/div&gt;&lt;div&gt;- resilience and handling system failures&lt;/div&gt;&lt;div&gt;- Monitoring, logging, alerting etc&lt;/div&gt;&lt;div&gt;- CI/CD pipeline&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="441" width="547" x="-231" y="428" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
