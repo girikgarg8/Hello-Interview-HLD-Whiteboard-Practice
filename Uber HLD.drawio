@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="2cL-e1aPalSVDb-uw84N">
-    <mxGraphModel dx="2673" dy="1081" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2156" dy="1014" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -67,6 +67,16 @@
         <mxCell id="4AVsCT5-GB9Ya2Id5GA0-32" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Authentication &amp;amp; Authorization&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Load balancing&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Routing&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Rate Limiting&lt;/div&gt;" vertex="1">
           <mxGeometry height="472" width="120" x="188" y="1799" as="geometry" />
         </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-80" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.59;entryY=0.924;entryDx=0;entryDy=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-210" y="2433.85" />
+              <mxPoint x="689.79" y="2433.85" />
+            </Array>
+            <mxPoint x="-210" y="2180" as="sourcePoint" />
+            <mxPoint x="689.7999999999997" y="2389.896" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="4AVsCT5-GB9Ya2Id5GA0-33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Driver (iOS/Android)" vertex="1">
           <mxGeometry height="60" width="137" x="-261" y="2118" as="geometry" />
         </mxCell>
@@ -122,13 +132,13 @@
           <mxGeometry height="30" width="60" x="791" y="1990" as="geometry" />
         </mxCell>
         <mxCell id="4AVsCT5-GB9Ya2Id5GA0-50" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Discussion on geohashing vs quadtree" vertex="1">
-          <mxGeometry height="30" width="60" x="-376" y="2496" as="geometry" />
+          <mxGeometry height="30" width="60" x="-368" y="2727" as="geometry" />
         </mxCell>
         <mxCell id="4AVsCT5-GB9Ya2Id5GA0-52" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Check if all fn reqmts are met" vertex="1">
-          <mxGeometry height="30" width="60" x="-406" y="2615" as="geometry" />
+          <mxGeometry height="30" width="60" x="-377" y="2994" as="geometry" />
         </mxCell>
         <mxCell id="4AVsCT5-GB9Ya2Id5GA0-53" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Explain point by point how each non fn requirement is met" vertex="1">
-          <mxGeometry height="30" width="60" x="-406" y="2822" as="geometry" />
+          <mxGeometry height="30" width="60" x="-377" y="3201" as="geometry" />
         </mxCell>
         <mxCell id="4AVsCT5-GB9Ya2Id5GA0-55" edge="1" parent="1" source="4AVsCT5-GB9Ya2Id5GA0-35" style="endArrow=classic;html=1;rounded=0;exitX=0.331;exitY=0.977;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.331;entryY=-0.049;entryDx=0;entryDy=0;entryPerimeter=0;" target="4AVsCT5-GB9Ya2Id5GA0-36" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
@@ -184,11 +194,11 @@
         <mxCell id="4AVsCT5-GB9Ya2Id5GA0-71" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="8. Consume events from Kafka topic" vertex="1">
           <mxGeometry height="30" width="126" x="1076" y="2362" as="geometry" />
         </mxCell>
-        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-72" edge="1" parent="1" source="4AVsCT5-GB9Ya2Id5GA0-37" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" value="">
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-72" edge="1" parent="1" source="4AVsCT5-GB9Ya2Id5GA0-37" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.608;entryY=0.937;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <Array as="points">
               <mxPoint x="491" y="2365" />
-              <mxPoint x="496.63" y="2168.94" />
+              <mxPoint x="-175.16" y="2360.32" />
             </Array>
             <mxPoint x="623" y="2369" as="sourcePoint" />
             <mxPoint x="-119.66" y="2165.53" as="targetPoint" />
@@ -205,6 +215,30 @@
         </mxCell>
         <mxCell id="4AVsCT5-GB9Ya2Id5GA0-75" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="10.&lt;div&gt;Accept/deny the booking&lt;/div&gt;" vertex="1">
           <mxGeometry height="30" width="60" x="-57" y="2069" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-81" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="11. Send driver&#39;s location updates" vertex="1">
+          <mxGeometry height="30" width="189" x="-32" y="2392" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-84" edge="1" parent="1" source="4AVsCT5-GB9Ya2Id5GA0-37" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="589" y="2365" as="sourcePoint" />
+            <mxPoint x="509.84" y="2302.97" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-85" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Kafka topic" vertex="1">
+          <mxGeometry height="39" width="120" x="419" y="2263" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-86" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="4AVsCT5-GB9Ya2Id5GA0-36" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="494" y="2263" as="sourcePoint" />
+            <mxPoint x="544" y="2213" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-87" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="12. Push location updates to Kafka topic" vertex="1">
+          <mxGeometry height="30" width="153" x="548" y="2300" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-89" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="13. Update location in geospatial DB" vertex="1">
+          <mxGeometry height="30" width="101" x="452" y="2189" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
