@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="2cL-e1aPalSVDb-uw84N">
-    <mxGraphModel dx="1805" dy="811" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2453" dy="954" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -9,6 +9,147 @@
         </mxCell>
         <mxCell id="4AVsCT5-GB9Ya2Id5GA0-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Functional requirements&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Users should be able to input a start location and a destination and get an estimate fare&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. User should be able to request a ride based on an estimate&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;3. Drivers should be able to accept/deny a reqest and navigate to pickup/drop-off&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Out of scope&lt;/div&gt;&lt;div&gt;- Fare estimate or booking of multiple car types, we&#39;ll go with only one car type for now&lt;/div&gt;&lt;div&gt;- Ratings for drivers and riders&lt;/div&gt;&lt;div&gt;- Schedule a ride in advance&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Non-functional requirements&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Low latency matching &amp;lt; 1 min to match or failure&lt;/div&gt;&lt;div&gt;2. Consistency of matching. Ride to driver is 1:1&lt;/div&gt;&lt;div&gt;3. Highly available outside the matching&lt;/div&gt;&lt;div&gt;4. Handle high throughput, surges for peak hours or special events. 100s of thousands of requests within a given region&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Out of scope&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- GDPR user privacy&lt;/div&gt;&lt;div&gt;- resilience and handling system failures&lt;/div&gt;&lt;div&gt;- Monitoring, logging, alerting etc&lt;/div&gt;&lt;div&gt;- CI/CD pipeline&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="441" width="547" x="-231" y="428" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Entity extraction and API design" vertex="1">
+          <mxGeometry height="30" width="223" x="-238" y="917" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Driver&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- Name&lt;/div&gt;&lt;div&gt;- CurrentLocation (Lat &amp;amp; Long)&lt;/div&gt;&lt;div&gt;- Phone Number&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="189" x="-255" y="1023" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Passenger&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- Name&lt;/div&gt;&lt;div&gt;- Phone Number&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="126" x="8" y="1023" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Vehicle&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- RegistrationId&lt;/div&gt;&lt;div&gt;- OwnerDriverId&lt;/div&gt;&lt;div&gt;...&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;...other metadata&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="193" x="203" y="985" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Ride&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- PassengerId&lt;/div&gt;&lt;div&gt;- DriverId&lt;/div&gt;&lt;div&gt;- SourceCoordinates&lt;/div&gt;&lt;div&gt;- DestinationCoordinates&lt;/div&gt;&lt;div&gt;- Status&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="167" x="494" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="PricingRequest&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- VehicleType&lt;/div&gt;&lt;div&gt;- SourceCoordinates&lt;/div&gt;&lt;div&gt;- DestinationCoordinates&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="137" x="-40" y="1222" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;PricingResponse&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="362" y="1192" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- Id&lt;div&gt;- MinPriceRange&lt;/div&gt;&lt;div&gt;- MaxPriceRange&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="113" x="364" y="1229" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="APIs" vertex="1">
+          <mxGeometry height="30" width="60" x="-261" y="1349" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="GET /prices?latitude={}&amp;amp;long={}&amp;amp;vehicleType={type}" vertex="1">
+          <mxGeometry height="30" width="113" x="-287.5" y="1421" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Response: PricingResponse" vertex="1">
+          <mxGeometry height="30" width="60" x="-266" y="1507" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="POST /rides" vertex="1">
+          <mxGeometry height="30" width="113" x="-62" y="1407" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Req Body: Ride" vertex="1">
+          <mxGeometry height="30" width="60" x="-48" y="1515" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="PassengerID extracted from JWT/Session ticket" vertex="1">
+          <mxGeometry height="30" width="189" x="-100" y="1456" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="PATCH /rides/:id" vertex="1">
+          <mxGeometry height="30" width="113" x="215" y="1404" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Rider ID extracted from JWT/Session ticket" vertex="1">
+          <mxGeometry height="30" width="189" x="183" y="1461" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-27" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HLD" vertex="1">
+          <mxGeometry height="30" width="60" x="-287.5" y="1635" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Passenger (iOS/Android)" vertex="1">
+          <mxGeometry height="60" width="137" x="-266" y="1893" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-32" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Authentication &amp;amp; Authorization&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Load balancing&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Routing&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Rate Limiting&lt;/div&gt;" vertex="1">
+          <mxGeometry height="472" width="120" x="188" y="1799" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Driver (iOS/Android)" vertex="1">
+          <mxGeometry height="60" width="137" x="-261" y="2118" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Fare Estimate Service" vertex="1">
+          <mxGeometry height="60" width="120" x="623" y="1806" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-35" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Ride Service" vertex="1">
+          <mxGeometry height="54" width="120" x="623" y="1990" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-36" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Location Service" vertex="1">
+          <mxGeometry height="54" width="120" x="625" y="2183" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Notification Service" vertex="1">
+          <mxGeometry height="54" width="120" x="623" y="2338" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-38" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-129" y="1924" as="sourcePoint" />
+            <mxPoint x="186.56" y="1920.92" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-39" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="4AVsCT5-GB9Ya2Id5GA0-34" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="308" y="1927" as="sourcePoint" />
+            <mxPoint x="358" y="1877" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-40" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. getFareEstimate(source,dest,type)" vertex="1">
+          <mxGeometry height="30" width="207" x="337" y="1833" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-41" edge="1" parent="1" source="4AVsCT5-GB9Ya2Id5GA0-32" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.969;exitY=0.348;exitDx=0;exitDy=0;exitPerimeter=0;" target="4AVsCT5-GB9Ya2Id5GA0-35" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="396" y="2114" as="sourcePoint" />
+            <mxPoint x="711" y="2023" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-42" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. createRide(source,destination,type)" vertex="1">
+          <mxGeometry height="30" width="259" x="308" y="2002" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-43" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="PostgreSQL" vertex="1">
+          <mxGeometry height="80" width="80" x="908" y="1981" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-44" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="(SQL DB is chosen because of strong consistency requirement to avoid double booking)" vertex="1">
+          <mxGeometry height="30" width="240" x="1016" y="2012" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-47" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="4AVsCT5-GB9Ya2Id5GA0-43" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="743" y="2018" as="sourcePoint" />
+            <mxPoint x="793" y="1968" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-48" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Persist ride in DB" vertex="1">
+          <mxGeometry height="30" width="60" x="791" y="1990" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-50" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Discussion on geohashing vs quadtree" vertex="1">
+          <mxGeometry height="30" width="60" x="-376" y="2496" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-52" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Check if all fn reqmts are met" vertex="1">
+          <mxGeometry height="30" width="60" x="-406" y="2615" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-53" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Explain point by point how each non fn requirement is met" vertex="1">
+          <mxGeometry height="30" width="60" x="-406" y="2822" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-55" edge="1" parent="1" source="4AVsCT5-GB9Ya2Id5GA0-35" style="endArrow=classic;html=1;rounded=0;exitX=0.331;exitY=0.977;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.331;entryY=-0.049;entryDx=0;entryDy=0;entryPerimeter=0;" target="4AVsCT5-GB9Ya2Id5GA0-36" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="649" y="2088" as="sourcePoint" />
+            <mxPoint x="699" y="2038" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-56" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="4. Query nearby drivers near to source" vertex="1">
+          <mxGeometry height="30" width="60" x="570" y="2088" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-57" edge="1" parent="1" source="4AVsCT5-GB9Ya2Id5GA0-36" style="endArrow=classic;html=1;rounded=0;exitX=0.647;exitY=0.01;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.664;entryY=1.035;entryDx=0;entryDy=0;entryPerimeter=0;" target="4AVsCT5-GB9Ya2Id5GA0-35" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="649" y="2067" as="sourcePoint" />
+            <mxPoint x="699" y="2017" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-59" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="5. Return response" vertex="1">
+          <mxGeometry height="11" width="60" x="745" y="2095" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-62" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;PostGIS/&lt;/span&gt;ElasticSearch" vertex="1">
+          <mxGeometry height="80" width="80" x="908" y="2178" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
