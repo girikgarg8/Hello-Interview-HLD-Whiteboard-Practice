@@ -134,9 +134,6 @@
         <mxCell id="4AVsCT5-GB9Ya2Id5GA0-50" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Discussion on geohashing vs quadtree" vertex="1">
           <mxGeometry height="30" width="167" x="-415" y="2615" as="geometry" />
         </mxCell>
-        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-53" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Explain point by point how each non fn requirement is met" vertex="1">
-          <mxGeometry height="30" width="60" x="-488" y="3969" as="geometry" />
-        </mxCell>
         <mxCell id="4AVsCT5-GB9Ya2Id5GA0-55" edge="1" parent="1" source="4AVsCT5-GB9Ya2Id5GA0-35" style="endArrow=classic;html=1;rounded=0;exitX=0.331;exitY=0.977;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.331;entryY=-0.049;entryDx=0;entryDy=0;entryPerimeter=0;" target="4AVsCT5-GB9Ya2Id5GA0-36" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <mxPoint x="649" y="2088" as="sourcePoint" />
