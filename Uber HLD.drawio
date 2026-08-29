@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="2cL-e1aPalSVDb-uw84N">
-    <mxGraphModel dx="2407" dy="1159" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2205" dy="811" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -132,13 +132,10 @@
           <mxGeometry height="30" width="60" x="791" y="1990" as="geometry" />
         </mxCell>
         <mxCell id="4AVsCT5-GB9Ya2Id5GA0-50" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Discussion on geohashing vs quadtree" vertex="1">
-          <mxGeometry height="30" width="60" x="-368" y="2727" as="geometry" />
-        </mxCell>
-        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-52" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Check if all fn reqmts are met" vertex="1">
-          <mxGeometry height="30" width="60" x="-377" y="2994" as="geometry" />
+          <mxGeometry height="30" width="167" x="-415" y="2615" as="geometry" />
         </mxCell>
         <mxCell id="4AVsCT5-GB9Ya2Id5GA0-53" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Explain point by point how each non fn requirement is met" vertex="1">
-          <mxGeometry height="30" width="60" x="-377" y="3201" as="geometry" />
+          <mxGeometry height="30" width="60" x="-488" y="3969" as="geometry" />
         </mxCell>
         <mxCell id="4AVsCT5-GB9Ya2Id5GA0-55" edge="1" parent="1" source="4AVsCT5-GB9Ya2Id5GA0-35" style="endArrow=classic;html=1;rounded=0;exitX=0.331;exitY=0.977;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.331;entryY=-0.049;entryDx=0;entryDy=0;entryPerimeter=0;" target="4AVsCT5-GB9Ya2Id5GA0-36" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
@@ -239,6 +236,36 @@
         </mxCell>
         <mxCell id="4AVsCT5-GB9Ya2Id5GA0-89" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="13. Update location in geospatial DB" vertex="1">
           <mxGeometry height="30" width="101" x="452" y="2189" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-91" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Geohashing&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;How it works?&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;The world map is firstly divided along longitude, then latitude, then longitude and so on repeatedly&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;The binary string &quot;0101011&quot; etc so obtained is then base32 encoded&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Let&#39;s say after base32 encoding we obtain a string like &quot;abcd&quot;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;To find nearby coordinates , we do a pattern search for ab* or abc* etc&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="300" width="161" x="-405" y="2769" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-92" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Advantage:&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="180" x="-405" y="3084" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-93" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Good for write heavy usecases with high frequency location updates (eg: Zomato, Uber etc)&amp;nbsp;because encoding is O(1) and do not need to rebalance spatial tree.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;2. 2D location becomes a 1D string, so we can use ordinary string indexes.&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="504" x="-421" y="3160" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-94" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Disadvantages:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="-425" y="3247" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-95" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1.&amp;nbsp;&amp;nbsp;Uses a uniform grid size globally, meaning it cannot automatically adapt to high-density vs. low-density areas without manual precision tuning&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2.&amp;nbsp;&amp;nbsp;Neighboring points close in physical distance can fall across different grid cell boundaries (having completely different hash prefixes), requiring checks of 8 adjacent cells for accurate proximity searches.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="105" width="385" x="-449" y="3285" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-96" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;How it works: A tree structure where every node has four children (obtained by dividing a cell into four smaller cells)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="658" x="-483" y="3482" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-97" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Quadtree" vertex="1">
+          <mxGeometry height="30" width="60" x="-465" y="3460" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-98" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Advantage:" vertex="1">
+          <mxGeometry height="30" width="60" x="-459" y="3540" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-99" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1.&amp;nbsp;Adapts to density: busy cities go deep, empty ocean stays one big leaf." vertex="1">
+          <mxGeometry height="30" width="711" x="-633" y="3586" as="geometry" />
+        </mxCell>
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-100" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Disadvantages:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Writes are heavier: split/merge as points move (Uber-style updates hurt more than geohash).&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="548" x="-485" y="3654" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
