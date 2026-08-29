@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="2cL-e1aPalSVDb-uw84N">
-    <mxGraphModel dx="2156" dy="1014" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2407" dy="1159" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -194,14 +194,14 @@
         <mxCell id="4AVsCT5-GB9Ya2Id5GA0-71" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="8. Consume events from Kafka topic" vertex="1">
           <mxGeometry height="30" width="126" x="1076" y="2362" as="geometry" />
         </mxCell>
-        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-72" edge="1" parent="1" source="4AVsCT5-GB9Ya2Id5GA0-37" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.608;entryY=0.937;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+        <mxCell id="4AVsCT5-GB9Ya2Id5GA0-72" edge="1" parent="1" source="4AVsCT5-GB9Ya2Id5GA0-37" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <Array as="points">
               <mxPoint x="491" y="2365" />
               <mxPoint x="-175.16" y="2360.32" />
             </Array>
             <mxPoint x="623" y="2369" as="sourcePoint" />
-            <mxPoint x="-119.66" y="2165.53" as="targetPoint" />
+            <mxPoint x="-175.16" y="2178.96" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="4AVsCT5-GB9Ya2Id5GA0-73" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="9. Notify drivers about new ride request" vertex="1">
