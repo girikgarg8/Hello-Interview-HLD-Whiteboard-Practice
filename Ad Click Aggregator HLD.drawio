@@ -100,6 +100,15 @@
         <mxCell id="0hhlm2UFPbmznsoc-qR2-35" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Ad&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- RedirectURL&lt;/div&gt;&lt;div&gt;...Other metadata&lt;/div&gt;" vertex="1">
           <mxGeometry height="30" width="129" x="927" y="2161" as="geometry" />
         </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-36" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Kafka/Kinesis stream" vertex="1">
+          <mxGeometry height="60" width="102" x="762" y="2350" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Flink job" vertex="1">
+          <mxGeometry height="60" width="102" x="978" y="2350" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-38" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="OLAP database" vertex="1">
+          <mxGeometry height="80" width="80" x="1243" y="2350" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
