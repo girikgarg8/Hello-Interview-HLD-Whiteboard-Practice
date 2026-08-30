@@ -41,7 +41,43 @@
           <mxGeometry height="30" width="275" x="-41" y="1018" as="geometry" />
         </mxCell>
         <mxCell id="0hhlm2UFPbmznsoc-qR2-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Out of scope&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Spam detection&lt;/div&gt;&lt;div&gt;- Demographic profiling&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Conversion tracking&lt;/span&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="30" width="292" x="-45" y="1118" as="geometry" />
+          <mxGeometry height="30" width="292" x="-72.5" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Data flow (important for infra heavy questions like these)" vertex="1">
+          <mxGeometry height="30" width="347" x="-32" y="1269" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Input&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="-21" y="1351" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- Click Data&lt;div&gt;- Advertiser queries&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="154" x="-48" y="1392" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;Output&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="-24" y="1463" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- Redirection&lt;div&gt;- Aggregated Click metrics&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="154" x="-32" y="1517" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="How the input data will be transformed to output? (high level)" vertex="1">
+          <mxGeometry height="30" width="261" x="-36" y="1610" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Click data comes into the system" vertex="1">
+          <mxGeometry height="30" width="217" x="-32" y="1684" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. User is redirected" vertex="1">
+          <mxGeometry height="30" width="217" x="-70" y="1727" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Click data validated" vertex="1">
+          <mxGeometry height="30" width="217" x="-67" y="1771" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="4. Click data logged" vertex="1">
+          <mxGeometry height="30" width="217" x="-75" y="1815" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-25" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="5. Click data aggregated" vertex="1">
+          <mxGeometry height="30" width="217" x="-64" y="1864" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="6. Aggregated data queried" vertex="1">
+          <mxGeometry height="30" width="217" x="-60" y="1908" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
