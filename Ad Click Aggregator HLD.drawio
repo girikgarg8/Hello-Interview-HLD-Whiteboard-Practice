@@ -79,6 +79,27 @@
         <mxCell id="0hhlm2UFPbmznsoc-qR2-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="6. Aggregated data queried" vertex="1">
           <mxGeometry height="30" width="217" x="-60" y="1908" as="geometry" />
         </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-27" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HLD" vertex="1">
+          <mxGeometry height="30" width="60" x="-36" y="1992" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client (User)" vertex="1">
+          <mxGeometry height="60" width="120" x="-24" y="2231" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-30" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Authentication &amp;amp; Authorization&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Rate Limiting&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Routing&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Load Balancing&lt;/div&gt;" vertex="1">
+          <mxGeometry height="364" width="120" x="214" y="2109" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Ad Placement Service" vertex="1">
+          <mxGeometry height="60" width="102" x="536" y="2146" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-32" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="DynamoDB" vertex="1">
+          <mxGeometry height="80" width="80" x="782" y="2138" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Click Processing Service" vertex="1">
+          <mxGeometry height="60" width="102" x="536" y="2342" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-35" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Ad&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- RedirectURL&lt;/div&gt;&lt;div&gt;...Other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="129" x="927" y="2161" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
