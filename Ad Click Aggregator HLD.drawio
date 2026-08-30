@@ -1,11 +1,47 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="N8x26qexgqWFth8rlQlZ">
-    <mxGraphModel dx="1405" dy="811" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1805" dy="811" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="0hhlm2UFPbmznsoc-qR2-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Hello Interview Delivery Framework&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Requirement Gathering (Functional and non-functional)&lt;/div&gt;&lt;div&gt;2. Entity extraction and API design&lt;/div&gt;&lt;div&gt;3. Data flow (for infra heavy questions like this)&lt;/div&gt;&lt;div&gt;4. HLD that satisfies basic functional requirements&lt;/div&gt;&lt;div&gt;5. Deep dives into non functional requirements&lt;/div&gt;" vertex="1">
           <mxGeometry height="155" width="504" x="51" y="115" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Functional requirements" vertex="1">
+          <mxGeometry height="30" width="216" x="2" y="358" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Users click an ad and get redirected to the advertiser&#39;s website&lt;div&gt;2. Advertisers can query click metrics over time with 1 minute time granulairity&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="414" x="19" y="426" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Non functional requirements" vertex="1">
+          <mxGeometry height="30" width="216" x="11" y="639" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Out of scope&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Ad targetting and serving&lt;/div&gt;&lt;div&gt;- Cross device tracking&lt;/div&gt;&lt;div&gt;- Integration with offline channels&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="292" x="-10" y="531" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="• Discussion on scale of system&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- 10 Million ads at any given time&lt;/div&gt;&lt;div&gt;- 10K ad clicks per second at peak&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="261" x="-11.5" y="713" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- System should be scalable to support 10K CPS" vertex="1">
+          <mxGeometry height="30" width="275" x="24" y="787" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- Low latency analytics queries &amp;lt; 1 sec" vertex="1">
+          <mxGeometry height="30" width="275" x="-6" y="834" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- Fault tolerance" vertex="1">
+          <mxGeometry height="30" width="275" x="-64" y="881" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- Data integrity" vertex="1">
+          <mxGeometry height="30" width="275" x="-67" y="928" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- As realtime as possible" vertex="1">
+          <mxGeometry height="30" width="275" x="-45" y="975" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- Idempotency of ad clicks" vertex="1">
+          <mxGeometry height="30" width="275" x="-41" y="1018" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Out of scope&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Spam detection&lt;/div&gt;&lt;div&gt;- Demographic profiling&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Conversion tracking&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="292" x="-45" y="1118" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
