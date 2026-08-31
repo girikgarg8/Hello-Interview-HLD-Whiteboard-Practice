@@ -109,6 +109,9 @@
         <mxCell id="0hhlm2UFPbmznsoc-qR2-38" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="OLAP database" vertex="1">
           <mxGeometry height="80" width="80" x="1243" y="2350" as="geometry" />
         </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-39" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q. In the reconciliation workflow, why do we need s3? can spark not read from kafla stream with durability of 7 days?" vertex="1">
+          <mxGeometry height="30" width="531" x="-50" y="2716" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
