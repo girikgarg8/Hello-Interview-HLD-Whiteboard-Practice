@@ -113,13 +113,13 @@
           <mxGeometry height="30" width="531" x="-53" y="2938" as="geometry" />
         </mxCell>
         <mxCell id="0hhlm2UFPbmznsoc-qR2-41" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q. What makes OLAP Database much faster for analytical queries than OLTP databases like PostgreSQL ?" vertex="1">
-          <mxGeometry height="30" width="397" x="-31" y="3102" as="geometry" />
+          <mxGeometry height="30" width="397" x="-35.5" y="3540" as="geometry" />
         </mxCell>
         <mxCell id="0hhlm2UFPbmznsoc-qR2-42" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q. Difference between Flink and Spark?" vertex="1">
-          <mxGeometry height="30" width="361" x="-97" y="3336" as="geometry" />
+          <mxGeometry height="30" width="361" x="-125" y="3891" as="geometry" />
         </mxCell>
         <mxCell id="0hhlm2UFPbmznsoc-qR2-43" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q. How is idempotency of ad views ensured in this design ?" vertex="1">
-          <mxGeometry height="30" width="323" x="-36" y="3543" as="geometry" />
+          <mxGeometry height="30" width="323" x="-53" y="4051" as="geometry" />
         </mxCell>
         <mxCell id="0hhlm2UFPbmznsoc-qR2-44" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.01;entryY=0.432;entryDx=0;entryDy=0;entryPerimeter=0;" target="0hhlm2UFPbmznsoc-qR2-30" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
@@ -146,7 +146,7 @@
           <mxGeometry height="30" width="217" x="483" y="2083" as="geometry" />
         </mxCell>
         <mxCell id="0hhlm2UFPbmznsoc-qR2-51" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q. Why is click processing service handling both click redirection and push to Kafka/Kinesis stream?" vertex="1">
-          <mxGeometry height="30" width="476" x="-55" y="2999" as="geometry" />
+          <mxGeometry height="30" width="476" x="-75" y="3189" as="geometry" />
         </mxCell>
         <mxCell id="0hhlm2UFPbmznsoc-qR2-52" edge="1" parent="1" source="0hhlm2UFPbmznsoc-qR2-30" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="0hhlm2UFPbmznsoc-qR2-33" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
@@ -288,6 +288,27 @@
         </mxCell>
         <mxCell id="0hhlm2UFPbmznsoc-qR2-100" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- AdId&lt;div&gt;- Minute&lt;/div&gt;&lt;div&gt;- Total Clicks&lt;/div&gt;" vertex="1">
           <mxGeometry height="30" width="153" x="1317" y="2384" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-102" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="A. Theoretically speaking, a Flink or Spark job can read from S3 or Kinesis/Kafka stream and do the aggregation&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;However, in this specific usecase, since Spark is being used for reconciliation, it makes sense to do it over a bounded S3 bucket than a live stream.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="303" x="-53" y="3035" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-104" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="A. Let&#39;s evaluate different options:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Option A:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Ad Placement service returns the redirect URL for each ad, and client (browser) fires a second call to processing service to record the event in Kafka/Kinesis stream&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Disadvantage: If client had ad blocker installed, the second call to record event will never fire, due to which our metrics will be skewed&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Option B:&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Click Processing Service is responsible for both the ad redirection and pushing event to Kafka/Kinesis stream.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;This helps solves the issues related to incomplete clickstream data.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="448" x="-61" y="3324" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-106" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="OLAP Database: Stores data column by column. The database only reads the price column off the disk, ignoring all other irrelevant attributes. This architecture can instantly reduce the data loaded into memory by 10x to 50x." vertex="1">
+          <mxGeometry height="30" width="418" x="-38" y="3779" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-107" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&amp;nbsp;Storage Layout: Row-Oriented vs. Columnar" vertex="1">
+          <mxGeometry height="30" width="278" x="-35.5" y="3602" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-108" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="OLTP (PostgreSQL): Stores data row by row (contiguous on disk). If you run an analytical query like SELECT AVG(price) FROM sales, PostgreSQL must load the entire row—including fields like customer_id, shipping_address, and timestamp—into memory just to extract the price column. This causes massive, unnecessary Disk I/O" vertex="1">
+          <mxGeometry height="30" width="457.5" x="-35.5" y="3696" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-109" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="A. Flink is used for realtime stream processing while Spark is used for batch stream processing&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="397" x="-64" y="3968" as="geometry" />
+        </mxCell>
+        <mxCell id="0hhlm2UFPbmznsoc-qR2-111" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Answer.&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;A. Page load&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;User opens a page that needs an ad.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Picks an adId&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;impressionId = UUID() — generated here, in process&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Signs adId + impressionId + timestamp with the private key.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Returns HTML &amp;lt;a href=&quot;https://clicks…/c?adId=&amp;amp;imp=&amp;amp;ts=&amp;amp;sig=&quot;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Until someone clicks, that id exists only in the URL (and maybe Placement logs).&amp;nbsp;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;B. Click — Click Processor&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Browser hits Click Processor with those query params.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Verify sig with the public key → proves Placement minted this imp.&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Redis: have we seen this imp?&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="359" width="573" x="-188" y="4126" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
