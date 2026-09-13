@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="jPIsLkbbkSyFe4eVlREV">
-    <mxGraphModel dx="3141" dy="868" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3541" dy="868" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -498,6 +498,117 @@
         </mxCell>
         <mxCell id="e2RgB2zIPSqEstAvz9yk-153" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Key is window:{truncated_timestamp}&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;TTL will be kept 30 days to fallback in case latest data is not available&lt;/div&gt;" vertex="1">
           <mxGeometry height="75" width="342" x="-545" y="7551" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-160" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Some variations of the same problem" vertex="1">
+          <mxGeometry height="30" width="293" x="-1608" y="7972" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-161" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Having cracked the main problem, let&#39;s look at some of the variants of this problem" vertex="1">
+          <mxGeometry height="30" width="377" x="-1567" y="8034" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-162" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Supporting sliding window, so far in the problem we have been discussing tumbling windows" vertex="1">
+          <mxGeometry height="30" width="500" x="-1571" y="8134" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-163" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. So far, we had been supporting tumbling windows which had predictable time windows. Last hour always meant 09:00-10:00, last week always meant from Monday to Sunday etc&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;So, the minimum granularity at which we were storing the data was hourly buckets : 3 Sept 9-10, 10-11 etc since it sufficed for our usecase&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="428" x="-1638" y="8464" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-165" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Problem:" vertex="1">
+          <mxGeometry height="30" width="60" x="-1638" y="8377" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-166" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. However, with sliding window, if the time right now is 11:17, I will have to query data from 10:17 to 11:17 for last hour&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Storing the view data at minimum granularity of hour is no longer sufficient (otherwise how would I return data of 10:17 to 11:17 ?). We need to store view data at minimum granularity of minute.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="115" width="431" x="-1650" y="8579" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-167" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Okay, understood that we have to store the data at minute granularity level. But, how will the queries work on the read path ?&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Example: If I have a query to data from 9:01 to 10:01 (last hour), do I need to query all the minute level data and sum it up ?&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="397" x="-1641" y="8753" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-168" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Answer: No, that would be highly inefficient.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Instead, we&#39;ll have the precomputed tumbling window answers stored already, and will try to reuse them as much as possible&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Example: for the query from 9:01 to 10:01, the tumbling window data from 9:00 to 10:00 can be reused. Only thing is, data from 9:00 to 9:01 needs to be deleted while that from 10:00 to 10:01 need to be added&lt;/div&gt;" vertex="1">
+          <mxGeometry height="133" width="377" x="-1616" y="8843" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-169" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Updated HLD to support sliding window" vertex="1">
+          <mxGeometry height="30" width="164" x="-1719.5" y="9028" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-170" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;VideoViews&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;Kafka Topic/Stream" vertex="1">
+          <mxGeometry height="60" width="120" x="-1682" y="9422" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-171" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Flink Job" vertex="1">
+          <mxGeometry height="60" width="120" x="-1435" y="9422" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-172" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;endFill=0;" target="e2RgB2zIPSqEstAvz9yk-171" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-1562" y="9452" as="sourcePoint" />
+            <mxPoint x="-1512" y="9402" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-173" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-1315" y="9454" as="sourcePoint" />
+            <mxPoint x="-1181.34" y="9454" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-175" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Views DB&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(Postgres)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="80" width="80" x="-1181" y="9418" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-176" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="VideoViewsMinute&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- VideoId&lt;/div&gt;&lt;div&gt;- Views&lt;/div&gt;&lt;div&gt;- time bucket&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="134" x="-1031" y="9430" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-177" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;blockquote style=&quot;margin: 0px 0px 0px 40px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px;&quot;&gt;First of all, to be clear on what sliding window means here:&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0px 0px 0px 40px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px;&quot;&gt;&lt;br&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0px 0px 0px 40px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px;&quot;&gt;&lt;blockquote style=&quot;margin: 0px 0px 0px 40px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px;&quot;&gt;• It is NOT about arbitrary queries, like give me data from 10:05 to 11:05 on last Tuesday&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0px 0px 0px 40px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px;&quot;&gt;&lt;br&gt;&lt;/blockquote&gt;&lt;blockquote style=&quot;margin: 0px 0px 0px 40px; border-width: medium; border-style: none; border-color: currentcolor; border-image: none; padding: 0px;&quot;&gt;• It is ONLY about getting data from last 60 minutes (from the time of query), last 24 hours (from time of query) etc&lt;/blockquote&gt;&lt;/blockquote&gt;" vertex="1">
+          <mxGeometry height="30" width="593" x="-1672" y="8240" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-178" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Q. How the sliding window calculation works ?" vertex="1">
+          <mxGeometry height="30" width="253" x="-1748" y="9709" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-179" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="VideoViewsLastHour&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- VideoId&lt;/div&gt;&lt;div&gt;- Views&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="134" x="-848" y="9424" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-180" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="VideoViewsLastDay&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- VideoId&lt;/div&gt;&lt;div&gt;- Views&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="134" x="-653" y="9424" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-181" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="VideoViewsLastMonth&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- VideoId&lt;/div&gt;&lt;div&gt;- Views&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="134" x="-484" y="9426" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-182" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Notes&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Last hour, day etc here mean data from last 60 mins, last 24 hrs etc from the time of query&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. There will be an index on views column in each of these tables for faster read queries&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="389" x="-836" y="9539" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-183" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="A.ViewsLastHour (t) = ViewsLastHour (t-1) - ViewsMinute(t-61) +&amp;nbsp;&amp;nbsp;ViewsMinute(t)&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Basically, remove the data of 61th minute and add data of the current minute&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="270" x="-1770" y="9787" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-184" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Cron job" vertex="1">
+          <mxGeometry height="33" width="80" x="-1167" y="9282" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-185" edge="1" parent="1" source="e2RgB2zIPSqEstAvz9yk-184" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-598" y="9572" as="sourcePoint" />
+            <mxPoint x="-1010" y="9232.05" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-186" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Redis Cache" vertex="1">
+          <mxGeometry height="33" width="80" x="-1045" y="9196" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-187" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Top K fetch service" vertex="1">
+          <mxGeometry height="35.5" width="105" x="-1409.5" y="9190" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-188" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway" vertex="1">
+          <mxGeometry height="101" width="105" x="-1690" y="9162" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-189" edge="1" parent="1" source="e2RgB2zIPSqEstAvz9yk-188" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.991;exitY=0.454;exitDx=0;exitDy=0;exitPerimeter=0;" target="e2RgB2zIPSqEstAvz9yk-187" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-1581.85" y="9204.5" as="sourcePoint" />
+            <mxPoint x="-933" y="9513" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-190" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.026;entryY=0.391;entryDx=0;entryDy=0;exitX=0.991;exitY=0.454;exitDx=0;exitDy=0;exitPerimeter=0;entryPerimeter=0;" target="e2RgB2zIPSqEstAvz9yk-186" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-1304.5" y="9207.49" as="sourcePoint" />
+            <mxPoint x="-1127.5" y="9207.49" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-191" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Key is window:{truncated_timestamp}&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;TTL will be kept 30 days to fallback in case latest data is not available&lt;/div&gt;" vertex="1">
+          <mxGeometry height="75" width="342" x="-953" y="9165" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-192" edge="1" parent="1" source="e2RgB2zIPSqEstAvz9yk-184" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="e2RgB2zIPSqEstAvz9yk-175" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-1131" y="9418" as="sourcePoint" />
+            <mxPoint x="-1081" y="9368" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
