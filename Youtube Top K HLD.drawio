@@ -436,6 +436,21 @@
         <mxCell id="e2RgB2zIPSqEstAvz9yk-130" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="VideoViewAllTime table&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Video&lt;/div&gt;&lt;div&gt;- Views&lt;/div&gt;" vertex="1">
           <mxGeometry height="30" width="155" x="-323" y="6707" as="geometry" />
         </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-131" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Option 3:" vertex="1">
+          <mxGeometry height="30" width="60" x="-1233" y="6826" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-132" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Have Flink job do the aggregation at hourly, weekly, monthly granularity etc&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;It will eliminate the need for Postgres and cron job completely&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Flink job can write data aggregated hourly, daily and monthly data to Redis cache&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="456" x="-1227" y="6901" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-133" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Disadvantages of this solution (why it&#39;s not good for interviews):&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="461" x="-1260.5" y="6987" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-135" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. It makes the entire problem lean heavily on Flink, which the interviewer might not be happy with." vertex="1">
+          <mxGeometry height="30" width="576" x="-1246" y="7053" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-136" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. The interview discussion might shift to Flink internals, algorithms etc which we might not be familiar with" vertex="1">
+          <mxGeometry height="30" width="576" x="-1233" y="7107" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
