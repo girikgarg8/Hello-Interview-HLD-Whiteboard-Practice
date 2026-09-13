@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="jPIsLkbbkSyFe4eVlREV">
-    <mxGraphModel dx="2557" dy="1215" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3357" dy="1215" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -60,6 +60,63 @@
         </mxCell>
         <mxCell id="e2RgB2zIPSqEstAvz9yk-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Notes:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. window in this context means &#39;last week&#39;, &#39;last month&#39; etc.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. k is assumed to be small enough in this problem (max 1000). Hence, pagination is not required&lt;/div&gt;" vertex="1">
           <mxGeometry height="118" width="236" x="216" y="1469" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HLD that satisfies basic functional requirements" vertex="1">
+          <mxGeometry height="30" width="359" x="-813" y="1714" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Note that in the context of my problem, the focus is on top K.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Hence, I can assume that the data of views in present in a Kafka topic, which is already available and can be consumed.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="81" width="383" x="-801" y="1782" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-24" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Video Views (Kafka topic)" vertex="1">
+          <mxGeometry height="60" width="173" x="-773" y="2265" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-25" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-600" y="2297" as="sourcePoint" />
+            <mxPoint x="-488.85" y="2297" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-26" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="View Consumer" vertex="1">
+          <mxGeometry height="63" width="173" x="-483" y="2265" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-27" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-310" y="2297" as="sourcePoint" />
+            <mxPoint x="-219.51" y="2297" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-28" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Views DB&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;(Postgres)&lt;/span&gt;" vertex="1">
+          <mxGeometry height="102" width="102" x="-217" y="2245.5" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="VideoViews&lt;div&gt;&lt;br&gt;&lt;div&gt;• videoId&lt;/div&gt;&lt;div&gt;• views&lt;/div&gt;&lt;div&gt;• timestamp&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Index on timestamp is created for fast range queries&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="118" width="204" x="60" y="2250" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-30" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Note:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Timestamp in above schema doesn&#39;t mean exact timestamp at which the view occurred, but the hourly time bucket (9-10 PM, 10-11 PM etc) in which the view landed&lt;/div&gt;" vertex="1">
+          <mxGeometry height="69" width="233" x="60" y="2435" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Top K Fetch Service" vertex="1">
+          <mxGeometry height="60" width="120" x="-469" y="2113" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-32" edge="1" parent="1" source="e2RgB2zIPSqEstAvz9yk-31" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="e2RgB2zIPSqEstAvz9yk-28" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="67" y="2419" as="sourcePoint" />
+            <mxPoint x="117" y="2369" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway" vertex="1">
+          <mxGeometry height="63" width="120" x="-768" y="2113" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-35" edge="1" parent="1" source="e2RgB2zIPSqEstAvz9yk-33" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="e2RgB2zIPSqEstAvz9yk-31" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="67" y="2419" as="sourcePoint" />
+            <mxPoint x="117" y="2369" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-36" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="SQL query for fetching top K:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;SELECT videoId, SUM(views) as views&lt;/div&gt;&lt;div&gt;FROM videoViews&lt;/div&gt;&lt;div&gt;WHERE timstamp &amp;gt;= {windowStart} AND timestamp &amp;lt;= {windowEnd}&lt;/div&gt;&lt;div&gt;GROUP BY videoId&lt;/div&gt;&lt;div&gt;ORDER BY SUM(views) DESC LIMIT {k}&lt;/div&gt;" vertex="1">
+          <mxGeometry height="94" width="391" x="-899" y="2514" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-38" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Note: this basic HLD satisfies all functional requirements, but it is not scalable, low latency etc&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;We will cover these non-functional requirements in the next sections&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="403" x="-920" y="2762" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
