@@ -349,6 +349,93 @@
         <mxCell id="e2RgB2zIPSqEstAvz9yk-105" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Use Hadoop or Spark Jobs. Each job can take up the job of aggregation of a specific video, which helps us to parallelize the aggregation process.&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Once done, the aggregated monthly view data from each job can be sorted&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Downside:&amp;nbsp; We&#39;ll be using lot of resources for a problem that can be solved with lesser resources elegantly&lt;/div&gt;" vertex="1">
           <mxGeometry height="106" width="422" x="-1185" y="5778" as="geometry" />
         </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-106" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Option 2" vertex="1">
+          <mxGeometry height="30" width="60" x="-1180" y="5949" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-108" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Create different tables to store view data at different granularities (hourly, daily, monthly, all time) at the write path&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;This will benefit during the read path, if top K videos over a month have to be fetched, the sum count of views of each video is already present in the table. We don&#39;t have to do the aggregation, how we were doing in step A of option 1 earlier.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="373" x="-1183" y="6062" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-110" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Updated HLD after option 2:" vertex="1">
+          <mxGeometry height="30" width="167.5" x="-1180" y="6175" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-111" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="VideoViews&lt;div&gt;(Kafka Topic/Stream)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="-1181" y="6571" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-112" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="e2RgB2zIPSqEstAvz9yk-111" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-913.77" y="6601" as="sourcePoint" />
+            <mxPoint x="-190" y="6677" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-113" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Flink job for batching the views data" vertex="1">
+          <mxGeometry height="60" width="120" x="-912" y="6575" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-114" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="Postgres with multiple shards" vertex="1">
+          <mxGeometry height="80" width="80" x="-604" y="6571" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-115" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="e2RgB2zIPSqEstAvz9yk-114" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-792" y="6608" as="sourcePoint" />
+            <mxPoint x="-742" y="6558" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-116" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Views DB" vertex="1">
+          <mxGeometry height="30" width="60" x="-591" y="6679" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-117" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Cron job" vertex="1">
+          <mxGeometry height="33" width="80" x="-662" y="6457" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-118" edge="1" parent="1" source="e2RgB2zIPSqEstAvz9yk-117" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="e2RgB2zIPSqEstAvz9yk-114" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-93" y="6747" as="sourcePoint" />
+            <mxPoint x="-43" y="6697" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-119" edge="1" parent="1" source="e2RgB2zIPSqEstAvz9yk-117" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-93" y="6747" as="sourcePoint" />
+            <mxPoint x="-505" y="6407.05" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-120" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Redis Cache" vertex="1">
+          <mxGeometry height="33" width="80" x="-540" y="6371" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-121" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Top K fetch service" vertex="1">
+          <mxGeometry height="35.5" width="105" x="-904.5" y="6365" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-122" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway" vertex="1">
+          <mxGeometry height="101" width="105" x="-1185" y="6337" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-123" edge="1" parent="1" source="e2RgB2zIPSqEstAvz9yk-122" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.991;exitY=0.454;exitDx=0;exitDy=0;exitPerimeter=0;" target="e2RgB2zIPSqEstAvz9yk-121" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-1076.85" y="6379.5" as="sourcePoint" />
+            <mxPoint x="-428" y="6688" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-124" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.026;entryY=0.391;entryDx=0;entryDy=0;exitX=0.991;exitY=0.454;exitDx=0;exitDy=0;exitPerimeter=0;entryPerimeter=0;" target="e2RgB2zIPSqEstAvz9yk-120" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-799.5" y="6382.49" as="sourcePoint" />
+            <mxPoint x="-622.5" y="6382.49" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-125" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Key is window:{truncated_timestamp}&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;TTL will be kept 30 days to fallback in case latest data is not available&lt;/div&gt;" vertex="1">
+          <mxGeometry height="75" width="342" x="-448" y="6340" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-126" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="VideoViewsHourly table&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Video&lt;/div&gt;&lt;div&gt;- Views&lt;/div&gt;&lt;div&gt;- TimeBucket&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="155" x="-489" y="6565" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-127" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Write data to hourly, weekly, monthly and all time tables" vertex="1">
+          <mxGeometry height="30" width="155" x="-783" y="6621" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-128" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="VideoViewsWeekly table&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Video&lt;/div&gt;&lt;div&gt;- Views&lt;/div&gt;&lt;div&gt;- TimeBucket&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="155" x="-323" y="6565" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-129" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="VideoViewsMonthly table&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Video&lt;/div&gt;&lt;div&gt;- Views&lt;/div&gt;&lt;div&gt;- TimeBucket&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="155" x="-140" y="6567" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-130" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="VideoViewAllTime table&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Video&lt;/div&gt;&lt;div&gt;- Views&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="155" x="-323" y="6707" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
