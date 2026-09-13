@@ -11,7 +11,7 @@
           <mxGeometry height="30" width="179" x="-248" y="399" as="geometry" />
         </mxCell>
         <mxCell id="e2RgB2zIPSqEstAvz9yk-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. User is able to see Top K viewed videos from all time&amp;nbsp;" vertex="1">
-          <mxGeometry height="30" width="332" x="-240" y="469" as="geometry" />
+          <mxGeometry height="30" width="332" x="-241" y="477" as="geometry" />
         </mxCell>
         <mxCell id="e2RgB2zIPSqEstAvz9yk-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. User is able to see Top-K viewed videos in last month/week/day/hour etc" vertex="1">
           <mxGeometry height="30" width="419" x="-235" y="520" as="geometry" />
