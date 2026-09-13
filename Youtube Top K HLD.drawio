@@ -1,11 +1,38 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="jPIsLkbbkSyFe4eVlREV">
-    <mxGraphModel dx="2018" dy="911" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2557" dy="1215" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="e2RgB2zIPSqEstAvz9yk-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Hello Interview Delivery Framework&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Requirement Gathering (Functional &amp;amp; Non-functional)&lt;/div&gt;&lt;div&gt;2. Entity extraction &amp;amp; API design&lt;/div&gt;&lt;div&gt;3. Data flow (for backend data oriented heavy questions)&lt;/div&gt;&lt;div&gt;4. Basic HLD that satisfies functional requirements&lt;/div&gt;&lt;div&gt;5. Deep dives into non-functional requirements&lt;/div&gt;" vertex="1">
           <mxGeometry height="179" width="518" x="-22" y="117" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Functional requirements" vertex="1">
+          <mxGeometry height="30" width="179" x="-248" y="399" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. User is able to see Top K viewed videos from all time&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="332" x="-240" y="469" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. User is able to see Top-K viewed videos in last month/week/day/hour etc" vertex="1">
+          <mxGeometry height="30" width="419" x="-235" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Concept of tumbling and sliding windows" vertex="1">
+          <mxGeometry height="30" width="288" x="-276" y="634" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Tumbling windows: fixed windows always, example: last week always means from Monday to Sunday&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="454" x="-252.5" y="703" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Sliding windows: variable windows always, example: last week can mean data from today (Tuesday) till last Tuesday" vertex="1">
+          <mxGeometry height="30" width="522" x="-272" y="795" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="In the context of our problem, we&#39;ll go for tumbling windows: week (7 days), month (28 days) etc&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="537" x="-272" y="887" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Out of scope functional requirement:" vertex="1">
+          <mxGeometry height="30" width="280" x="-298.5" y="972" as="geometry" />
+        </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="* Arbitrary time window (eg: give me top K videos as it existed on 19th Jan)" vertex="1">
+          <mxGeometry height="30" width="437" x="-277" y="1019" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
