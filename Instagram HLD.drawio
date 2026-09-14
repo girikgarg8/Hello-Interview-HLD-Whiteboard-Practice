@@ -25,6 +25,24 @@
         <mxCell id="d20bjUF1XWa1bvxXcyLc-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. Commenting and liking on posts" vertex="1">
           <mxGeometry height="30" width="211.5" x="-404.5" y="616" as="geometry" />
         </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Non-functional requirements" vertex="1">
+          <mxGeometry height="30" width="189" x="291" y="338" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. CAP theorem:&amp;nbsp; AP system for post creation" vertex="1">
+          <mxGeometry height="30" width="291" x="215" y="392" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Low latency feed loading (&amp;lt;500 ms)" vertex="1">
+          <mxGeometry height="30" width="291" x="193" y="441" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Low latency media delivery (&amp;lt;500 ms)" vertex="1">
+          <mxGeometry height="30" width="291" x="198" y="489" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="4. Scalable to 500 Million DAU" vertex="1">
+          <mxGeometry height="30" width="291" x="171" y="537" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="[Value of 500 ms is chosen because human beings perceive things as real time in this timeframe and experience doesn&#39;t feel laggy]&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="291" x="206" y="626" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
