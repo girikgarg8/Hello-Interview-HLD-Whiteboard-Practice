@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="WH2d26EReXali_2EshNB">
-    <mxGraphModel dx="2418" dy="911" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2741" dy="868" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -78,6 +78,233 @@
         </mxCell>
         <mxCell id="d20bjUF1XWa1bvxXcyLc-27" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;div style=&quot;forced-color-adjust: none;&quot;&gt;User ID extracted from Authorization header (JWT/Session)&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none;&quot;&gt;&lt;br style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="51" width="393" x="-500.9965362548828" y="1784.0043139648437" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-28" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HLD that satisfies the functional and non-functional requirements" vertex="1">
+          <mxGeometry height="30" width="236" x="-749" y="1960" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Client" vertex="1">
+          <mxGeometry height="60" width="120" x="-745" y="2308" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-30" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="API Gateway&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Authentication&lt;/div&gt;&lt;div&gt;- Authorization&lt;/div&gt;&lt;div&gt;- Rate Limiting&lt;/div&gt;&lt;div&gt;- Routing&lt;/div&gt;&lt;div&gt;...etc&lt;/div&gt;" vertex="1">
+          <mxGeometry height="294" width="120" x="-335" y="2234" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-31" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Post Service" vertex="1">
+          <mxGeometry height="36" width="103" x="50" y="2241" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-33" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Follower Service" vertex="1">
+          <mxGeometry height="36" width="98" x="14" y="2416" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-34" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Feed Service" vertex="1">
+          <mxGeometry height="36" width="98" x="4" y="2567" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-35" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.007;entryY=0.226;entryDx=0;entryDy=0;entryPerimeter=0;" target="d20bjUF1XWa1bvxXcyLc-30" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-625" y="2327" as="sourcePoint" />
+            <mxPoint x="-575" y="2277" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-36" edge="1" parent="1" source="d20bjUF1XWa1bvxXcyLc-30" style="endArrow=classic;html=1;rounded=0;exitX=0.998;exitY=0.131;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="d20bjUF1XWa1bvxXcyLc-31" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-84" y="2367" as="sourcePoint" />
+            <mxPoint x="-34" y="2317" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-37" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. createPost&lt;div&gt;(mediaMetadata, caption)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="166" x="-593" y="2270" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-38" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. createPost&lt;div&gt;(mediaMetadata, caption)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="166" x="-184" y="2230" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-39" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="S3 Blob Storage" vertex="1">
+          <mxGeometry height="60" width="60" x="335" y="2182" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-40" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="DynamoDB" vertex="1">
+          <mxGeometry height="67" width="67" x="663" y="2380" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-41" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Post&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- AuthorUserId&lt;/div&gt;&lt;div&gt;- S3ObjectKey&lt;/div&gt;&lt;div&gt;- Caption&lt;/div&gt;&lt;div&gt;...other metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="93" width="120" x="764" y="2312" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-42" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="d20bjUF1XWa1bvxXcyLc-40" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="153" y="2260" as="sourcePoint" />
+            <mxPoint x="203" y="2210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-43" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. save media metdata in DB" vertex="1">
+          <mxGeometry height="30" width="111" x="344" y="2293" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-44" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" target="d20bjUF1XWa1bvxXcyLc-39" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="156" y="2252" as="sourcePoint" />
+            <mxPoint x="206" y="2202" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-45" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="5. generate S3 presigned URL" vertex="1">
+          <mxGeometry height="30" width="60" x="198" y="2180" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-46" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="d20bjUF1XWa1bvxXcyLc-39" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="-687.33" y="2112.23" />
+              <mxPoint x="-186.33" y="2114.23" />
+              <mxPoint x="367.67" y="2122.23" />
+            </Array>
+            <mxPoint x="-685" y="2308" as="sourcePoint" />
+            <mxPoint x="-635" y="2258" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-47" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="6. Upload media (image/video) to S3 with multi-part upload using presigned URL" vertex="1">
+          <mxGeometry height="30" width="283" x="-379" y="2074" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-48" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Some notes about multi-part upload:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. It&#39;s &quot;multi-part&quot; upload, not &quot;multi-partite&quot; upload&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;2. For a long time, I used to think that I need to maintain chunk&#39;s metdata in DB myself. With AWS S3 multi-part upload, no need of manual chunking strategy or management:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;UPLOAD:&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="336" x="-924" y="2771" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-49" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="You register a file with AWS and upload its pieces in parallel. Once all pieces arrive, AWS automatically stitches them into a single object&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="366" x="-931" y="2899" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-50" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="DOWNLOAD:" vertex="1">
+          <mxGeometry height="30" width="60" x="-786" y="2976" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-51" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="You request different byte ranges of a single unified object to stream multiple pieces over separate network channels simultaneously. Your download client writes these streams directly into their designated positions on disk, naturally reassembling the file without needing a post-download merge step." vertex="1">
+          <mxGeometry height="30" width="421" x="-971" y="3056" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-52" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.278;entryY=0.029;entryDx=0;entryDy=0;entryPerimeter=0;" target="d20bjUF1XWa1bvxXcyLc-40" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="515.93" y="2261.96" />
+            </Array>
+            <mxPoint x="395" y="2215" as="sourcePoint" />
+            <mxPoint x="647.36" y="2356.24" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-53" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="7. Lambda function invoked via S3 notification to update status" vertex="1">
+          <mxGeometry height="30" width="157" x="482" y="2222" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-54" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Note:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1. Media transcoding (converting to different formats like 144p, 360p, 1080 p) hasn&#39;t been shown in the diagram to keep it less cluttered.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;However, note that:&lt;br&gt;&lt;br&gt;A. You do not need to write your own transcoder, as third-party services like Cloudinary, AWS Elemental MediaConvert, and Mux can handle video and image transcoding entirely for you.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;B. After transcoding, store all the different format of chunk in a manifest file.&lt;br&gt;&lt;br&gt;C. The client can then read the mannifest file and download the appropriate resolution (144p/1080p) according to the network bandwidth.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="166" x="-140" y="3013" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-55" edge="1" parent="1" source="d20bjUF1XWa1bvxXcyLc-31" style="endArrow=classic;html=1;rounded=0;exitX=0.579;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.445;entryY=0.123;entryDx=0;entryDy=0;entryPerimeter=0;" target="d20bjUF1XWa1bvxXcyLc-58" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-125" y="2407" as="sourcePoint" />
+            <mxPoint x="313.45" y="2485.68" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-56" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="4.0 Async &#39;post event&#39;&amp;nbsp;" vertex="1">
+          <mxGeometry height="30" width="183.5" x="184" y="2375" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-58" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Kafka topic" vertex="1">
+          <mxGeometry height="30" width="120" x="311" y="2483" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-60" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="431" y="2502" as="sourcePoint" />
+            <mxPoint x="475.83" y="2502" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-61" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Kafka consumer" vertex="1">
+          <mxGeometry height="36" width="120" x="478" y="2486" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-62" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="d20bjUF1XWa1bvxXcyLc-40" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="598" y="2502" as="sourcePoint" />
+            <mxPoint x="648" y="2452" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-63" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="4.1 Write precomputed feed entries" vertex="1">
+          <mxGeometry height="30" width="60" x="629" y="2477" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-64" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Precomputed Feed&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- UserId (index)&lt;/div&gt;&lt;div&gt;- PostId&lt;/div&gt;" vertex="1">
+          <mxGeometry height="93" width="120" x="945" y="2312" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-65" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Follow&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Id&lt;/div&gt;&lt;div&gt;- FollowerUserId (Index)&lt;/div&gt;&lt;div&gt;- FollowedUserId (Index)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="93" width="162" x="1161" y="2312" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-66" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Notes on the write and read paths for precomputed feed:" vertex="1">
+          <mxGeometry height="30" width="213" x="344" y="2825" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-67" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Write path:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Whenever a new post is created,&amp;nbsp; push an event to Kafka topic, which will be consumed by a Kafka consumer&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;This Kafka consumer will look at the author of post, and how many followers this author has.&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="326" x="247" y="2929" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-69" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="A. If number of followers &amp;lt; 10,000 (non-celebrity):&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Create a precomputed feed entry for follow to author&#39;s post ID&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;B. If number of followers &amp;gt; 10,000 (celebrity):&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Drop the event. No precomputed feed entry will be persisted to DB.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="109" width="283" x="274" y="3083" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-70" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Why?" vertex="1">
+          <mxGeometry height="30" width="60" x="377" y="3217" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-71" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="A celebrity can have millions of followers&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Creating precomputed feed for millions of followers will be computationally and monetarily expensive&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="303" x="264" y="3277" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-72" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Read path:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;When a user logs in to view their feed, we&#39;ll use a combination of the two techniques:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;A. Fan out on write: Read the precomputed feed entries from DB, download the media from CDN/S3 and display to user&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;B.&amp;nbsp; Fan out on read path:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Parallely, for the celebrity posts&#39; usecase, search all the followers of current logged in user, and fetch posts of all the celebrities.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;These posts can be lazily displayed to the user once they scroll down to fetch the next set of posts.&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="201" width="183.5" x="289.5" y="3395" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-73" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.006;entryY=0.442;entryDx=0;entryDy=0;entryPerimeter=0;" target="d20bjUF1XWa1bvxXcyLc-30" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-621" y="2358" as="sourcePoint" />
+            <mxPoint x="-571" y="2308" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-74" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="8. followUser(followedId)" vertex="1">
+          <mxGeometry height="30" width="60" x="-535" y="2331" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-75" edge="1" parent="1" source="d20bjUF1XWa1bvxXcyLc-30" style="endArrow=classic;html=1;rounded=0;exitX=0.983;exitY=0.451;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="d20bjUF1XWa1bvxXcyLc-33" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-83" y="2339" as="sourcePoint" />
+            <mxPoint x="-33" y="2289" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-76" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0.041;entryY=0.682;entryDx=0;entryDy=0;entryPerimeter=0;" target="d20bjUF1XWa1bvxXcyLc-40" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="117" y="2436" as="sourcePoint" />
+            <mxPoint x="167" y="2386" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-79" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-size: 12px;&quot;&gt;9.&amp;nbsp; followUser(followedId)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="36" width="159" x="-145.00273170107897" y="2346.0025162760417" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-82" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-size: 12px;&quot;&gt;10.&amp;nbsp; followUser(followedId)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="36" width="159" x="386.00000000000006" y="2405" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-83" edge="1" parent="1" source="d20bjUF1XWa1bvxXcyLc-29" style="endArrow=classic;html=1;rounded=0;entryX=-0.016;entryY=0.801;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="d20bjUF1XWa1bvxXcyLc-30" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-675" y="2371" as="sourcePoint" />
+            <mxPoint x="-625" y="2321" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-84" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="11. fetchFeed()" vertex="1">
+          <mxGeometry height="30" width="60" x="-580" y="2434" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-85" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="d20bjUF1XWa1bvxXcyLc-34" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-215" y="2474" as="sourcePoint" />
+            <mxPoint x="123" y="2572" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-86" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="12. fetchFeed()" vertex="1">
+          <mxGeometry height="30" width="60" x="-108" y="2486" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-87" edge="1" parent="1" source="d20bjUF1XWa1bvxXcyLc-34" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="d20bjUF1XWa1bvxXcyLc-40" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="723.98" y="2579.74" />
+            </Array>
+            <mxPoint x="153" y="2596" as="sourcePoint" />
+            <mxPoint x="384" y="2653" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-88" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="13. Fetch posts with a combination of fan out with read and write approach (explained in detail below)" vertex="1">
+          <mxGeometry height="30" width="257" x="180" y="2611" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-89" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;" value="CDN" vertex="1">
+          <mxGeometry height="80" width="80" x="-701" y="2477" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-91" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" target="d20bjUF1XWa1bvxXcyLc-89" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="-720" y="2368" as="sourcePoint" />
+            <mxPoint x="-670" y="2318" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-92" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="14. Fetch media from CDN" vertex="1">
+          <mxGeometry height="30" width="60" x="-809" y="2422" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
