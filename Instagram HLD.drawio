@@ -49,6 +49,36 @@
         <mxCell id="d20bjUF1XWa1bvxXcyLc-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="User&lt;div&gt;MediaMetadata&lt;/div&gt;&lt;div&gt;MediaBlobContent&lt;/div&gt;&lt;div&gt;Post&lt;/div&gt;&lt;div&gt;PrecomputedFeed&lt;/div&gt;&lt;div&gt;Follow&lt;/div&gt;" vertex="1">
           <mxGeometry height="104" width="143" x="-408" y="866" as="geometry" />
         </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="API design" vertex="1">
+          <mxGeometry height="30" width="101" x="-424" y="1004" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="// create a post" vertex="1">
+          <mxGeometry height="30" width="179" x="-461" y="1061" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="POST /posts -&amp;gt; S3 presigned URL&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Request body :&lt;/div&gt;&lt;div&gt;{&lt;/div&gt;&lt;div&gt;MediaMetadata,&lt;/div&gt;&lt;div&gt;Caption&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;}&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="222" x="-431" y="1111" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="PUT {S3 presigned URL}&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Request body: MediaBlobContent&lt;/div&gt;" vertex="1">
+          <mxGeometry height="63" width="222" x="-424" y="1279" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-26" edge="1" parent="1" source="d20bjUF1XWa1bvxXcyLc-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="d20bjUF1XWa1bvxXcyLc-21" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;// follow user&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;POST /follows&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Follower User ID extracted from Authorization header (JWT/Session)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="240" x="-455" y="1450" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Request Body:&amp;nbsp;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;{&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&amp;nbsp;followedUserId&lt;br&gt;&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="87" width="90.25" x="-390" y="1511" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;// get feed&lt;div&gt;&lt;br&gt;&lt;div&gt;GET /feeds?cursor={cursor}&amp;amp;limit={limit}&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="143" x="-427" y="1701" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-23" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Response: List &amp;lt;Post&amp;gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="-403.5" y="1849" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-27" parent="1" style="text;whiteSpace=wrap;html=1;" value="&lt;div style=&quot;forced-color-adjust: none;&quot;&gt;User ID extracted from Authorization header (JWT/Session)&lt;/div&gt;&lt;div style=&quot;forced-color-adjust: none;&quot;&gt;&lt;br style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="51" width="393" x="-500.9965362548828" y="1784.0043139648437" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
