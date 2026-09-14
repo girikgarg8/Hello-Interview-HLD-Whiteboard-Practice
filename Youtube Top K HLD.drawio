@@ -610,6 +610,9 @@
             <mxPoint x="-1081" y="9368" as="targetPoint" />
           </mxGeometry>
         </mxCell>
+        <mxCell id="e2RgB2zIPSqEstAvz9yk-193" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Another variant of this problem:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;If I was allowed to use approximations instead of precise results for top K&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;From Google&#39;s perspective, it doesn&#39;t probably matter to show exact top K and spend too much hardware/resources on it. So, they might think to go for approximations&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;However, in this case, approximation involves use of Count Min Sketch - which is a lesser known and complicated technique - hence I would not even bring up the point of approximations in interview&lt;/div&gt;" vertex="1">
+          <mxGeometry height="238" width="286" x="-1833" y="9963" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
