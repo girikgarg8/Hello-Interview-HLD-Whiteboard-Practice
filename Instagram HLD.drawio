@@ -43,6 +43,12 @@
         <mxCell id="d20bjUF1XWa1bvxXcyLc-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="[Value of 500 ms is chosen because human beings perceive things as real time in this timeframe and experience doesn&#39;t feel laggy]&amp;nbsp;" vertex="1">
           <mxGeometry height="30" width="291" x="206" y="626" as="geometry" />
         </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Entity extraction &amp;amp; API design&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="198" x="-413" y="790" as="geometry" />
+        </mxCell>
+        <mxCell id="d20bjUF1XWa1bvxXcyLc-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="User&lt;div&gt;MediaMetadata&lt;/div&gt;&lt;div&gt;MediaBlobContent&lt;/div&gt;&lt;div&gt;Post&lt;/div&gt;&lt;div&gt;PrecomputedFeed&lt;/div&gt;&lt;div&gt;Follow&lt;/div&gt;" vertex="1">
+          <mxGeometry height="104" width="143" x="-408" y="866" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
