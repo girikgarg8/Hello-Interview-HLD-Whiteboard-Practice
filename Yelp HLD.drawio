@@ -40,6 +40,30 @@
         <mxCell id="gO3A2CuuGkIVxFOZevAj-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- Business&lt;div&gt;- Review&lt;/div&gt;&lt;div&gt;- User&lt;/div&gt;" vertex="1">
           <mxGeometry height="30" width="60" x="-361" y="743" as="geometry" />
         </mxCell>
+        <mxCell id="gO3A2CuuGkIVxFOZevAj-13" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="API design" vertex="1">
+          <mxGeometry height="30" width="108" x="-385" y="832" as="geometry" />
+        </mxCell>
+        <mxCell id="gO3A2CuuGkIVxFOZevAj-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="// Search for businesses" vertex="1">
+          <mxGeometry height="30" width="153" x="-389" y="899" as="geometry" />
+        </mxCell>
+        <mxCell id="gO3A2CuuGkIVxFOZevAj-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="GET /businesses?location={}&amp;amp;category={}&amp;amp;page={}&amp;amp;size={}&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;(Support pagination since response size can be huge)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Response: Partial &amp;lt;Event&amp;gt; []&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="377" x="-407" y="1005" as="geometry" />
+        </mxCell>
+        <mxCell id="gO3A2CuuGkIVxFOZevAj-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div&gt;// View business details&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;GET /businesses/:businessId&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Response: Business&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="391" x="-482" y="1143" as="geometry" />
+        </mxCell>
+        <mxCell id="gO3A2CuuGkIVxFOZevAj-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="// View reviews" vertex="1">
+          <mxGeometry height="30" width="173" x="-395" y="1238" as="geometry" />
+        </mxCell>
+        <mxCell id="gO3A2CuuGkIVxFOZevAj-19" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="GET /businesses/:businessId/reviews?page={}&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Response: Review[]&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="255" x="-364" y="1311" as="geometry" />
+        </mxCell>
+        <mxCell id="gO3A2CuuGkIVxFOZevAj-20" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="// Post a review" vertex="1">
+          <mxGeometry height="30" width="128" x="-381" y="1372" as="geometry" />
+        </mxCell>
+        <mxCell id="gO3A2CuuGkIVxFOZevAj-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="POST /businesses/:businessId/reviews&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Request Body: {&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;rating: number,&lt;/div&gt;&lt;div&gt;text?: string&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Response: Review entity with 201 Created status&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="334" x="-425" y="1487" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
