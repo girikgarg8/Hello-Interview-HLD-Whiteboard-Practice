@@ -34,6 +34,12 @@
         <mxCell id="gO3A2CuuGkIVxFOZevAj-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="4. Constraint: 1 review per user per business to avoid spam" vertex="1">
           <mxGeometry height="30" width="374" x="293" y="558" as="geometry" />
         </mxCell>
+        <mxCell id="gO3A2CuuGkIVxFOZevAj-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Entity extraction &amp;amp; API design" vertex="1">
+          <mxGeometry height="30" width="206" x="-385" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="gO3A2CuuGkIVxFOZevAj-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="- Business&lt;div&gt;- Review&lt;/div&gt;&lt;div&gt;- User&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="60" x="-361" y="743" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
