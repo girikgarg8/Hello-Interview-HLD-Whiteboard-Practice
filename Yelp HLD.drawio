@@ -64,6 +64,9 @@
         <mxCell id="gO3A2CuuGkIVxFOZevAj-21" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="POST /businesses/:businessId/reviews&amp;nbsp;&lt;div&gt;// AUTHENTICATED in the header session token or JWT&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Request Body: {&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;rating: number,&lt;/div&gt;&lt;div&gt;text?: string&lt;/div&gt;&lt;div&gt;}&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Response: Review entity with 201 Created status&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="30" width="334" x="-427" y="1525" as="geometry" />
         </mxCell>
+        <mxCell id="gO3A2CuuGkIVxFOZevAj-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;High level design&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="258" x="-544" y="1678" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
