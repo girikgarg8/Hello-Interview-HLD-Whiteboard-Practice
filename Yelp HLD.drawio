@@ -19,6 +19,21 @@
         <mxCell id="gO3A2CuuGkIVxFOZevAj-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. User should be able to leave reviews (1-5 star + optional text)" vertex="1">
           <mxGeometry height="30" width="424" x="-410" y="523" as="geometry" />
         </mxCell>
+        <mxCell id="gO3A2CuuGkIVxFOZevAj-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Non functional requirements" vertex="1">
+          <mxGeometry height="30" width="195" x="328" y="332" as="geometry" />
+        </mxCell>
+        <mxCell id="gO3A2CuuGkIVxFOZevAj-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1. CAP thorem: AP system (Availability &amp;gt;&amp;gt; Consistency)" vertex="1">
+          <mxGeometry height="30" width="353" x="293" y="409" as="geometry" />
+        </mxCell>
+        <mxCell id="gO3A2CuuGkIVxFOZevAj-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="2. Low latency search (&amp;lt;500 ms)" vertex="1">
+          <mxGeometry height="30" width="353" x="231" y="456" as="geometry" />
+        </mxCell>
+        <mxCell id="gO3A2CuuGkIVxFOZevAj-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="3. Scalable to handle 100 Million DAU and 10 Million businesses" vertex="1">
+          <mxGeometry height="30" width="353" x="317" y="509" as="geometry" />
+        </mxCell>
+        <mxCell id="gO3A2CuuGkIVxFOZevAj-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="4. Constraint: 1 review per user per business to avoid spam" vertex="1">
+          <mxGeometry height="30" width="374" x="293" y="558" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
